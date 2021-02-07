@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Posisi : MonoBehaviour
 {
-    private GameObject bidak;
-    public static bool status = false;
+    public static string kepemilikan;
     public static float x;
     public static float y;
     // Start is called before the first frame update
@@ -18,6 +17,14 @@ public class Posisi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision){
+        
+    }
+
+    void OnTriggerExit2D(Collider2D collision){
         
     }
 }
