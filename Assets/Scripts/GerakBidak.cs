@@ -8,12 +8,14 @@ public class GerakBidak : MonoBehaviour
 	public Sprite sprites;
     private string scene_name;
     private bool awal_permainan;
+    private bool cek_asal;
     // Start is called before the first frame update
     void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites;
         scene_name = SceneManager.GetActiveScene().name;
         awal_permainan = true;
+        cek_asal = false;
     }
 
     // Update is called once per frame
@@ -49,17 +51,38 @@ public class GerakBidak : MonoBehaviour
                 transform.position = new Vector3(newX, newY, transform.position.z);
                 obyek.tag = "Pemain";
                 obyek_asal.tag = "Untagged";
+                cek_asal = false;
             }else{
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
+                cek_asal = false;
                 //obyek.tag = "Untagged";
             }
         }else if(scene_name == "Rookie"){
             if(newY >= firstY && status){
-                transform.position = new Vector3(newX, newY, transform.position.z);
-                obyek.tag = "Pemain";
-                obyek_asal.tag = "Untagged";
+                if((newX == TempatIstirahat.xIstirahat[0] && newY == TempatIstirahat.yIstirahat[0]) || 
+                (newX == TempatIstirahat.xIstirahat[1] && newY == TempatIstirahat.yIstirahat[1]) ||
+                (newX == TempatIstirahat.xIstirahat[2] && newY == TempatIstirahat.yIstirahat[2]) ||
+                (newX == TempatIstirahat.xIstirahat[3] && newY == TempatIstirahat.yIstirahat[3]) ||
+                (newX == TempatIstirahat.xIstirahat[4] && newY == TempatIstirahat.yIstirahat[4]) ||
+                (newX == TempatIstirahat.xIstirahat[5] && newY == TempatIstirahat.yIstirahat[5]) ||
+                (newX == TempatIstirahat.xIstirahat[6] && newY == TempatIstirahat.yIstirahat[6]) ||
+                (newX == TempatIstirahat.xIstirahat[7] && newY == TempatIstirahat.yIstirahat[7])){
+                    transform.position = new Vector3(firstX, firstY, transform.position.z);
+                    cek_asal = false;
+                    //obyek.tag = "Untagged";
+                }else{
+                    transform.position = new Vector3(newX, newY, transform.position.z);
+                    obyek.tag = "Pemain";
+                    obyek_asal.tag = "Untagged";
+                    cek_asal = false;
+                    Debug.Log(TempatIstirahat.xIstirahat[0]);
+                    Debug.Log(TempatIstirahat.yIstirahat[0]);
+                    Debug.Log(newX);
+                    Debug.Log(newY);
+                }
             }else{
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
+                cek_asal = false;
                 //obyek.tag = "Untagged";
             }
         }
@@ -81,7 +104,10 @@ public class GerakBidak : MonoBehaviour
         
     }
     void OnTriggerExit2D(Collider2D collision){
-        obyek_asal = collision;
+        if(cek_asal == false){
+            obyek_asal = collision;
+            cek_asal = true;
+        }
         status = false;
     }
 }
