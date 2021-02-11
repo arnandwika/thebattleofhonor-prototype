@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\GerakBidak.cs" />
      <Compile Include="Assets\Scripts\Posisi.cs" />
      <Compile Include="Assets\Scripts\Scene.cs" />
+     <Compile Include="Assets\Scripts\TempatIstirahat.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Perkuliahan/Game Engine/unity2019/The Battle of Honor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

@@ -9,6 +9,7 @@ public class GerakBidak : MonoBehaviour
     private string scene_name;
     private bool awal_permainan;
     private bool cek_asal;
+    private bool cek_taruh;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class GerakBidak : MonoBehaviour
         scene_name = SceneManager.GetActiveScene().name;
         awal_permainan = true;
         cek_asal = false;
+        cek_taruh = true;
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class GerakBidak : MonoBehaviour
     private Collider2D obyek_asal;
 
     void OnMouseDown(){
+        cek_taruh = false;
     	firstY = transform.position.y;
         firstX = transform.position.x;
     	screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -52,9 +55,11 @@ public class GerakBidak : MonoBehaviour
                 obyek.tag = "Pemain";
                 obyek_asal.tag = "Untagged";
                 cek_asal = false;
+                cek_taruh = true;
             }else{
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
                 cek_asal = false;
+                cek_taruh = true;
                 //obyek.tag = "Untagged";
             }
         }else if(scene_name == "Rookie"){
@@ -69,20 +74,19 @@ public class GerakBidak : MonoBehaviour
                 (newX == TempatIstirahat.xIstirahat[7] && newY == TempatIstirahat.yIstirahat[7])){
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
+                    cek_taruh = true;
                     //obyek.tag = "Untagged";
                 }else{
                     transform.position = new Vector3(newX, newY, transform.position.z);
                     obyek.tag = "Pemain";
                     obyek_asal.tag = "Untagged";
                     cek_asal = false;
-                    Debug.Log(TempatIstirahat.xIstirahat[0]);
-                    Debug.Log(TempatIstirahat.yIstirahat[0]);
-                    Debug.Log(newX);
-                    Debug.Log(newY);
+                    cek_taruh = true;
                 }
             }else{
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
                 cek_asal = false;
+                cek_taruh = true;
                 //obyek.tag = "Untagged";
             }
         }
@@ -104,7 +108,7 @@ public class GerakBidak : MonoBehaviour
         
     }
     void OnTriggerExit2D(Collider2D collision){
-        if(cek_asal == false){
+        if(cek_asal == false && cek_taruh == false){
             obyek_asal = collision;
             cek_asal = true;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Posisi : MonoBehaviour
 {
-    public static string kepemilikan;
+    public int gerak;
     public static float x;
     public static float y;
     // Start is called before the first frame update
