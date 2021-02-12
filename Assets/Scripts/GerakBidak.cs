@@ -35,6 +35,11 @@ public class GerakBidak : MonoBehaviour
     private bool status = false;
     private Collider2D obyek;
     private Collider2D obyek_asal;
+    private int gerak;
+    private int xPosAwal;
+    private int yPosAwal;
+    private int xPosTujuan;
+    private int yPosTujuan;
 
     void OnMouseDown(){
         cek_taruh = false;
@@ -97,6 +102,9 @@ public class GerakBidak : MonoBehaviour
         if(awal_permainan){
             obyek.tag = "Pemain";
             awal_permainan = false;
+        }else{
+            xPosTujuan = collision.GetComponent<Posisi>().xPos;
+            yPosTujuan = collision.GetComponent<Posisi>().yPos;
         }
         if(obyek.tag == "Pemain"){
             status = false;
@@ -110,6 +118,9 @@ public class GerakBidak : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision){
         if(cek_asal == false && cek_taruh == false){
             obyek_asal = collision;
+            gerak = collision.GetComponent<Posisi>().gerak;
+            xPosAwal = collision.GetComponent<Posisi>().xPos;
+            yPosAwal = collision.GetComponent<Posisi>().yPos;
             cek_asal = true;
         }
         status = false;

@@ -222,7 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 10
+  yPos: 2
 --- !u!61 &38904690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -342,7 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 0
+  yPos: 2
 --- !u!61 &46057286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -542,7 +546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 4
+  yPos: 1
 --- !u!61 &75850559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -675,7 +681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 5
+  yPos: 4
 --- !u!61 &109929620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -795,7 +803,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 10
+  yPos: 3
 --- !u!61 &110950118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -995,7 +1005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 11
+  yPos: 3
 --- !u!61 &139913351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1207,7 +1219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 8
+  yPos: 4
 --- !u!61 &194904649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1469,7 +1483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 13
+  yPos: 4
 --- !u!61 &212390943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1589,7 +1605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 6
+  xPos: 10
+  yPos: 0
 --- !u!61 &232518652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1709,7 +1727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 8
+  yPos: 3
 --- !u!61 &238378749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1829,7 +1849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 11
+  yPos: 2
 --- !u!61 &244812429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1949,7 +1971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 8
+  xPos: 5
+  yPos: 2
 --- !u!61 &248854830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2290,7 +2314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 2
+  yPos: 0
 --- !u!61 &289170952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2411,7 +2437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 11
+  yPos: 1
 --- !u!61 &290001897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2544,7 +2572,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 9
+  yPos: 2
 --- !u!61 &302029959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2743,7 +2773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 3
+  yPos: 3
 --- !u!61 &388330893
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2942,7 +2974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 0
+  yPos: 3
 --- !u!61 &404454610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3063,7 +3097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 9
+  yPos: 3
 --- !u!61 &405258396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3196,7 +3232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 1
+  yPos: 4
 --- !u!61 &407926301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3316,7 +3354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 12
+  yPos: 1
 --- !u!61 &412619702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3515,7 +3555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 1
+  yPos: 1
 --- !u!61 &439773921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3777,7 +3819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 3
+  yPos: 2
 --- !u!61 &461694020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3897,7 +3941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 8
+  yPos: 1
 --- !u!61 &463783411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4017,7 +4063,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 3
+  yPos: 1
 --- !u!61 &466465834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4137,7 +4185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 9
+  xPos: 7
+  yPos: 0
 --- !u!61 &517301277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4257,7 +4307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 0
+  yPos: 0
 --- !u!61 &524604796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4598,7 +4650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 9
+  xPos: 6
+  yPos: 4
 --- !u!61 &630654335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4718,7 +4772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 2
+  yPos: 2
 --- !u!61 &634322307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5140,7 +5196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 4
+  yPos: 0
 --- !u!61 &701916676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5260,7 +5318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 1
+  yPos: 0
 --- !u!61 &718376621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5522,7 +5582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 6
+  xPos: 10
+  yPos: 4
 --- !u!61 &741273217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5642,7 +5704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 6
+  xPos: 3
+  yPos: 0
 --- !u!61 &757765720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5762,7 +5826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 8
+  xPos: 8
+  yPos: 2
 --- !u!61 &767468855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6040,7 +6106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 13
+  yPos: 0
 --- !u!61 &775711288
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6160,7 +6228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 5
+  yPos: 0
 --- !u!61 &777989584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6280,7 +6350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 12
+  yPos: 3
 --- !u!61 &782710110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6400,7 +6472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 12
+  yPos: 0
 --- !u!61 &817998451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6978,7 +7052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 9
+  yPos: 0
 --- !u!61 &968320815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7098,7 +7174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 5
+  yPos: 3
 --- !u!61 &969219967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7219,7 +7297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 2
+  yPos: 1
 --- !u!61 &989684965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7442,6 +7522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gerak: 1
+  xPos: 9
+  yPos: 1
 --- !u!114 &998645304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7486,7 +7568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 4
+  yPos: 4
 --- !u!61 &1015829890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7890,7 +7974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 7
+  yPos: 2
 --- !u!61 &1123810308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8152,7 +8238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 6
+  xPos: 3
+  yPos: 4
 --- !u!61 &1140412135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8406,7 +8494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 0
+  yPos: 4
 --- !u!61 &1212284566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8810,7 +8900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 11
+  yPos: 0
 --- !u!61 &1295519437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9072,7 +9164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 6
+  yPos: 2
 --- !u!61 &1314502663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9271,7 +9365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 0
+  yPos: 1
 --- !u!61 &1341998077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9613,7 +9709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 4
+  yPos: 3
 --- !u!61 &1383860660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10541,7 +10639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 9
+  xPos: 6
+  yPos: 0
 --- !u!61 &1545590363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10661,7 +10761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 7
+  xPos: 12
+  yPos: 2
 --- !u!61 &1578522545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10781,7 +10883,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 2
+  xPos: 12
+  yPos: 4
 --- !u!61 &1591432959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10980,7 +11084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 2
+  yPos: 4
 --- !u!61 &1616525074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11180,7 +11286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 1
+  xPos: 2
+  yPos: 3
 --- !u!61 &1655443593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11313,7 +11421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 13
+  yPos: 1
 --- !u!61 &1660922090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11512,7 +11622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 10
+  yPos: 1
 --- !u!61 &1681273638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11916,7 +12028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 13
+  yPos: 3
 --- !u!61 &1798178733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12036,7 +12150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 11
+  yPos: 4
 --- !u!61 &1808549416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12314,7 +12430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 7
+  xPos: 1
+  yPos: 2
 --- !u!61 &1844610490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12576,7 +12694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 4
+  yPos: 2
 --- !u!61 &1883791702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12696,7 +12816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 5
+  yPos: 1
 --- !u!61 &1886876868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13334,7 +13456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 4
+  xPos: 9
+  yPos: 4
 --- !u!61 &1950858813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13533,7 +13657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 5
+  xPos: 13
+  yPos: 2
 --- !u!61 &2013267690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13795,7 +13921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 3
+  xPos: 1
+  yPos: 3
 --- !u!61 &2049830107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14058,6 +14186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gerak: 2
+  xPos: 8
+  yPos: 0
 --- !u!61 &2088817839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14177,7 +14307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 0
+  gerak: 9
+  xPos: 7
+  yPos: 4
 --- !u!61 &2117941048
 BoxCollider2D:
   m_ObjectHideFlags: 0

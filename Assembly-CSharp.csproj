@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AturanGerak.cs" />
      <Compile Include="Assets\Scripts\Bidak.cs" />
      <Compile Include="Assets\Scripts\GerakBidak.cs" />
      <Compile Include="Assets\Scripts\Posisi.cs" />

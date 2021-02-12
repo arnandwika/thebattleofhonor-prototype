@@ -5,13 +5,12 @@ using UnityEngine;
 public class Posisi : MonoBehaviour
 {
     public int gerak;
-    public static float x;
-    public static float y;
+    public int xPos;
+    public int yPos;
     // Start is called before the first frame update
     void Start()
     {
-        x = transform.position.x;
-        y = transform.position.y;
+        
     }
 
     // Update is called once per frame
