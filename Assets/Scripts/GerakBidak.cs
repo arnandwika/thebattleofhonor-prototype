@@ -33,13 +33,15 @@ public class GerakBidak : MonoBehaviour
     private float firstX;
     private float newX;
     private bool status = false;
-    private Collider2D obyek;
+    private Collider2D obyek_akhir;
     private Collider2D obyek_asal;
+    private Posisi posAwal;
+    private Posisi posTujuan;
     private int gerak;
-    private int xPosAwal;
-    private int yPosAwal;
-    private int xPosTujuan;
-    private int yPosTujuan;
+    private int barisPosAwal;
+    private int kolomPosAwal;
+    private int barisPosTujuan;
+    private int kolomPosTujuan;
 
     void OnMouseDown(){
         cek_taruh = false;
@@ -54,20 +56,27 @@ public class GerakBidak : MonoBehaviour
     	transform.position = curPosition;
     }
     void OnMouseUp(){
-        if(scene_name == "Expert"){
+        if(scene_name == "Rookie"){
             if(status){
-                transform.position = new Vector3(newX, newY, transform.position.z);
-                obyek.tag = "Pemain";
-                obyek_asal.tag = "Untagged";
-                cek_asal = false;
-                cek_taruh = true;
+                if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
+                    transform.position = new Vector3(newX, newY, transform.position.z);
+                    obyek_akhir.tag = "Pemain";
+                    obyek_asal.tag = "Untagged";
+                    cek_asal = false;
+                    cek_taruh = true;
+                }else{
+                    transform.position = new Vector3(firstX, firstY, transform.position.z);
+                    cek_asal = false;
+                    cek_taruh = true;
+                    //obyek.tag = "Untagged";
+                }
             }else{
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
                 cek_asal = false;
                 cek_taruh = true;
                 //obyek.tag = "Untagged";
             }
-        }else if(scene_name == "Rookie"){
+        }else if(scene_name == "Expert"){
             if(newY >= firstY && status){
                 if((newX == TempatIstirahat.xIstirahat[0] && newY == TempatIstirahat.yIstirahat[0]) || 
                 (newX == TempatIstirahat.xIstirahat[1] && newY == TempatIstirahat.yIstirahat[1]) ||
@@ -83,7 +92,7 @@ public class GerakBidak : MonoBehaviour
                     //obyek.tag = "Untagged";
                 }else{
                     transform.position = new Vector3(newX, newY, transform.position.z);
-                    obyek.tag = "Pemain";
+                    obyek_akhir.tag = "Pemain";
                     obyek_asal.tag = "Untagged";
                     cek_asal = false;
                     cek_taruh = true;
@@ -98,15 +107,18 @@ public class GerakBidak : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision){
-        obyek = collision;
+        obyek_akhir = collision;
         if(awal_permainan){
-            obyek.tag = "Pemain";
+            obyek_akhir.tag = "Pemain";
             awal_permainan = false;
         }else{
-            xPosTujuan = collision.GetComponent<Posisi>().xPos;
-            yPosTujuan = collision.GetComponent<Posisi>().yPos;
+            if(!collision.isTrigger){
+                posTujuan = collision.GetComponent<Posisi>();
+                barisPosTujuan = posTujuan.barisPos;
+                kolomPosTujuan = posTujuan.kolomPos;
+            }
         }
-        if(obyek.tag == "Pemain"){
+        if(obyek_akhir.tag == "Pemain"){
             status = false;
         }else{
             status = true;
@@ -118,10 +130,14 @@ public class GerakBidak : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision){
         if(cek_asal == false && cek_taruh == false){
             obyek_asal = collision;
-            gerak = collision.GetComponent<Posisi>().gerak;
-            xPosAwal = collision.GetComponent<Posisi>().xPos;
-            yPosAwal = collision.GetComponent<Posisi>().yPos;
             cek_asal = true;
+            if(!collision.isTrigger){
+                posAwal = collision.GetComponent<Posisi>();
+                gerak = posAwal.gerak;
+                barisPosAwal = posAwal.barisPos;
+                kolomPosAwal = posAwal.kolomPos;
+                print(gerak);
+            }
         }
         status = false;
     }
