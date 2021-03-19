@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 8
+  gerak: 7
   barisPos: 5
   kolomPos: 2
 --- !u!61 &248854830
@@ -4185,7 +4185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 9
+  gerak: 8
   barisPos: 7
   kolomPos: 0
 --- !u!61 &517301277
@@ -4650,7 +4650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 9
+  gerak: 8
   barisPos: 6
   kolomPos: 4
 --- !u!61 &630654335
@@ -5826,7 +5826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 8
+  gerak: 7
   barisPos: 8
   kolomPos: 2
 --- !u!61 &767468855
@@ -10639,7 +10639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 9
+  gerak: 8
   barisPos: 6
   kolomPos: 0
 --- !u!61 &1545590363
@@ -14307,7 +14307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ea0c33d0426b47a4f7a0288278532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerak: 9
+  gerak: 8
   barisPos: 7
   kolomPos: 4
 --- !u!61 &2117941048

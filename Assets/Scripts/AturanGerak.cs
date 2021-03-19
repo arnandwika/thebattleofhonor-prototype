@@ -50,17 +50,17 @@ public class AturanGerak : MonoBehaviour
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 5){
-                    if(barisPosAwal <= barisPosTujuan+4 && barisPosTujuan < barisPosAwal){
+                    if(barisPosAwal <= barisPosTujuan+4 && barisPosAwal > barisPosTujuan){
                         return true;
-                    }else if(barisPosAwal == barisPosTujuan-1 && barisPosTujuan > barisPosAwal){
+                    }else if(barisPosAwal == barisPosTujuan-1 && barisPosAwal < barisPosTujuan){
                         return true;
                     }else{
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 8){
-                    if(barisPosAwal >= barisPosTujuan-4 && barisPosTujuan > barisPosAwal){
+                    if(barisPosAwal >= barisPosTujuan-4 && barisPosAwal < barisPosTujuan){
                         return true;
-                    }else if(barisPosAwal == barisPosTujuan+1 && barisPosTujuan < barisPosAwal){
+                    }else if(barisPosAwal == barisPosTujuan+1 && barisPosAwal > barisPosTujuan){
                         return true;
                     }else{
                         return false;
@@ -126,21 +126,74 @@ public class AturanGerak : MonoBehaviour
                 }
             }
             else if(gerak == 5){
-                return true;
+                if(barisPosAwal != barisPosTujuan && kolomPosAwal == kolomPosTujuan && (barisPosAwal == barisPosTujuan-1 || barisPosAwal == barisPosTujuan+1)){
+                    return true;
+                }else if(kolomPosAwal != kolomPosTujuan && barisPosAwal == barisPosTujuan && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
             else if(gerak == 6){
-                return true;
+                if(barisPosAwal != barisPosTujuan && kolomPosAwal == kolomPosTujuan){
+                    if(barisPosAwal == 10 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-2){
+                        return true;
+                    }else if(barisPosAwal == 10 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+3){
+                        return true;
+                    }else if(barisPosAwal == 3 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-3){
+                        return true;
+                    }else if(barisPosAwal == 3 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+2){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else if(barisPosAwal != barisPosTujuan && kolomPosAwal != kolomPosTujuan){
+                    if((barisPosAwal == barisPosTujuan-1 || barisPosAwal == barisPosTujuan+1) && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else if(barisPosAwal == barisPosTujuan && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
             else if(gerak == 7){
-                return true;
+                if(barisPosAwal == barisPosTujuan){
+                    return true;
+                }else if(kolomPosAwal == kolomPosTujuan && (barisPosAwal == barisPosTujuan-1 || barisPosAwal == barisPosTujuan+1)){
+                    return true;
+                }else if((barisPosAwal == 12 || barisPosAwal == 5) && barisPosAwal == barisPosTujuan+1 && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
+                    return true;
+                }else if((barisPosAwal == 1 || barisPosAwal == 8) && barisPosAwal == barisPosTujuan-1 && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
             else if(gerak == 8){
-                return true;
-            }
-            else if(gerak == 9){
-                return true;
+                if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 7 && barisPosAwal >= barisPosTujuan-5 && barisPosAwal < barisPosTujuan){
+                    return true;
+                }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 7 && barisPosAwal == barisPosTujuan+1){
+                    return true;
+                }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 6 && barisPosAwal <= barisPosTujuan+5 && barisPosAwal > barisPosTujuan){
+                    return true;
+                }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 6 && barisPosAwal == barisPosTujuan-1){
+                    return true;
+                }
+            }else{
+                return false;
             }
         }
+        return false;
+    }
+
+    private bool cekLompatBaris(int barisPosAwal, int barisPosTujuan, int kolom){
+        return false;
+    }
+
+    private bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
         return false;
     }
 }
