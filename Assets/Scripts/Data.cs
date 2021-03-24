@@ -37,11 +37,20 @@ public class Data : MonoBehaviour
         }
     }
 
-    public static void printSpesifik(int baris, int kolom){
-        print(pangkatBidak[baris,kolom]);
+    public static void dataPangkatPindah(int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan, int pangkat){
+        insertPangkat(barisPosTujuan, kolomPosTujuan, pangkat);
+        zeroPangkat(barisPosAwal, kolomPosAwal);
     }
 
     public static void insertPangkat(int baris, int kolom, int pangkat){
         pangkatBidak[baris,kolom] = pangkat;
+    }
+
+    public static void zeroPangkat(int baris, int kolom){
+        pangkatBidak[baris,kolom] = 0;
+    }
+
+    public static int getPangkat(int baris, int kolom){
+        return pangkatBidak[baris,kolom];
     }
 }

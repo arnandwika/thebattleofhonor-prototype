@@ -68,8 +68,7 @@ public class GerakBidak : MonoBehaviour
                     cek_asal = false;
                     cek_taruh = true;
                     pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
-                    Data.insertPangkat(barisPosTujuan, kolomPosTujuan, pangkatBidak);
-                    // Data.printSpesifik(barisPosTujuan, kolomPosTujuan);
+                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
                 }else{
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
@@ -110,6 +109,7 @@ public class GerakBidak : MonoBehaviour
                 //obyek.tag = "Untagged";
             }
         }
+        AturanGerak.allow = true;
     }
 
     void OnTriggerEnter2D(Collider2D collision){
@@ -148,7 +148,6 @@ public class GerakBidak : MonoBehaviour
                 gerak = posAwal.gerak;
                 barisPosAwal = posAwal.barisPos;
                 kolomPosAwal = posAwal.kolomPos;
-                // print(gerak);
             }
         }
         status = false;

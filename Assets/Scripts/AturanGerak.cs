@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AturanGerak : MonoBehaviour
 {
+    public static bool allow = true;
+    private static int loop;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,19 +40,19 @@ public class AturanGerak : MonoBehaviour
                 if(barisPosAwal == barisPosTujuan){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 1){
-                    if(barisPosAwal >= barisPosTujuan-5){
+                    if(barisPosAwal >= barisPosTujuan-5 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 12){
-                    if(barisPosAwal <= barisPosTujuan+5){
+                    if(barisPosAwal <= barisPosTujuan+5 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 5){
-                    if(barisPosAwal <= barisPosTujuan+4 && barisPosAwal > barisPosTujuan){
+                    if(barisPosAwal <= barisPosTujuan+4 && barisPosAwal > barisPosTujuan && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else if(barisPosAwal == barisPosTujuan-1 && barisPosAwal < barisPosTujuan){
                         return true;
@@ -58,7 +60,7 @@ public class AturanGerak : MonoBehaviour
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 8){
-                    if(barisPosAwal >= barisPosTujuan-4 && barisPosAwal < barisPosTujuan){
+                    if(barisPosAwal >= barisPosTujuan-4 && barisPosAwal < barisPosTujuan && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else if(barisPosAwal == barisPosTujuan+1 && barisPosAwal > barisPosTujuan){
                         return true;
@@ -90,7 +92,7 @@ public class AturanGerak : MonoBehaviour
                 if(barisPosAwal == barisPosTujuan && (kolomPosAwal == kolomPosTujuan-1 || kolomPosAwal == kolomPosTujuan+1)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 11){
-                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+4){
+                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+4 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else if(barisPosAwal < barisPosTujuan && barisPosAwal == barisPosTujuan-1){
                         return true;
@@ -98,17 +100,17 @@ public class AturanGerak : MonoBehaviour
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 9){
-                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+2){
+                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+2 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
-                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-3){
+                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-3 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
                     }
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 4){
-                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+3){
+                    if(barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+3 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
-                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-2){
+                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-2 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
@@ -116,7 +118,7 @@ public class AturanGerak : MonoBehaviour
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 2){
                     if(barisPosAwal > barisPosTujuan && barisPosAwal == barisPosTujuan+1){
                         return true;
-                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-4){
+                    }else if(barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-4 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
@@ -136,13 +138,13 @@ public class AturanGerak : MonoBehaviour
             }
             else if(gerak == 6){
                 if(barisPosAwal != barisPosTujuan && kolomPosAwal == kolomPosTujuan){
-                    if(barisPosAwal == 10 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-2){
+                    if(barisPosAwal == 10 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-2 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
-                    }else if(barisPosAwal == 10 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+3){
+                    }else if(barisPosAwal == 10 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+3 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
-                    }else if(barisPosAwal == 3 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-3){
+                    }else if(barisPosAwal == 3 && barisPosAwal < barisPosTujuan && barisPosAwal >= barisPosTujuan-3 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
-                    }else if(barisPosAwal == 3 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+2){
+                    }else if(barisPosAwal == 3 && barisPosAwal > barisPosTujuan && barisPosAwal <= barisPosTujuan+2 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                         return true;
                     }else{
                         return false;
@@ -173,11 +175,11 @@ public class AturanGerak : MonoBehaviour
                 }
             }
             else if(gerak == 8){
-                if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 7 && barisPosAwal >= barisPosTujuan-5 && barisPosAwal < barisPosTujuan){
+                if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 7 && barisPosAwal >= barisPosTujuan-5 && barisPosAwal < barisPosTujuan && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 7 && barisPosAwal == barisPosTujuan+1){
                     return true;
-                }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 6 && barisPosAwal <= barisPosTujuan+5 && barisPosAwal > barisPosTujuan){
+                }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 6 && barisPosAwal <= barisPosTujuan+5 && barisPosAwal > barisPosTujuan && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 6 && barisPosAwal == barisPosTujuan-1){
                     return true;
@@ -189,11 +191,27 @@ public class AturanGerak : MonoBehaviour
         return false;
     }
 
-    private bool cekLompatBaris(int barisPosAwal, int barisPosTujuan, int kolom){
-        return false;
+    private static bool cekLompatBaris(int barisPosAwal, int barisPosTujuan, int kolom){
+        if(barisPosAwal > barisPosTujuan && barisPosAwal - barisPosTujuan > 1){
+            loop = barisPosAwal - barisPosTujuan;
+            for(int i = 1; i < loop; i++){
+                if(Data.getPangkat(barisPosTujuan+i, kolom) != 0){
+                    allow = false;
+                }
+            }
+            return allow;
+        }else if(barisPosTujuan > barisPosAwal && barisPosTujuan - barisPosAwal > 1){
+            loop = barisPosTujuan - barisPosAwal;
+            for(int i = 1; i < loop; i++){
+                if(Data.getPangkat(barisPosAwal+i, kolom) != 0){
+                    allow = false;
+                }
+            }
+        }
+        return allow;
     }
 
-    private bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
+    private static bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
         return false;
     }
 }
