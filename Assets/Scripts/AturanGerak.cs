@@ -17,10 +17,10 @@ public class AturanGerak : MonoBehaviour
     }
 
     public static bool opsiGerak(int gerak, int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan){
-        print(barisPosAwal);
-        print(kolomPosAwal);
-        print(barisPosTujuan);
-        print(kolomPosTujuan);
+        // print(barisPosAwal);
+        // print(kolomPosAwal);
+        // print(barisPosTujuan);
+        // print(kolomPosTujuan);
         if(barisPosAwal == barisPosTujuan && kolomPosAwal == kolomPosTujuan){
             return false;
         }else{

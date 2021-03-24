@@ -42,6 +42,9 @@ public class GerakBidak : MonoBehaviour
     private int kolomPosAwal;
     private int barisPosTujuan;
     private int kolomPosTujuan;
+    private int pangkatBidak;
+    private int barisPos;
+    private int kolomPos;
 
     void OnMouseDown(){
         cek_taruh = false;
@@ -64,6 +67,9 @@ public class GerakBidak : MonoBehaviour
                     obyek_asal.tag = "Untagged";
                     cek_asal = false;
                     cek_taruh = true;
+                    pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                    Data.insertPangkat(barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                    // Data.printSpesifik(barisPosTujuan, kolomPosTujuan);
                 }else{
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
@@ -110,6 +116,12 @@ public class GerakBidak : MonoBehaviour
         obyek_akhir = collision;
         if(awal_permainan){
             obyek_akhir.tag = "Pemain";
+            pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+            if(!collision.isTrigger){
+                barisPos = collision.GetComponent<Posisi>().barisPos;
+                kolomPos = collision.GetComponent<Posisi>().kolomPos;
+            }
+            Data.insertPangkat(barisPos, kolomPos, pangkatBidak);
             awal_permainan = false;
         }else{
             if(!collision.isTrigger){
@@ -136,7 +148,7 @@ public class GerakBidak : MonoBehaviour
                 gerak = posAwal.gerak;
                 barisPosAwal = posAwal.barisPos;
                 kolomPosAwal = posAwal.kolomPos;
-                print(gerak);
+                // print(gerak);
             }
         }
         status = false;

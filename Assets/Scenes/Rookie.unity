@@ -1323,6 +1323,7 @@ GameObject:
   - component: {fileID: 211782817}
   - component: {fileID: 211782816}
   - component: {fileID: 211782815}
+  - component: {fileID: 211782818}
   m_Layer: 0
   m_Name: Letnan
   m_TagString: Pemain
@@ -1452,6 +1453,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &211782818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211782812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: letnan
+  pangkat: 4
+  kepemilikan: p
 --- !u!1 &212390941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3691,7 @@ GameObject:
   - component: {fileID: 453395624}
   - component: {fileID: 453395623}
   - component: {fileID: 453395622}
+  - component: {fileID: 453395625}
   m_Layer: 0
   m_Name: Prajurit
   m_TagString: Pemain
@@ -3804,6 +3821,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &453395625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453395619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: prajurit
+  pangkat: 2
+  kepemilikan: p
 --- !u!1 &461694018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,6 +4538,7 @@ GameObject:
   - component: {fileID: 572616797}
   - component: {fileID: 572616796}
   - component: {fileID: 572616795}
+  - component: {fileID: 572616798}
   m_Layer: 0
   m_Name: Dinamit (2)
   m_TagString: Pemain
@@ -4635,6 +4668,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &572616798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572616792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: dinamit
+  pangkat: -1
+  kepemilikan: p
 --- !u!1 &630654333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +4940,7 @@ GameObject:
   - component: {fileID: 654111611}
   - component: {fileID: 654111610}
   - component: {fileID: 654111609}
+  - component: {fileID: 654111612}
   m_Layer: 0
   m_Name: Kapten
   m_TagString: Pemain
@@ -5021,6 +5070,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &654111612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654111606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: kapten
+  pangkat: 5
+  kepemilikan: p
 --- !u!1 &662600640
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,6 +5502,7 @@ GameObject:
   - component: {fileID: 718679481}
   - component: {fileID: 718679480}
   - component: {fileID: 718679479}
+  - component: {fileID: 718679482}
   m_Layer: 0
   m_Name: Prajurit (1)
   m_TagString: Pemain
@@ -5567,6 +5632,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &718679482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718679476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: prajurit
+  pangkat: 2
+  kepemilikan: p
 --- !u!1 &741273215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6908,6 +6988,7 @@ GameObject:
   - component: {fileID: 910121596}
   - component: {fileID: 910121595}
   - component: {fileID: 910121594}
+  - component: {fileID: 910121597}
   m_Layer: 0
   m_Name: Mayor
   m_TagString: Pemain
@@ -7037,6 +7118,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &910121597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910121591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: mayor
+  pangkat: 6
+  kepemilikan: p
 --- !u!1 &968320813
 GameObject:
   m_ObjectHideFlags: 0
@@ -7688,6 +7784,7 @@ GameObject:
   - component: {fileID: 1068528263}
   - component: {fileID: 1068528262}
   - component: {fileID: 1068528261}
+  - component: {fileID: 1068528264}
   m_Layer: 0
   m_Name: Kapten (1)
   m_TagString: Pemain
@@ -7817,6 +7914,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1068528264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068528258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: kapten
+  pangkat: 5
+  kepemilikan: p
 --- !u!1 &1090081689
 GameObject:
   m_ObjectHideFlags: 0
@@ -7830,6 +7942,7 @@ GameObject:
   - component: {fileID: 1090081694}
   - component: {fileID: 1090081693}
   - component: {fileID: 1090081692}
+  - component: {fileID: 1090081695}
   m_Layer: 0
   m_Name: Bom
   m_TagString: Pemain
@@ -7959,6 +8072,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1090081695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090081689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: bom
+  pangkat: -2
+  kepemilikan: p
 --- !u!1 &1123810306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8094,6 +8222,7 @@ GameObject:
   - component: {fileID: 1126996158}
   - component: {fileID: 1126996157}
   - component: {fileID: 1126996156}
+  - component: {fileID: 1126996159}
   m_Layer: 0
   m_Name: Prajurit (2)
   m_TagString: Pemain
@@ -8223,6 +8352,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1126996159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126996153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: prajurit
+  pangkat: 2
+  kepemilikan: p
 --- !u!1 &1140412133
 GameObject:
   m_ObjectHideFlags: 0
@@ -8614,6 +8758,7 @@ GameObject:
   - component: {fileID: 1215701701}
   - component: {fileID: 1215701700}
   - component: {fileID: 1215701699}
+  - component: {fileID: 1215701702}
   m_Layer: 0
   m_Name: Dinamit (1)
   m_TagString: Pemain
@@ -8743,6 +8888,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1215701702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215701696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: dinamit
+  pangkat: -1
+  kepemilikan: p
 --- !u!1 &1241147306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8756,6 +8916,7 @@ GameObject:
   - component: {fileID: 1241147311}
   - component: {fileID: 1241147310}
   - component: {fileID: 1241147309}
+  - component: {fileID: 1241147312}
   m_Layer: 0
   m_Name: Brigjen (1)
   m_TagString: Pemain
@@ -8885,6 +9046,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1241147312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241147306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: brigjen
+  pangkat: 8
+  kepemilikan: p
 --- !u!1 &1295519435
 GameObject:
   m_ObjectHideFlags: 0
@@ -9020,6 +9196,7 @@ GameObject:
   - component: {fileID: 1306781349}
   - component: {fileID: 1306781348}
   - component: {fileID: 1306781347}
+  - component: {fileID: 1306781350}
   m_Layer: 0
   m_Name: Sersan
   m_TagString: Pemain
@@ -9149,6 +9326,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1306781350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306781344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: sersan
+  pangkat: 3
+  kepemilikan: p
 --- !u!1 &1314502661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9485,6 +9677,7 @@ GameObject:
   - component: {fileID: 1346073955}
   - component: {fileID: 1346073954}
   - component: {fileID: 1346073953}
+  - component: {fileID: 1346073956}
   m_Layer: 0
   m_Name: Letjen
   m_TagString: Pemain
@@ -9614,6 +9807,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1346073956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346073950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: letjen
+  pangkat: 9
+  kepemilikan: p
 --- !u!1 &1362566188
 GameObject:
   m_ObjectHideFlags: 0
@@ -9842,6 +10050,7 @@ GameObject:
   - component: {fileID: 1416503867}
   - component: {fileID: 1416503866}
   - component: {fileID: 1416503865}
+  - component: {fileID: 1416503868}
   m_Layer: 0
   m_Name: Mayor (1)
   m_TagString: Pemain
@@ -9971,6 +10180,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1416503868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416503862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: mayor
+  pangkat: 6
+  kepemilikan: p
 --- !u!1 &1418112367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9984,6 +10208,7 @@ GameObject:
   - component: {fileID: 1418112371}
   - component: {fileID: 1418112372}
   - component: {fileID: 1418112370}
+  - component: {fileID: 1418112373}
   m_Layer: 0
   m_Name: Panglima
   m_TagString: Pemain
@@ -10113,6 +10338,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 0.9}
   m_EdgeRadius: 0
+--- !u!114 &1418112373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418112367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: panglima
+  pangkat: 10
+  kepemilikan: p
 --- !u!1 &1481020380
 GameObject:
   m_ObjectHideFlags: 0
@@ -10126,6 +10366,7 @@ GameObject:
   - component: {fileID: 1481020385}
   - component: {fileID: 1481020384}
   - component: {fileID: 1481020383}
+  - component: {fileID: 1481020386}
   m_Layer: 0
   m_Name: Sersan (1)
   m_TagString: Pemain
@@ -10255,6 +10496,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1481020386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481020380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: sersan
+  pangkat: 3
+  kepemilikan: p
 --- !u!1 &1513830932
 GameObject:
   m_ObjectHideFlags: 0
@@ -10413,6 +10669,7 @@ GameObject:
   - component: {fileID: 1523954112}
   - component: {fileID: 1523954111}
   - component: {fileID: 1523954110}
+  - component: {fileID: 1523954113}
   m_Layer: 0
   m_Name: Kolonel (1)
   m_TagString: Pemain
@@ -10542,6 +10799,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1523954113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523954107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: kolonel
+  pangkat: 7
+  kepemilikan: p
 --- !u!1 &1529322139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10553,6 +10825,7 @@ GameObject:
   - component: {fileID: 1529322142}
   - component: {fileID: 1529322141}
   - component: {fileID: 1529322140}
+  - component: {fileID: 1529322143}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10624,6 +10897,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529322143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529322139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62fcae0736b4034e8d2ae85bef3c914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545590361
 GameObject:
   m_ObjectHideFlags: 0
@@ -11742,6 +12027,7 @@ GameObject:
   - component: {fileID: 1700067764}
   - component: {fileID: 1700067763}
   - component: {fileID: 1700067762}
+  - component: {fileID: 1700067765}
   m_Layer: 0
   m_Name: Kolonel
   m_TagString: Pemain
@@ -11871,6 +12157,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1700067765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700067759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: kolonel
+  pangkat: 7
+  kepemilikan: p
 --- !u!1 &1725341252
 GameObject:
   m_ObjectHideFlags: 0
@@ -11884,6 +12185,7 @@ GameObject:
   - component: {fileID: 1725341257}
   - component: {fileID: 1725341256}
   - component: {fileID: 1725341255}
+  - component: {fileID: 1725341258}
   m_Layer: 0
   m_Name: Brigjen
   m_TagString: Pemain
@@ -12013,6 +12315,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1725341258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725341252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: brigjen
+  pangkat: 8
+  kepemilikan: p
 --- !u!1 &1798178731
 GameObject:
   m_ObjectHideFlags: 0
@@ -12550,6 +12867,7 @@ GameObject:
   - component: {fileID: 1881442409}
   - component: {fileID: 1881442408}
   - component: {fileID: 1881442407}
+  - component: {fileID: 1881442410}
   m_Layer: 0
   m_Name: Sersan (2)
   m_TagString: Pemain
@@ -12679,6 +12997,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1881442410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881442404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: sersan
+  pangkat: 3
+  kepemilikan: p
 --- !u!1 &1883791700
 GameObject:
   m_ObjectHideFlags: 0
@@ -13115,6 +13448,7 @@ GameObject:
   - component: {fileID: 1919378051}
   - component: {fileID: 1919378050}
   - component: {fileID: 1919378049}
+  - component: {fileID: 1919378052}
   m_Layer: 0
   m_Name: Dinamit
   m_TagString: Pemain
@@ -13244,6 +13578,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1919378052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919378046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: dinamit
+  pangkat: -1
+  kepemilikan: p
 --- !u!1 &1924703422
 GameObject:
   m_ObjectHideFlags: 0
@@ -13312,6 +13661,7 @@ GameObject:
   - component: {fileID: 1928085227}
   - component: {fileID: 1928085226}
   - component: {fileID: 1928085225}
+  - component: {fileID: 1928085228}
   m_Layer: 0
   m_Name: Letnan (1)
   m_TagString: Pemain
@@ -13441,6 +13791,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1928085228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928085222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: letnan
+  pangkat: 4
+  kepemilikan: p
 --- !u!1 &1950858811
 GameObject:
   m_ObjectHideFlags: 0
@@ -13777,6 +14142,7 @@ GameObject:
   - component: {fileID: 2041556848}
   - component: {fileID: 2041556847}
   - component: {fileID: 2041556846}
+  - component: {fileID: 2041556849}
   m_Layer: 0
   m_Name: Bom (1)
   m_TagString: Pemain
@@ -13906,6 +14272,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2041556849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041556843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: bom
+  pangkat: -2
+  kepemilikan: p
 --- !u!1 &2049830105
 GameObject:
   m_ObjectHideFlags: 0
@@ -14041,6 +14422,7 @@ GameObject:
   - component: {fileID: 2053781852}
   - component: {fileID: 2053781851}
   - component: {fileID: 2053781850}
+  - component: {fileID: 2053781853}
   m_Layer: 0
   m_Name: Letnan (2)
   m_TagString: Pemain
@@ -14170,6 +14552,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2053781853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053781847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nama: letnan
+  pangkat: 4
+  kepemilikan: p
 --- !u!1 &2088817837
 GameObject:
   m_ObjectHideFlags: 0

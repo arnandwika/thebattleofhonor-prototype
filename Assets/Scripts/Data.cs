@@ -30,8 +30,11 @@ public class Data : MonoBehaviour
         
     }
 
-    public static void printAll(){
-        print(pangkatBidak);
+    [ContextMenu("Debug Collection")]
+    public void printAll(){
+        foreach(var pangkat in pangkatBidak){
+            Debug.Log(pangkat);
+        }
     }
 
     public static void printSpesifik(int baris, int kolom){
