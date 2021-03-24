@@ -8,7 +8,6 @@ public class Bidak : MonoBehaviour
     public string nama;
     public int pangkat;
     public string kepemilikan;
-    public int status;
     // Start is called before the first frame update
     void Start()
     {
