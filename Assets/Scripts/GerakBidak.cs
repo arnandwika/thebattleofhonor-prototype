@@ -34,6 +34,7 @@ public class GerakBidak : MonoBehaviour
     private float newX;
     private bool status = false;
     private Collider2D obyek_akhir;
+    private Collider2D obyek_bidak;
     private Collider2D obyek_asal;
     private Posisi posAwal;
     private Posisi posTujuan;
@@ -60,15 +61,36 @@ public class GerakBidak : MonoBehaviour
     }
     void OnMouseUp(){
         if(scene_name == "Rookie"){
-            if(status){
+            if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
-                    transform.position = new Vector3(newX, newY, transform.position.z);
-                    obyek_akhir.tag = "Pemain";
-                    obyek_asal.tag = "Untagged";
-                    cek_asal = false;
-                    cek_taruh = true;
-                    pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
-                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                    if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
+                        string hasil = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
+                        if(hasil == "menang"){
+                            Destroy(obyek_bidak.gameObject);
+                            transform.position = new Vector3(newX, newY, transform.position.z);
+                            obyek_akhir.tag = gameObject.tag;
+                            obyek_asal.tag = "Untagged";
+                            cek_asal = false;
+                            cek_taruh = true;
+                            pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                            Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                        }else if(hasil == "draw"){
+                            Destroy(obyek_bidak.gameObject);
+                            Destroy(gameObject);
+                        }else if(hasil == "kalah"){
+                            Destroy(gameObject);
+                        }else if(hasil == "selesai"){
+                            print("GAME SELESAI");
+                        }
+                    }else{
+                        transform.position = new Vector3(newX, newY, transform.position.z);
+                        obyek_akhir.tag = gameObject.tag;
+                        obyek_asal.tag = "Untagged";
+                        cek_asal = false;
+                        cek_taruh = true;
+                        pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                        Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                    }
                 }else{
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
@@ -115,7 +137,7 @@ public class GerakBidak : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
         obyek_akhir = collision;
         if(awal_permainan){
-            obyek_akhir.tag = "Pemain";
+            obyek_akhir.tag = gameObject.tag;
             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
             if(!collision.isTrigger){
                 barisPos = collision.GetComponent<Posisi>().barisPos;
@@ -129,15 +151,17 @@ public class GerakBidak : MonoBehaviour
                 barisPosTujuan = posTujuan.barisPos;
                 kolomPosTujuan = posTujuan.kolomPos;
             }
+            if(collision.isTrigger){
+                obyek_bidak = collision;
+            }
         }
-        if(obyek_akhir.tag == "Pemain"){
+        if(obyek_akhir.tag == gameObject.tag){
             status = false;
-        }else{
+        }else if(obyek_akhir.tag != gameObject.tag){
             status = true;
             newX = collision.transform.position.x;
             newY = collision.transform.position.y;
         }
-        
     }
     void OnTriggerExit2D(Collider2D collision){
         if(cek_asal == false && cek_taruh == false){

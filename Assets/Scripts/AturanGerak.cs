@@ -228,4 +228,12 @@ public class AturanGerak : MonoBehaviour
         }
         return allow;
     }
+
+    public static bool cekPangkatBergerak(int baris, int kolom){
+        if(Data.getPangkat(baris, kolom) == 1 || Data.getPangkat(baris, kolom) == -1){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
