@@ -37,7 +37,7 @@ public class AturanGerak : MonoBehaviour
                     return false;
                 }
             }else if(gerak == 2){
-                if(barisPosAwal == barisPosTujuan){
+                if(barisPosAwal == barisPosTujuan && cekLompatKolom(kolomPosAwal, kolomPosTujuan, barisPosAwal)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && barisPosAwal == 1){
                     if(barisPosAwal >= barisPosTujuan-5 && cekLompatBaris(barisPosAwal, barisPosTujuan, kolomPosAwal)){
@@ -80,7 +80,7 @@ public class AturanGerak : MonoBehaviour
                 }
             }
             else if(gerak == 3){
-                if(barisPosAwal == barisPosTujuan){
+                if(barisPosAwal == barisPosTujuan && cekLompatKolom(kolomPosAwal, kolomPosTujuan, barisPosAwal)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && (barisPosAwal == barisPosTujuan-1 || barisPosAwal == barisPosTujuan+1)){
                     return true;
@@ -162,7 +162,7 @@ public class AturanGerak : MonoBehaviour
                 }
             }
             else if(gerak == 7){
-                if(barisPosAwal == barisPosTujuan){
+                if(barisPosAwal == barisPosTujuan && cekLompatKolom(kolomPosAwal, kolomPosTujuan, barisPosAwal)){
                     return true;
                 }else if(kolomPosAwal == kolomPosTujuan && (barisPosAwal == barisPosTujuan-1 || barisPosAwal == barisPosTujuan+1)){
                     return true;
@@ -199,7 +199,6 @@ public class AturanGerak : MonoBehaviour
                     allow = false;
                 }
             }
-            return allow;
         }else if(barisPosTujuan > barisPosAwal && barisPosTujuan - barisPosAwal > 1){
             loop = barisPosTujuan - barisPosAwal;
             for(int i = 1; i < loop; i++){
@@ -212,6 +211,21 @@ public class AturanGerak : MonoBehaviour
     }
 
     private static bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
-        return false;
+        if(kolomPosAwal > kolomPosTujuan && kolomPosAwal - kolomPosTujuan > 1){
+            loop = kolomPosAwal - kolomPosTujuan;
+            for(int i = 1; i < loop; i++){
+                if(Data.getPangkat(baris, kolomPosTujuan+i) != 0){
+                    allow = false;
+                }
+            }
+        }else if(kolomPosTujuan > kolomPosAwal && kolomPosTujuan - kolomPosAwal > 1){
+            loop = kolomPosTujuan - kolomPosAwal;
+            for(int i = 1; i < loop; i++){
+                if(Data.getPangkat(baris, kolomPosAwal+i) != 0){
+                    allow = false;
+                }
+            }
+        }
+        return allow;
     }
 }
