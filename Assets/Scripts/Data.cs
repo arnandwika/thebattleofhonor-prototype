@@ -57,7 +57,7 @@ public class Data : MonoBehaviour
     public static string bidakBertabrakan(int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan){
         int pangkatMenabrak = getPangkat(barisPosAwal, kolomPosAwal);
         int pangkatDitabrak = getPangkat(barisPosTujuan, kolomPosTujuan);
-        if(pangkatDitabrak == -2){
+        if(pangkatDitabrak == -2 || pangkatMenabrak == -2){
             return "draw";
         }else if(pangkatDitabrak == -1 && pangkatMenabrak == 2){
             return "menang";

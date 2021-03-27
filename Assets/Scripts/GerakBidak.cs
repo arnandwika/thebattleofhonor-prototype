@@ -10,6 +10,7 @@ public class GerakBidak : MonoBehaviour
     private bool awal_permainan;
     private bool cek_asal;
     private bool cek_taruh;
+    private bool giliranPemain;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,25 +49,35 @@ public class GerakBidak : MonoBehaviour
     private int kolomPos;
 
     void OnMouseDown(){
-        cek_taruh = false;
-    	firstY = transform.position.y;
-        firstX = transform.position.x;
-    	screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-    	offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        giliranPemain = Giliran.getGiliran();
+        if((gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
+            cek_taruh = false;
+            firstY = transform.position.y;
+            firstX = transform.position.x;
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));  
+        }else{
+            if(gameObject.tag == "Pemain"){
+                print("Giliran lawan");
+            }else if(gameObject.tag == "Lawan"){
+                print("Giliran pemain");
+            }
+        }
     }
     void OnMouseDrag(){
-    	Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-    	Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint)+offset;
-    	transform.position = curPosition;
+        if((gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint)+offset;
+            transform.position = curPosition;
+        }
     }
     void OnMouseUp(){
-        if(scene_name == "Rookie"){
+        if(scene_name == "Rookie" && (gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
             if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
                         string hasil = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
                         if(hasil == "menang"){
-                            Destroy(obyek_bidak.gameObject);
                             transform.position = new Vector3(newX, newY, transform.position.z);
                             obyek_akhir.tag = gameObject.tag;
                             obyek_asal.tag = "Untagged";
@@ -74,13 +85,39 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
                             Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                            Destroy(obyek_bidak.gameObject);
                         }else if(hasil == "draw"){
+                            obyek_akhir.tag = "Untagged";
+                            obyek_asal.tag = "Untagged";
+                            cek_asal = false;
+                            cek_taruh = true;
+                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                            Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
+                            if(gameObject.tag == "Pemain"){
+                                Giliran.setGiliranLawan();
+                                giliranPemain = Giliran.getGiliran();
+                            }else if(gameObject.tag == "Lawan"){
+                                Giliran.setGiliranPemain();
+                                giliranPemain = Giliran.getGiliran();
+                            }
                             Destroy(obyek_bidak.gameObject);
                             Destroy(gameObject);
                         }else if(hasil == "kalah"){
+                            obyek_asal.tag = "Untagged";
+                            cek_asal = false;
+                            cek_taruh = true;
+                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                            if(gameObject.tag == "Pemain"){
+                                Giliran.setGiliranLawan();
+                                giliranPemain = Giliran.getGiliran();
+                            }else if(gameObject.tag == "Lawan"){
+                                Giliran.setGiliranPemain();
+                                giliranPemain = Giliran.getGiliran();
+                            }
                             Destroy(gameObject);
                         }else if(hasil == "selesai"){
                             print("GAME SELESAI");
+                            SceneManager.LoadScene("Main Menu");
                         }
                     }else{
                         transform.position = new Vector3(newX, newY, transform.position.z);
@@ -90,6 +127,13 @@ public class GerakBidak : MonoBehaviour
                         cek_taruh = true;
                         pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
                         Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                        if(gameObject.tag == "Pemain"){
+                            Giliran.setGiliranLawan();
+                            giliranPemain = Giliran.getGiliran();
+                        }else if(gameObject.tag == "Lawan"){
+                            Giliran.setGiliranPemain();
+                            giliranPemain = Giliran.getGiliran();
+                        }
                     }
                 }else{
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
@@ -135,7 +179,9 @@ public class GerakBidak : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision){
-        obyek_akhir = collision;
+        if(!collision.isTrigger){
+            obyek_akhir = collision;
+        }
         if(awal_permainan){
             obyek_akhir.tag = gameObject.tag;
             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
