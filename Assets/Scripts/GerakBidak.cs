@@ -47,10 +47,11 @@ public class GerakBidak : MonoBehaviour
     private int pangkatBidak;
     private int barisPos;
     private int kolomPos;
+    private char kepemilikanBidak;
 
     void OnMouseDown(){
         giliranPemain = Giliran.getGiliran();
-        if((gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
+        if((gameObject.tag == "Pemain" && giliranPemain)){
             cek_taruh = false;
             firstY = transform.position.y;
             firstX = transform.position.x;
@@ -65,14 +66,14 @@ public class GerakBidak : MonoBehaviour
         }
     }
     void OnMouseDrag(){
-        if((gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
+        if((gameObject.tag == "Pemain" && giliranPemain)){
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint)+offset;
             transform.position = curPosition;
         }
     }
     void OnMouseUp(){
-        if(scene_name == "Rookie" && (gameObject.tag == "Pemain" && giliranPemain) || (gameObject.tag == "Lawan" && !giliranPemain)){
+        if(scene_name == "Rookie" && (gameObject.tag == "Pemain" && giliranPemain)){
             if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
@@ -84,7 +85,9 @@ public class GerakBidak : MonoBehaviour
                             cek_asal = false;
                             cek_taruh = true;
                             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                            kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
                             Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                            Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                             Destroy(obyek_bidak.gameObject);
                         }else if(hasil == "draw"){
                             obyek_akhir.tag = "Untagged";
@@ -93,6 +96,8 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                             Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                             Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
+                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
+                            Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
                             if(gameObject.tag == "Pemain"){
                                 Giliran.setGiliranLawan();
                                 giliranPemain = Giliran.getGiliran();
@@ -107,6 +112,7 @@ public class GerakBidak : MonoBehaviour
                             cek_asal = false;
                             cek_taruh = true;
                             Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                             if(gameObject.tag == "Pemain"){
                                 Giliran.setGiliranLawan();
                                 giliranPemain = Giliran.getGiliran();
@@ -126,7 +132,9 @@ public class GerakBidak : MonoBehaviour
                         cek_asal = false;
                         cek_taruh = true;
                         pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                        kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
                         Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                        Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                         if(gameObject.tag == "Pemain"){
                             Giliran.setGiliranLawan();
                             giliranPemain = Giliran.getGiliran();
@@ -185,11 +193,15 @@ public class GerakBidak : MonoBehaviour
         if(awal_permainan){
             obyek_akhir.tag = gameObject.tag;
             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+            kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
             if(!collision.isTrigger){
                 barisPos = collision.GetComponent<Posisi>().barisPos;
                 kolomPos = collision.GetComponent<Posisi>().kolomPos;
             }
             Data.insertPangkat(barisPos, kolomPos, pangkatBidak);
+            Data.insertKepemilikan(barisPos, kolomPos, kepemilikanBidak);
+            gameObject.GetComponent<Bidak>().baris = barisPos;
+            gameObject.GetComponent<Bidak>().kolom = kolomPos;
             awal_permainan = false;
         }else{
             if(!collision.isTrigger){

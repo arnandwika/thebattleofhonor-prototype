@@ -209,7 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bom
   pangkat: -2
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &19469219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,12 +387,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38904688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46057284
 GameObject:
@@ -507,12 +509,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46057284}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 14.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &52933831
 GameObject:
@@ -611,7 +613,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: brigjen
   pangkat: 8
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &52933835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,12 +792,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75850557}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &75850562
 MonoBehaviour:
@@ -923,12 +927,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109929618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &110950116
 GameObject:
@@ -1045,12 +1049,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110950116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117031538
 GameObject:
@@ -1149,7 +1153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &117031542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,12 +1332,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139913349}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &139913354
 MonoBehaviour:
@@ -1443,7 +1449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: brigjen
   pangkat: 8
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &147559536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,12 +1627,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194904647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &211782812
 GameObject:
@@ -1783,7 +1791,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &212390941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,12 +1909,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212390941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232518650
 GameObject:
@@ -2021,12 +2031,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232518650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &238378747
 GameObject:
@@ -2143,12 +2153,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238378747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244812427
 GameObject:
@@ -2265,12 +2275,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244812427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248854828
 GameObject:
@@ -2387,12 +2397,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248854828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261237969
 GameObject:
@@ -2551,7 +2561,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bendera
   pangkat: 1
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &272549602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &272549606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2825,12 +2839,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289170950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290001895
 GameObject:
@@ -2948,12 +2962,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290001895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &290001900
 MonoBehaviour:
@@ -3083,12 +3097,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302029957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313259430
 GameObject:
@@ -3187,7 +3201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: panglima
   pangkat: 10
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &313259434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3363,12 +3379,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388330891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 7.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402191890
 GameObject:
@@ -3467,7 +3483,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kapten
   pangkat: 5
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &402191894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,12 +3661,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404454608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 14.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405258394
 GameObject:
@@ -3766,12 +3784,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405258394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &405258399
 MonoBehaviour:
@@ -3901,12 +3919,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407926299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 12.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412619700
 GameObject:
@@ -4023,12 +4041,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412619700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435263424
 GameObject:
@@ -4127,7 +4145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &435263428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,12 +4323,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439773919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 12.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453395619
 GameObject:
@@ -4467,7 +4487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &461694018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,12 +4605,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461694018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 7.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463783409
 GameObject:
@@ -4705,12 +4727,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463783409}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466465832
 GameObject:
@@ -4827,12 +4849,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466465832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 7.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517301275
 GameObject:
@@ -4949,12 +4971,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517301275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524604794
 GameObject:
@@ -5071,12 +5093,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524604794}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 14.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546867733
 GameObject:
@@ -5175,7 +5197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &546867737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5393,7 +5417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &630654333
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,12 +5535,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630654333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634322305
 GameObject:
@@ -5631,12 +5657,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634322305}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &654111606
 GameObject:
@@ -5795,7 +5821,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kapten
   pangkat: 5
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &662600640
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,7 +5921,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kolonel
   pangkat: 7
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &662600644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6069,12 +6099,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701916674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718376619
 GameObject:
@@ -6191,12 +6221,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718376619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 12.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718679476
 GameObject:
@@ -6355,7 +6385,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &741273215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,12 +6503,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741273215}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757765718
 GameObject:
@@ -6593,12 +6625,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757765718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 7.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767468853
 GameObject:
@@ -6715,12 +6747,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767468853}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770625209
 GameObject:
@@ -6819,7 +6851,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &770625213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6977,7 +7011,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kapten
   pangkat: 5
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &771020981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7153,12 +7189,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775711286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777989582
 GameObject:
@@ -7275,12 +7311,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777989582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782710108
 GameObject:
@@ -7397,12 +7433,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782710108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817998449
 GameObject:
@@ -7519,12 +7555,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817998449}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834512551
 GameObject:
@@ -7623,7 +7659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bendera
   pangkat: 1
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &834512555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7874,7 +7912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &862765653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8032,7 +8072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &886011800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8250,7 +8292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: mayor
   pangkat: 6
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &968320813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8366,12 +8410,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968320813}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969219965
 GameObject:
@@ -8488,12 +8532,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969219965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989684963
 GameObject:
@@ -8611,12 +8655,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989684963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &989684968
 MonoBehaviour:
@@ -8732,12 +8776,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998645299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &998645303
 MonoBehaviour:
@@ -8882,12 +8926,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015829888}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1068528258
 GameObject:
@@ -9046,7 +9090,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kapten
   pangkat: 5
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1090081689
 GameObject:
   m_ObjectHideFlags: 0
@@ -9204,7 +9250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bom
   pangkat: -2
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1123810306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9320,12 +9368,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123810306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1126996153
 GameObject:
@@ -9484,7 +9532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1140412133
 GameObject:
   m_ObjectHideFlags: 0
@@ -9600,12 +9650,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140412133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 7.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147132010
 GameObject:
@@ -9759,7 +9809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1202050371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9935,12 +9987,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212284564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 14.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215701696
 GameObject:
@@ -10099,7 +10151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1241147306
 GameObject:
   m_ObjectHideFlags: 0
@@ -10257,7 +10311,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: brigjen
   pangkat: 8
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1295519435
 GameObject:
   m_ObjectHideFlags: 0
@@ -10373,12 +10429,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295519435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306781344
 GameObject:
@@ -10537,7 +10593,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1314502661
 GameObject:
   m_ObjectHideFlags: 0
@@ -10653,12 +10711,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314502661}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334620700
 GameObject:
@@ -10757,7 +10815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1334620704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10933,12 +10993,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341998075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 14.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346073950
 GameObject:
@@ -11097,7 +11157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letjen
   pangkat: 9
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1362566188
 GameObject:
   m_ObjectHideFlags: 0
@@ -11195,7 +11257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1362566192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11372,12 +11436,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383860658}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1383860663
 MonoBehaviour:
@@ -11549,7 +11613,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: mayor
   pangkat: 6
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1418112367
 GameObject:
   m_ObjectHideFlags: 0
@@ -11707,7 +11773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: panglima
   pangkat: 10
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1481020380
 GameObject:
   m_ObjectHideFlags: 0
@@ -11865,7 +11933,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1513830932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12029,7 +12099,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1515420268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12247,7 +12319,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kolonel
   pangkat: 7
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1529322139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12343,6 +12417,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62fcae0736b4034e8d2ae85bef3c914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posisi:
+  - {fileID: 524604794}
+  - {fileID: 1341998075}
+  - {fileID: 46057284}
+  - {fileID: 404454608}
+  - {fileID: 1212284564}
+  - {fileID: 718376619}
+  - {fileID: 439773919}
+  - {fileID: 1844610488}
+  - {fileID: 2049830105}
+  - {fileID: 407926299}
+  - {fileID: 289170950}
+  - {fileID: 989684963}
+  - {fileID: 634322305}
+  - {fileID: 1655443591}
+  - {fileID: 1616525072}
+  - {fileID: 757765718}
+  - {fileID: 466465832}
+  - {fileID: 461694018}
+  - {fileID: 388330891}
+  - {fileID: 1140412133}
+  - {fileID: 701916674}
+  - {fileID: 75850557}
+  - {fileID: 1883791700}
+  - {fileID: 1383860658}
+  - {fileID: 1015829888}
+  - {fileID: 777989582}
+  - {fileID: 1886876866}
+  - {fileID: 248854828}
+  - {fileID: 969219965}
+  - {fileID: 109929618}
+  - {fileID: 1545590361}
+  - {fileID: 1314502661}
+  - {fileID: 630654333}
+  - {fileID: 517301275}
+  - {fileID: 1123810306}
+  - {fileID: 2117941046}
+  - {fileID: 2088817837}
+  - {fileID: 463783409}
+  - {fileID: 767468853}
+  - {fileID: 238378747}
+  - {fileID: 194904647}
+  - {fileID: 968320813}
+  - {fileID: 998645299}
+  - {fileID: 302029957}
+  - {fileID: 405258394}
+  - {fileID: 1950858811}
+  - {fileID: 232518650}
+  - {fileID: 1681273636}
+  - {fileID: 38904688}
+  - {fileID: 110950116}
+  - {fileID: 741273215}
+  - {fileID: 1295519435}
+  - {fileID: 290001895}
+  - {fileID: 244812427}
+  - {fileID: 139913349}
+  - {fileID: 1808549414}
+  - {fileID: 817998449}
+  - {fileID: 412619700}
+  - {fileID: 1578522543}
+  - {fileID: 782710108}
+  - {fileID: 1591432957}
+  - {fileID: 775711286}
+  - {fileID: 1660922088}
+  - {fileID: 2013267688}
+  - {fileID: 1798178731}
+  - {fileID: 212390941}
 --- !u!1 &1545590361
 GameObject:
   m_ObjectHideFlags: 0
@@ -12458,12 +12599,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545590361}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1578522543
 GameObject:
@@ -12580,12 +12721,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578522543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591432957
 GameObject:
@@ -12702,12 +12843,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591432957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599391029
 GameObject:
@@ -12806,7 +12947,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: mayor
   pangkat: 6
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1599391033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12867,6 +13010,102 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1601080530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601080531}
+  m_Layer: 0
+  m_Name: Posisi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601080531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601080530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 998645302}
+  - {fileID: 405258398}
+  - {fileID: 139913353}
+  - {fileID: 290001899}
+  - {fileID: 775711290}
+  - {fileID: 1660922092}
+  - {fileID: 2013267692}
+  - {fileID: 1798178735}
+  - {fileID: 212390945}
+  - {fileID: 817998453}
+  - {fileID: 412619704}
+  - {fileID: 1578522547}
+  - {fileID: 782710112}
+  - {fileID: 1591432961}
+  - {fileID: 1295519439}
+  - {fileID: 244812431}
+  - {fileID: 1808549418}
+  - {fileID: 232518654}
+  - {fileID: 1681273640}
+  - {fileID: 38904692}
+  - {fileID: 110950120}
+  - {fileID: 741273219}
+  - {fileID: 968320817}
+  - {fileID: 302029961}
+  - {fileID: 1950858815}
+  - {fileID: 2088817841}
+  - {fileID: 463783413}
+  - {fileID: 767468857}
+  - {fileID: 238378751}
+  - {fileID: 194904651}
+  - {fileID: 517301279}
+  - {fileID: 1123810310}
+  - {fileID: 2117941050}
+  - {fileID: 1545590365}
+  - {fileID: 1314502665}
+  - {fileID: 630654337}
+  - {fileID: 777989586}
+  - {fileID: 1886876870}
+  - {fileID: 248854832}
+  - {fileID: 969219969}
+  - {fileID: 109929622}
+  - {fileID: 701916678}
+  - {fileID: 75850561}
+  - {fileID: 1883791704}
+  - {fileID: 1383860662}
+  - {fileID: 1015829892}
+  - {fileID: 757765722}
+  - {fileID: 466465836}
+  - {fileID: 461694022}
+  - {fileID: 388330895}
+  - {fileID: 1140412137}
+  - {fileID: 289170954}
+  - {fileID: 989684967}
+  - {fileID: 634322309}
+  - {fileID: 1655443595}
+  - {fileID: 1616525076}
+  - {fileID: 718376623}
+  - {fileID: 439773923}
+  - {fileID: 1844610492}
+  - {fileID: 2049830109}
+  - {fileID: 407926303}
+  - {fileID: 524604798}
+  - {fileID: 1341998079}
+  - {fileID: 46057288}
+  - {fileID: 404454612}
+  - {fileID: 1212284568}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616525072
 GameObject:
   m_ObjectHideFlags: 0
@@ -12982,12 +13221,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616525072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: 10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622556891
 GameObject:
@@ -13086,7 +13325,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1622556895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13263,12 +13504,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655443591}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 10.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1655443596
 MonoBehaviour:
@@ -13398,12 +13639,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660922088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670674325
 GameObject:
@@ -13599,12 +13840,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681273636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1700067759
 GameObject:
@@ -13763,7 +14004,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kolonel
   pangkat: 7
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1725341252
 GameObject:
   m_ObjectHideFlags: 0
@@ -13921,7 +14164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: brigjen
   pangkat: 8
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1798178731
 GameObject:
   m_ObjectHideFlags: 0
@@ -14037,12 +14282,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798178731}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: -14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1808549414
 GameObject:
@@ -14159,12 +14404,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808549414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823827006
 GameObject:
@@ -14263,7 +14508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bom
   pangkat: -2
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1823827010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14421,7 +14668,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: prajurit
   pangkat: 2
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1830710649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14597,12 +14846,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844610488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 12.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881442404
 GameObject:
@@ -14761,7 +15010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: sersan
   pangkat: 3
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1883791700
 GameObject:
   m_ObjectHideFlags: 0
@@ -14877,12 +15128,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883791700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886876866
 GameObject:
@@ -14999,12 +15250,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886876866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.8, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887795251
 GameObject:
@@ -15103,7 +15354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: kolonel
   pangkat: 7
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &1887795255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15420,7 +15673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: dinamit
   pangkat: -1
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1924703422
 GameObject:
   m_ObjectHideFlags: 0
@@ -15430,6 +15685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1924703423}
+  - component: {fileID: 1924703424}
   m_Layer: 0
   m_Name: Bidak Lawan
   m_TagString: Untagged
@@ -15476,6 +15732,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924703424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924703422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034c919f7a906824ca8c398d0f05406c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listBidak:
+  - {fileID: 662600640}
+  - {fileID: 546867733}
+  - {fileID: 1823827006}
+  - {fileID: 862765649}
+  - {fileID: 1887795251}
+  - {fileID: 1515420264}
+  - {fileID: 770625209}
+  - {fileID: 1830710645}
+  - {fileID: 886011796}
+  - {fileID: 2001123923}
+  - {fileID: 1202050367}
+  - {fileID: 1599391029}
+  - {fileID: 435263424}
+  - {fileID: 147559532}
+  - {fileID: 272549602}
+  - {fileID: 52933831}
+  - {fileID: 402191890}
+  - {fileID: 1334620700}
+  - {fileID: 313259430}
+  - {fileID: 1362566188}
+  - {fileID: 771020977}
+  - {fileID: 117031538}
+  - {fileID: 1622556891}
+  - {fileID: 834512551}
+  - {fileID: 19469215}
 --- !u!1 &1928085222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15633,7 +15927,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &1950858811
 GameObject:
   m_ObjectHideFlags: 0
@@ -15749,12 +16045,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950858811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001123923
 GameObject:
@@ -15853,7 +16149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: mayor
   pangkat: 6
-  kepemilikan: l
+  kepemilikan: 108
+  baris: 0
+  kolom: 0
 --- !u!114 &2001123927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16029,12 +16327,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013267688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -14.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041556843
 GameObject:
@@ -16193,7 +16491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: bom
   pangkat: -2
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &2049830105
 GameObject:
   m_ObjectHideFlags: 0
@@ -16309,12 +16609,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049830105}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7, y: 12.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053781847
 GameObject:
@@ -16473,7 +16773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nama: letnan
   pangkat: 4
-  kepemilikan: p
+  kepemilikan: 112
+  baris: 0
+  kolom: 0
 --- !u!1 &2088817837
 GameObject:
   m_ObjectHideFlags: 0
@@ -16589,12 +16891,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088817837}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.55, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117941046
 GameObject:
@@ -16711,10 +17013,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117941046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_Father: {fileID: 1601080531}
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
