@@ -31,7 +31,8 @@ public class AI : MonoBehaviour
     }
 
     public void randomMovement(){
-        if(strategy == 1){
+        giliranPemain = Giliran.getGiliran();
+        if(strategy == 1 && !giliranPemain){
             tempatIstirahat1 = Data.getKepemilikan(2, 1);
             tempatIstirahat2 = Data.getKepemilikan(2, 3);
             tempatIstirahat3 = Data.getKepemilikan(4, 1);
@@ -43,13 +44,15 @@ public class AI : MonoBehaviour
                     barisPos = Random.Range(3, 6);
                     kolomPos = Random.Range(2, 5);
                     foreach(var bidak in listBidak){
-                        if(bidak == null){
-                            randomMovement();
-                        }
-                        if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                        if(bidak == null || (barisPos == 4 && kolomPos == 3)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 4, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 3, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 1");
                         }
                     }
                 }else if(tempatIstirahat3 == 'n'){
@@ -58,15 +61,35 @@ public class AI : MonoBehaviour
                     kolomPos = Random.Range(0, 3);
                     
                     foreach(var bidak in listBidak){
-                        if(bidak == null){
-                            randomMovement();
-                        }
-                        if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                        if(bidak == null || (barisPos == 4 && kolomPos == 1)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 4, 1, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 1, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 2");
                         }
                     }
+                }else if(tempatIstirahat4 == 'n'){
+                    GameObject posisi = Data.listPosisi[4,3];
+                    barisPos = Random.Range(3, 6);
+                    kolomPos = Random.Range(2, 5);
+                    foreach(var bidak in listBidak){
+                        if(bidak == null || (barisPos == 4 && kolomPos == 3)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                            bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                            Data.dataPangkatPindah(barisPos, kolomPos, 4, 3, Data.getPangkat(barisPos, kolomPos));
+                            Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 3, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 3");
+                        }
+                    }
+                }else{
+                    randomMovement();
                 }
             }
             else if(tempatIstirahat2 == 'n' || tempatIstirahat1 == 'n'){
@@ -77,13 +100,15 @@ public class AI : MonoBehaviour
                     kolomPos = Random.Range(2, 5);
                     
                     foreach(var bidak in listBidak){
-                        if(bidak == null){
-                            randomMovement();
-                        }
-                        if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                        if(bidak == null || (barisPos == 2 && kolomPos == 3)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 2, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 3, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 4");
                         }
                     }
                 }else if(tempatIstirahat1 == 'n'){
@@ -92,18 +117,42 @@ public class AI : MonoBehaviour
                     kolomPos = Random.Range(0, 3);
                     
                     foreach(var bidak in listBidak){
-                        if(bidak == null){
-                            randomMovement();
-                        }
-                        if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                        if(bidak == null || (barisPos == 2 && kolomPos == 1)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 2, 1, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 1, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 5");
                         }
                     }
+                }else if(tempatIstirahat2 == 'n'){
+                    GameObject posisi = Data.listPosisi[2,3];
+                    barisPos = Random.Range(1, 4);
+                    kolomPos = Random.Range(2, 5);
+                    
+                    foreach(var bidak in listBidak){
+                        if(bidak == null || (barisPos == 2 && kolomPos == 3)){
+                            break;
+                        }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
+                            bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                            Data.dataPangkatPindah(barisPos, kolomPos, 2, 3, Data.getPangkat(barisPos, kolomPos));
+                            Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 3, Data.getKepemilikan(barisPos, kolomPos));
+                            Giliran.setGiliranPemain();
+                        }else{
+                            print("error 6");
+                        }
+                    }
+                }else{
+                    randomMovement();
                 }
+            }else{
+                print("Sudah masuk istirahat");
             }
+        }else if(strategy == 2 && !giliranPemain){
+            
         }
-        Giliran.setGiliranPemain();
     }
 }

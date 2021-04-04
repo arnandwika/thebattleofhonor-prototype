@@ -74,7 +74,7 @@ public class GerakBidak : MonoBehaviour
     }
     void OnMouseUp(){
         if(scene_name == "Rookie" && (gameObject.tag == "Pemain" && giliranPemain)){
-            if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
+            if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal) && !(barisPosAwal == barisPosTujuan && kolomPosAwal == kolomPosTujuan)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
                         string hasil = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
