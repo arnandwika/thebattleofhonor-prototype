@@ -86,6 +86,8 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                             pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
                             kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
+                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
                             Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
                             Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                             Destroy(obyek_bidak.gameObject);
@@ -94,6 +96,8 @@ public class GerakBidak : MonoBehaviour
                             obyek_asal.tag = "Untagged";
                             cek_asal = false;
                             cek_taruh = true;
+                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
                             Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                             Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
                             Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
@@ -111,6 +115,8 @@ public class GerakBidak : MonoBehaviour
                             obyek_asal.tag = "Untagged";
                             cek_asal = false;
                             cek_taruh = true;
+                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
                             Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                             Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                             if(gameObject.tag == "Pemain"){
@@ -133,6 +139,8 @@ public class GerakBidak : MonoBehaviour
                         cek_taruh = true;
                         pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
                         kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
+                        gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                        gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
                         Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
                         Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                         if(gameObject.tag == "Pemain"){

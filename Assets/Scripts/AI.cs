@@ -11,13 +11,14 @@ public class AI : MonoBehaviour
     private bool giliranPemain = true;
     private int barisPos;
     private int kolomPos;
+    private int pangkatBidak;
     private int strategy; //1 bertahan, 2 menyerang
     public GameObject[] listBidak;
+    private float timer = 2;
     // Start is called before the first frame update
     void Start()
     {
         strategy = 1;
-        randomMovement();
         giliranPemain = Giliran.getGiliran();
     }
 
@@ -26,7 +27,11 @@ public class AI : MonoBehaviour
     {
         giliranPemain = Giliran.getGiliran();
         if(!giliranPemain){
-            randomMovement();
+            if(timer > 0){
+                timer -= Time.deltaTime;
+            }else{
+                randomMovement();
+            }
         }
     }
 
@@ -45,14 +50,15 @@ public class AI : MonoBehaviour
                     kolomPos = Random.Range(2, 5);
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 4 && kolomPos == 3)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 4, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 3, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 1");
+                            bidak.GetComponent<Bidak>().baris = 4;
+                            bidak.GetComponent<Bidak>().kolom = 3;
+                            timer = 2;
                         }
                     }
                 }else if(tempatIstirahat3 == 'n'){
@@ -62,14 +68,15 @@ public class AI : MonoBehaviour
                     
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 4 && kolomPos == 1)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 4, 1, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 1, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 2");
+                            bidak.GetComponent<Bidak>().baris = 4;
+                            bidak.GetComponent<Bidak>().kolom = 1;
+                            timer = 2;
                         }
                     }
                 }else if(tempatIstirahat4 == 'n'){
@@ -78,14 +85,15 @@ public class AI : MonoBehaviour
                     kolomPos = Random.Range(2, 5);
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 4 && kolomPos == 3)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 4, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 4, 3, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 3");
+                            bidak.GetComponent<Bidak>().baris = 4;
+                            bidak.GetComponent<Bidak>().kolom = 3;
+                            timer = 2;
                         }
                     }
                 }else{
@@ -101,14 +109,15 @@ public class AI : MonoBehaviour
                     
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 2 && kolomPos == 3)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 2, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 3, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 4");
+                            bidak.GetComponent<Bidak>().baris = 2;
+                            bidak.GetComponent<Bidak>().kolom = 3;
+                            timer = 2;
                         }
                     }
                 }else if(tempatIstirahat1 == 'n'){
@@ -118,41 +127,52 @@ public class AI : MonoBehaviour
                     
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 2 && kolomPos == 1)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 2, 1, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 1, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 5");
+                            bidak.GetComponent<Bidak>().baris = 2;
+                            bidak.GetComponent<Bidak>().kolom = 1;
+                            timer = 2;
                         }
                     }
                 }else if(tempatIstirahat2 == 'n'){
+                    print("error 3");
                     GameObject posisi = Data.listPosisi[2,3];
                     barisPos = Random.Range(1, 4);
                     kolomPos = Random.Range(2, 5);
                     
                     foreach(var bidak in listBidak){
                         if(bidak == null || (barisPos == 2 && kolomPos == 3)){
-                            break;
+                            continue;
                         }else if(bidak.GetComponent<Bidak>().baris == barisPos && bidak.GetComponent<Bidak>().kolom == kolomPos){
                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                             Data.dataPangkatPindah(barisPos, kolomPos, 2, 3, Data.getPangkat(barisPos, kolomPos));
                             Data.dataKepemilikanPindah(barisPos, kolomPos, 2, 3, Data.getKepemilikan(barisPos, kolomPos));
                             Giliran.setGiliranPemain();
-                        }else{
-                            print("error 6");
+                            bidak.GetComponent<Bidak>().baris = 2;
+                            bidak.GetComponent<Bidak>().kolom = 3;
+                            timer = 2;
                         }
                     }
                 }else{
                     randomMovement();
                 }
             }else{
-                print("Sudah masuk istirahat");
+                strategy = 2;
             }
         }else if(strategy == 2 && !giliranPemain){
-            
+            int indeks = Random.Range(0, listBidak.Length);
+            GameObject bidak = listBidak[indeks];
+
+            if(bidak != null){
+                pangkatBidak = bidak.GetComponent<Bidak>().pangkat;
+                if(!(pangkatBidak == 1 || pangkatBidak == -1)){
+                    print("bidak bisa bergerak");
+                }
+            }
         }
     }
 }
