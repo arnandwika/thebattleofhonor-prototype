@@ -212,6 +212,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &19469219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +617,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &52933835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,6 +1158,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &117031542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,6 +1455,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &147559536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1798,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &212390941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,6 +2569,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &272549602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +2670,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &272549606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3204,6 +3211,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &313259434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3486,6 +3494,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &402191894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4148,6 +4157,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &435263428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4490,6 +4500,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &461694018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,6 +5211,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &546867737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5420,6 +5432,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &630654333
 GameObject:
   m_ObjectHideFlags: 0
@@ -5824,6 +5837,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &662600640
 GameObject:
   m_ObjectHideFlags: 0
@@ -5924,6 +5938,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &662600644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6388,6 +6403,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &741273215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6854,6 +6870,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &770625213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7014,6 +7031,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &771020981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7662,6 +7680,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &834512555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7915,6 +7934,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &862765653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8075,6 +8095,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &886011800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8295,6 +8316,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &968320813
 GameObject:
   m_ObjectHideFlags: 0
@@ -9093,6 +9115,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1090081689
 GameObject:
   m_ObjectHideFlags: 0
@@ -9253,6 +9276,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1123810306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9535,6 +9559,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1140412133
 GameObject:
   m_ObjectHideFlags: 0
@@ -9666,6 +9691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147132011}
+  - component: {fileID: 1147132012}
   m_Layer: 0
   m_Name: Bidak Pemain
   m_TagString: Untagged
@@ -9712,6 +9738,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147132012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147132010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f296aa57451b640ab481085d83255d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1202050367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9812,6 +9850,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1202050371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10154,6 +10193,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1241147306
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,6 +10354,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1295519435
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,6 +10637,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1314502661
 GameObject:
   m_ObjectHideFlags: 0
@@ -10818,6 +10860,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1334620704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11079,7 +11122,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -10.1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1855369681}
   m_Father: {fileID: 1147132011}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11160,6 +11204,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1362566188
 GameObject:
   m_ObjectHideFlags: 0
@@ -11260,6 +11305,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1362566192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11616,6 +11662,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1418112367
 GameObject:
   m_ObjectHideFlags: 0
@@ -11776,6 +11823,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1481020380
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,6 +11984,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1513830932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12102,6 +12151,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1515420268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12322,6 +12372,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1529322139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12950,6 +13001,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1599391033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13328,6 +13380,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1622556895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14007,6 +14060,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1725341252
 GameObject:
   m_ObjectHideFlags: 0
@@ -14167,6 +14221,88 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
+--- !u!1 &1781622260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781622261}
+  - component: {fileID: 1781622263}
+  - component: {fileID: 1781622262}
+  m_Layer: 5
+  m_Name: Prediction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1781622261
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781622260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1855369681}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: -0.0000092983}
+  m_SizeDelta: {x: 2.284, y: 1.5628}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1781622262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781622260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 0
+    m_FontStyle: 3
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '
+
+'
+--- !u!222 &1781622263
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781622260}
+  m_CullTransparentMesh: 0
 --- !u!1 &1798178731
 GameObject:
   m_ObjectHideFlags: 0
@@ -14511,6 +14647,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1823827010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14671,6 +14808,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1830710649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14853,6 +14991,105 @@ Transform:
   m_Father: {fileID: 1601080531}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1855369680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1855369681}
+  - component: {fileID: 1855369684}
+  - component: {fileID: 1855369683}
+  - component: {fileID: 1855369682}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1855369681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855369680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1781622261}
+  m_Father: {fileID: 1346073952}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.01, y: 0.3218}
+  m_SizeDelta: {x: 1.602, y: 1.5628}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1855369682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855369680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1855369683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855369680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 700
+--- !u!223 &1855369684
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855369680}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1881442404
 GameObject:
   m_ObjectHideFlags: 0
@@ -15013,6 +15250,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1883791700
 GameObject:
   m_ObjectHideFlags: 0
@@ -15357,6 +15595,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &1887795255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15676,6 +15915,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1924703422
 GameObject:
   m_ObjectHideFlags: 0
@@ -15744,32 +15984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c919f7a906824ca8c398d0f05406c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listBidak:
-  - {fileID: 662600640}
-  - {fileID: 546867733}
-  - {fileID: 1823827006}
-  - {fileID: 862765649}
-  - {fileID: 1887795251}
-  - {fileID: 1515420264}
-  - {fileID: 770625209}
-  - {fileID: 1830710645}
-  - {fileID: 886011796}
-  - {fileID: 2001123923}
-  - {fileID: 1202050367}
-  - {fileID: 1599391029}
-  - {fileID: 435263424}
-  - {fileID: 147559532}
-  - {fileID: 272549602}
-  - {fileID: 52933831}
-  - {fileID: 402191890}
-  - {fileID: 1334620700}
-  - {fileID: 313259430}
-  - {fileID: 1362566188}
-  - {fileID: 771020977}
-  - {fileID: 117031538}
-  - {fileID: 1622556891}
-  - {fileID: 834512551}
-  - {fileID: 19469215}
+  listBidak: []
 --- !u!1 &1928085222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15930,6 +16145,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &1950858811
 GameObject:
   m_ObjectHideFlags: 0
@@ -16152,6 +16368,7 @@ MonoBehaviour:
   kepemilikan: 108
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!114 &2001123927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16494,6 +16711,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &2049830105
 GameObject:
   m_ObjectHideFlags: 0
@@ -16776,6 +16994,7 @@ MonoBehaviour:
   kepemilikan: 112
   baris: 0
   kolom: 0
+  gerak: 0
 --- !u!1 &2088817837
 GameObject:
   m_ObjectHideFlags: 0

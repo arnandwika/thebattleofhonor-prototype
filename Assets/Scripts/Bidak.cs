@@ -10,6 +10,7 @@ public class Bidak : MonoBehaviour
     public char kepemilikan;
     public int baris;
     public int kolom;
+    public int gerak;
     // Start is called before the first frame update
     void Start()
     {

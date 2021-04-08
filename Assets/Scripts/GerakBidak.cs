@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GerakBidak : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class GerakBidak : MonoBehaviour
         awal_permainan = true;
         cek_asal = false;
         cek_taruh = true;
+
+        GameObject UIText = new GameObject("UIText");
+        UIText.transform.SetParent(this.transform);
+        Text myText = UIText.AddComponent<Text>();
+        myText.text = "TEKS";
     }
 
     // Update is called once per frame
@@ -78,59 +84,82 @@ public class GerakBidak : MonoBehaviour
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
                         string hasil = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
-                        if(hasil == "menang"){
-                            transform.position = new Vector3(newX, newY, transform.position.z);
-                            obyek_akhir.tag = gameObject.tag;
-                            obyek_asal.tag = "Untagged";
+                        if((newX == TempatIstirahat.xIstirahat[0] && newY == TempatIstirahat.yIstirahat[0]) || 
+                        (newX == TempatIstirahat.xIstirahat[1] && newY == TempatIstirahat.yIstirahat[1]) ||
+                        (newX == TempatIstirahat.xIstirahat[2] && newY == TempatIstirahat.yIstirahat[2]) ||
+                        (newX == TempatIstirahat.xIstirahat[3] && newY == TempatIstirahat.yIstirahat[3]) ||
+                        (newX == TempatIstirahat.xIstirahat[4] && newY == TempatIstirahat.yIstirahat[4]) ||
+                        (newX == TempatIstirahat.xIstirahat[5] && newY == TempatIstirahat.yIstirahat[5]) ||
+                        (newX == TempatIstirahat.xIstirahat[6] && newY == TempatIstirahat.yIstirahat[6]) ||
+                        (newX == TempatIstirahat.xIstirahat[7] && newY == TempatIstirahat.yIstirahat[7])){
+                            transform.position = new Vector3(firstX, firstY, transform.position.z);
                             cek_asal = false;
                             cek_taruh = true;
-                            pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
-                            kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
-                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
-                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                            Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
-                            Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
-                            Destroy(obyek_bidak.gameObject);
-                        }else if(hasil == "draw"){
-                            obyek_akhir.tag = "Untagged";
-                            obyek_asal.tag = "Untagged";
-                            cek_asal = false;
-                            cek_taruh = true;
-                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
-                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
-                            Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
-                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
-                            Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
-                            if(gameObject.tag == "Pemain"){
-                                Giliran.setGiliranLawan();
-                                giliranPemain = Giliran.getGiliran();
-                            }else if(gameObject.tag == "Lawan"){
-                                Giliran.setGiliranPemain();
-                                giliranPemain = Giliran.getGiliran();
+                        }else{
+                            if(hasil == "menang"){
+                                transform.position = new Vector3(newX, newY, transform.position.z);
+                                obyek_akhir.tag = gameObject.tag;
+                                obyek_asal.tag = "Untagged";
+                                cek_asal = false;
+                                cek_taruh = true;
+                                pangkatBidak = gameObject.GetComponent<Bidak>().pangkat;
+                                kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
+                                gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                                gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                gameObject.GetComponent<Bidak>().gerak = obyek_akhir.GetComponent<Posisi>().gerak;
+                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
+                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
+                                Destroy(obyek_bidak.gameObject);
+                                barisPosAwal = barisPosTujuan;
+                                kolomPosAwal = kolomPosTujuan;
+                            }else if(hasil == "draw"){
+                                obyek_akhir.tag = "Untagged";
+                                obyek_asal.tag = "Untagged";
+                                cek_asal = false;
+                                cek_taruh = true;
+                                gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                                gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                gameObject.GetComponent<Bidak>().gerak = obyek_akhir.GetComponent<Posisi>().gerak;
+                                Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                                Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
+                                Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
+                                Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
+                                if(gameObject.tag == "Pemain"){
+                                    Giliran.setGiliranLawan();
+                                    giliranPemain = Giliran.getGiliran();
+                                }else if(gameObject.tag == "Lawan"){
+                                    Giliran.setGiliranPemain();
+                                    giliranPemain = Giliran.getGiliran();
+                                }
+                                Destroy(obyek_bidak.gameObject);
+                                Destroy(gameObject);
+                                barisPosAwal = barisPosTujuan;
+                                kolomPosAwal = kolomPosTujuan;
+                            }else if(hasil == "kalah"){
+                                obyek_asal.tag = "Untagged";
+                                cek_asal = false;
+                                cek_taruh = true;
+                                gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
+                                gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                gameObject.GetComponent<Bidak>().gerak = obyek_akhir.GetComponent<Posisi>().gerak;
+                                Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                                Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
+                                if(gameObject.tag == "Pemain"){
+                                    Giliran.setGiliranLawan();
+                                    giliranPemain = Giliran.getGiliran();
+                                }else if(gameObject.tag == "Lawan"){
+                                    Giliran.setGiliranPemain();
+                                    giliranPemain = Giliran.getGiliran();
+                                }
+                                Destroy(gameObject);
+                                barisPosAwal = barisPosTujuan;
+                                kolomPosAwal = kolomPosTujuan;
+                            }else if(hasil == "selesai"){
+                                print("GAME SELESAI");
+                                SceneManager.LoadScene("Main Menu");
                             }
-                            Destroy(obyek_bidak.gameObject);
-                            Destroy(gameObject);
-                        }else if(hasil == "kalah"){
-                            obyek_asal.tag = "Untagged";
-                            cek_asal = false;
-                            cek_taruh = true;
-                            gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
-                            gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
-                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
-                            if(gameObject.tag == "Pemain"){
-                                Giliran.setGiliranLawan();
-                                giliranPemain = Giliran.getGiliran();
-                            }else if(gameObject.tag == "Lawan"){
-                                Giliran.setGiliranPemain();
-                                giliranPemain = Giliran.getGiliran();
-                            }
-                            Destroy(gameObject);
-                        }else if(hasil == "selesai"){
-                            print("GAME SELESAI");
-                            SceneManager.LoadScene("Main Menu");
                         }
+                        
                     }else{
                         transform.position = new Vector3(newX, newY, transform.position.z);
                         obyek_akhir.tag = gameObject.tag;
@@ -141,6 +170,7 @@ public class GerakBidak : MonoBehaviour
                         kepemilikanBidak = gameObject.GetComponent<Bidak>().kepemilikan;
                         gameObject.GetComponent<Bidak>().baris = barisPosTujuan;
                         gameObject.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                        gameObject.GetComponent<Bidak>().gerak = obyek_akhir.GetComponent<Posisi>().gerak;
                         Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
                         Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                         if(gameObject.tag == "Pemain"){
@@ -150,6 +180,8 @@ public class GerakBidak : MonoBehaviour
                             Giliran.setGiliranPemain();
                             giliranPemain = Giliran.getGiliran();
                         }
+                        barisPosAwal = barisPosTujuan;
+                        kolomPosAwal = kolomPosTujuan;
                     }
                 }else{
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
@@ -205,11 +237,13 @@ public class GerakBidak : MonoBehaviour
             if(!collision.isTrigger){
                 barisPos = collision.GetComponent<Posisi>().barisPos;
                 kolomPos = collision.GetComponent<Posisi>().kolomPos;
+                gerak = collision.GetComponent<Posisi>().gerak;
             }
             Data.insertPangkat(barisPos, kolomPos, pangkatBidak);
             Data.insertKepemilikan(barisPos, kolomPos, kepemilikanBidak);
             gameObject.GetComponent<Bidak>().baris = barisPos;
             gameObject.GetComponent<Bidak>().kolom = kolomPos;
+            gameObject.GetComponent<Bidak>().gerak = gerak;
             awal_permainan = false;
         }else{
             if(!collision.isTrigger){

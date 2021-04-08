@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Data.cs" />
      <Compile Include="Assets\Scripts\GerakBidak.cs" />
      <Compile Include="Assets\Scripts\Giliran.cs" />
+     <Compile Include="Assets\Scripts\Pemain.cs" />
      <Compile Include="Assets\Scripts\Posisi.cs" />
      <Compile Include="Assets\Scripts\Scene.cs" />
      <Compile Include="Assets\Scripts\TempatIstirahat.cs" />
