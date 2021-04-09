@@ -97,6 +97,7 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                         }else{
                             if(hasil == "menang"){
+                                AI.markBidak(Data.getPangkat(barisPosTujuan,kolomPosTujuan), gameObject, barisPosTujuan, kolomPosTujuan);
                                 transform.position = new Vector3(newX, newY, transform.position.z);
                                 obyek_akhir.tag = gameObject.tag;
                                 obyek_asal.tag = "Untagged";

@@ -2,9 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
+    struct Cases
+    {
+        public int pangkatAI;
+        public int predictionPangkatPemain;
+        public int barisPos;
+        public int kolomPos;
+
+        public Cases(int pangkatAI, int predictionPangkatPemain, int barisPos, int kolomPos){
+            this.pangkatAI = pangkatAI;
+            this.predictionPangkatPemain = predictionPangkatPemain;
+            this.barisPos = barisPos;
+            this.kolomPos = kolomPos;
+        }
+    }
     private char tempatIstirahat1;
     private char tempatIstirahat2;
     private char tempatIstirahat3;
@@ -18,6 +33,7 @@ public class AI : MonoBehaviour
     public GameObject[] listBidak;
     private float timer = 2;
     private int gerak;
+    private static List<Cases> listKasus = new List<Cases>();
     // Start is called before the first frame update
     void Start()
     {
@@ -294,6 +310,13 @@ public class AI : MonoBehaviour
                                         hasil = true;
                                         strategy = Random.Range(1,3);
                                     }else if(output == "kalah"){
+                                        GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+                                        foreach(var bidakPemain in listBidakPemain){
+                                            if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
+                                                AI.markBidak(bidak.GetComponent<Bidak>().pangkat, bidakPemain, barisPosTujuan, kolomPosTujuan);
+                                                break;
+                                            }
+                                        }
                                         GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
                                         posisiAwal.tag = "Untagged";
                                         bidak.GetComponent<Bidak>().baris = barisPosTujuan;
@@ -318,12 +341,27 @@ public class AI : MonoBehaviour
     }
 
     public static void markBidak(int pangkatAI, GameObject bidakPemain, int barisPosAI, int kolomPosAI){
-        int predictionPangkatPemain;
-        if(pangkatAI == -2){
-            predictionPangkatPemain = 2;
-        }else if(pangkatAI > 1){
-            predictionPangkatPemain = pangkatAI + 1;
+        string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
+        int predictionPangkatPemain = 0;
+        if(predictionNamaPemain == ""){
+            if(pangkatAI == -2){
+                predictionPangkatPemain = 2;
+            }else if(pangkatAI > 0){
+                predictionPangkatPemain = pangkatAI + 1;
+            }
+            string pangkat = Data.namaPangkat(predictionPangkatPemain);
+            bidakPemain.GetComponentInChildren<Text>().text = pangkat;
+        }else{
+            predictionPangkatPemain = Data.nilaiPangkat(predictionNamaPemain);
+            if(pangkatAI == -2){
+                predictionPangkatPemain = 2;
+            }else if(pangkatAI > predictionPangkatPemain){
+                predictionPangkatPemain = pangkatAI + 1;
+            }
+            string pangkat = Data.namaPangkat(predictionPangkatPemain);
+            bidakPemain.GetComponentInChildren<Text>().text = pangkat;
         }
-        
+        Cases kasus = new Cases(pangkatAI, predictionPangkatPemain, barisPosAI, kolomPosAI);
+        listKasus.Add(kasus);
     }
 }

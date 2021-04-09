@@ -151,4 +151,68 @@ public class Data : MonoBehaviour
             return "kalah";
         }
     }
+
+    public static string namaPangkat(int pangkat){
+        if(pangkat == -2){
+            return "Dinamit";
+        }else if(pangkat == -1){
+            return "Bom";
+        }else if(pangkat == 0){
+            return "Error";
+        }else if(pangkat == 1){
+            return "Bendera";
+        }else if(pangkat == 2){
+            return "Prajurit";
+        }else if(pangkat == 3){
+            return "Sersan";
+        }else if(pangkat == 4){
+            return "Letnan";
+        }else if(pangkat == 5){
+            return "Kapten";
+        }else if(pangkat == 6){
+            return "Mayor";
+        }else if(pangkat == 7){
+            return "Kolonel";
+        }else if(pangkat == 8){
+            return "Brigjen";
+        }else if(pangkat == 9){
+            return "Letjen";
+        }else if(pangkat == 10){
+            return "Panglima";
+        }else{
+            return "Error";
+        }
+    }
+
+    public static int nilaiPangkat(string nama){
+        if(nama == "Dinamit"){
+            return -2;
+        }else if(nama == "Bom"){
+            return -1;
+        }else if(nama == "Error"){
+            return 0;
+        }else if(nama == "Bendera"){
+            return 1;
+        }else if(nama == "Prajurit"){
+            return 2;
+        }else if(nama == "Sersan"){
+            return 3;
+        }else if(nama == "Letnan"){
+            return 4;
+        }else if(nama == "Kapten"){
+            return 5;
+        }else if(nama == "Mayor"){
+            return 6;
+        }else if(nama == "Kolonel"){
+            return 7;
+        }else if(nama == "Brigjen"){
+            return 8;
+        }else if(nama == "Letjen"){
+            return 9;
+        }else if(nama == "Panglima"){
+            return 0;
+        }else{
+            return 0;
+        }
+    }
 }
