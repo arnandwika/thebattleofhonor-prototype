@@ -7,6 +7,7 @@ public class Posisi : MonoBehaviour
     public int gerak;
     public int barisPos;
     public int kolomPos;
+    public GameObject[] ke;
 
     // Start is called before the first frame update
     void Start()

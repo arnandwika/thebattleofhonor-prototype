@@ -307,6 +307,7 @@ MonoBehaviour:
   gerak: 1
   barisPos: 10
   kolomPos: 2
+  ke: []
 --- !u!61 &38904690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -429,6 +430,10 @@ MonoBehaviour:
   gerak: 5
   barisPos: 0
   kolomPos: 2
+  ke:
+  - {fileID: 1341998075}
+  - {fileID: 404454608}
+  - {fileID: 1844610488}
 --- !u!61 &46057286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -794,6 +799,15 @@ MonoBehaviour:
   gerak: 1
   barisPos: 4
   kolomPos: 1
+  ke:
+  - {fileID: 757765718}
+  - {fileID: 466465832}
+  - {fileID: 461694018}
+  - {fileID: 701916674}
+  - {fileID: 1883791700}
+  - {fileID: 777989582}
+  - {fileID: 1886876866}
+  - {fileID: 248854828}
 --- !u!61 &75850559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1109,6 +1123,11 @@ MonoBehaviour:
   gerak: 2
   barisPos: 5
   kolomPos: 4
+  ke:
+  - {fileID: 407926299}
+  - {fileID: 1383860658}
+  - {fileID: 777989582}
+  - {fileID: 630654333}
 --- !u!61 &109929620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1231,6 +1250,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 10
   kolomPos: 3
+  ke: []
 --- !u!61 &110950118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1515,6 +1535,7 @@ MonoBehaviour:
   gerak: 1
   barisPos: 11
   kolomPos: 3
+  ke: []
 --- !u!61 &139913351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1811,6 +1832,7 @@ MonoBehaviour:
   gerak: 2
   barisPos: 8
   kolomPos: 4
+  ke: []
 --- !u!61 &194904649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2194,6 +2216,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 13
   kolomPos: 4
+  ke: []
 --- !u!61 &212390943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2397,6 +2420,7 @@ MonoBehaviour:
   gerak: 6
   barisPos: 10
   kolomPos: 0
+  ke: []
 --- !u!61 &232518652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2519,6 +2543,7 @@ MonoBehaviour:
   gerak: 3
   barisPos: 8
   kolomPos: 3
+  ke: []
 --- !u!61 &238378749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2641,6 +2666,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 11
   kolomPos: 2
+  ke: []
 --- !u!61 &244812429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2763,6 +2789,12 @@ MonoBehaviour:
   gerak: 7
   barisPos: 5
   kolomPos: 2
+  ke:
+  - {fileID: 777989582}
+  - {fileID: 75850557}
+  - {fileID: 1883791700}
+  - {fileID: 1383860658}
+  - {fileID: 109929618}
 --- !u!61 &248854830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3370,6 +3402,10 @@ MonoBehaviour:
   gerak: 4
   barisPos: 2
   kolomPos: 0
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 989684963}
+  - {fileID: 1545590361}
 --- !u!61 &289170952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3493,6 +3529,7 @@ MonoBehaviour:
   gerak: 1
   barisPos: 11
   kolomPos: 1
+  ke: []
 --- !u!61 &290001897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3628,6 +3665,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 9
   kolomPos: 2
+  ke: []
 --- !u!61 &302029959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4010,6 +4048,11 @@ MonoBehaviour:
   gerak: 5
   barisPos: 3
   kolomPos: 3
+  ke:
+  - {fileID: 1655443591}
+  - {fileID: 461694018}
+  - {fileID: 1140412133}
+  - {fileID: 1383860658}
 --- !u!61 &388330893
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4293,6 +4336,10 @@ MonoBehaviour:
   gerak: 5
   barisPos: 0
   kolomPos: 3
+  ke:
+  - {fileID: 46057284}
+  - {fileID: 1212284564}
+  - {fileID: 2049830105}
 --- !u!61 &404454610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4416,6 +4463,7 @@ MonoBehaviour:
   gerak: 1
   barisPos: 9
   kolomPos: 3
+  ke: []
 --- !u!61 &405258396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4551,6 +4599,11 @@ MonoBehaviour:
   gerak: 2
   barisPos: 1
   kolomPos: 4
+  ke:
+  - {fileID: 1212284564}
+  - {fileID: 718376619}
+  - {fileID: 1655443591}
+  - {fileID: 630654333}
 --- !u!61 &407926301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4673,6 +4726,7 @@ MonoBehaviour:
   gerak: 3
   barisPos: 12
   kolomPos: 1
+  ke: []
 --- !u!61 &412619702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5118,6 +5172,11 @@ MonoBehaviour:
   gerak: 3
   barisPos: 1
   kolomPos: 1
+  ke:
+  - {fileID: 1341998075}
+  - {fileID: 718376619}
+  - {fileID: 407926299}
+  - {fileID: 989684963}
 --- !u!61 &439773921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5483,6 +5542,15 @@ MonoBehaviour:
   gerak: 1
   barisPos: 3
   kolomPos: 2
+  ke:
+  - {fileID: 989684963}
+  - {fileID: 634322305}
+  - {fileID: 1655443591}
+  - {fileID: 466465832}
+  - {fileID: 388330891}
+  - {fileID: 75850557}
+  - {fileID: 1883791700}
+  - {fileID: 1383860658}
 --- !u!61 &461694020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5605,6 +5673,7 @@ MonoBehaviour:
   gerak: 3
   barisPos: 8
   kolomPos: 1
+  ke: []
 --- !u!61 &463783411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5727,6 +5796,11 @@ MonoBehaviour:
   gerak: 5
   barisPos: 3
   kolomPos: 1
+  ke:
+  - {fileID: 989684963}
+  - {fileID: 757765718}
+  - {fileID: 461694018}
+  - {fileID: 75850557}
 --- !u!61 &466465834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5849,6 +5923,7 @@ MonoBehaviour:
   gerak: 8
   barisPos: 7
   kolomPos: 0
+  ke: []
 --- !u!61 &517301277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6070,6 +6145,9 @@ MonoBehaviour:
   gerak: 5
   barisPos: 0
   kolomPos: 0
+  ke:
+  - {fileID: 1341998075}
+  - {fileID: 718376619}
 --- !u!61 &524604796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6713,6 +6791,9 @@ MonoBehaviour:
   gerak: 8
   barisPos: 6
   kolomPos: 4
+  ke:
+  - {fileID: 407926299}
+  - {fileID: 2117941046}
 --- !u!61 &630654335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6835,6 +6916,11 @@ MonoBehaviour:
   gerak: 5
   barisPos: 2
   kolomPos: 2
+  ke:
+  - {fileID: 1844610488}
+  - {fileID: 989684963}
+  - {fileID: 1655443591}
+  - {fileID: 461694018}
 --- !u!61 &634322307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7478,6 +7564,10 @@ MonoBehaviour:
   gerak: 4
   barisPos: 4
   kolomPos: 0
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 75850557}
+  - {fileID: 1545590361}
 --- !u!61 &701916676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7600,6 +7690,11 @@ MonoBehaviour:
   gerak: 2
   barisPos: 1
   kolomPos: 0
+  ke:
+  - {fileID: 524604794}
+  - {fileID: 407926299}
+  - {fileID: 989684963}
+  - {fileID: 1545590361}
 --- !u!61 &718376621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7965,6 +8060,7 @@ MonoBehaviour:
   gerak: 6
   barisPos: 10
   kolomPos: 4
+  ke: []
 --- !u!61 &741273217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8087,6 +8183,12 @@ MonoBehaviour:
   gerak: 6
   barisPos: 3
   kolomPos: 0
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 989684963}
+  - {fileID: 466465832}
+  - {fileID: 75850557}
+  - {fileID: 1545590361}
 --- !u!61 &757765720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8209,6 +8311,7 @@ MonoBehaviour:
   gerak: 7
   barisPos: 8
   kolomPos: 2
+  ke: []
 --- !u!61 &767468855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8653,6 +8756,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 13
   kolomPos: 0
+  ke: []
 --- !u!61 &775711288
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8775,6 +8879,11 @@ MonoBehaviour:
   gerak: 2
   barisPos: 5
   kolomPos: 0
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 75850557}
+  - {fileID: 109929618}
+  - {fileID: 1545590361}
 --- !u!61 &777989584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8897,6 +9006,7 @@ MonoBehaviour:
   gerak: 3
   barisPos: 12
   kolomPos: 3
+  ke: []
 --- !u!61 &782710110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9361,6 +9471,7 @@ MonoBehaviour:
   gerak: 2
   barisPos: 12
   kolomPos: 0
+  ke: []
 --- !u!61 &817998451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10401,6 +10512,7 @@ MonoBehaviour:
   gerak: 4
   barisPos: 9
   kolomPos: 0
+  ke: []
 --- !u!61 &968320815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10523,6 +10635,10 @@ MonoBehaviour:
   gerak: 3
   barisPos: 5
   kolomPos: 3
+  ke:
+  - {fileID: 777989582}
+  - {fileID: 1383860658}
+  - {fileID: 109929618}
 --- !u!61 &969219967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10646,6 +10762,15 @@ MonoBehaviour:
   gerak: 1
   barisPos: 2
   kolomPos: 1
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 439773919}
+  - {fileID: 1844610488}
+  - {fileID: 289170950}
+  - {fileID: 634322305}
+  - {fileID: 757765718}
+  - {fileID: 466465832}
+  - {fileID: 461694018}
 --- !u!61 &989684965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10870,6 +10995,7 @@ MonoBehaviour:
   gerak: 1
   barisPos: 9
   kolomPos: 1
+  ke: []
 --- !u!114 &998645304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10917,6 +11043,10 @@ MonoBehaviour:
   gerak: 4
   barisPos: 4
   kolomPos: 4
+  ke:
+  - {fileID: 407926299}
+  - {fileID: 1383860658}
+  - {fileID: 630654333}
 --- !u!61 &1015829890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11741,6 +11871,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 7
   kolomPos: 2
+  ke: []
 --- !u!61 &1123810308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12124,6 +12255,12 @@ MonoBehaviour:
   gerak: 6
   barisPos: 3
   kolomPos: 4
+  ke:
+  - {fileID: 407926299}
+  - {fileID: 1655443591}
+  - {fileID: 388330891}
+  - {fileID: 1383860658}
+  - {fileID: 1015829888}
 --- !u!61 &1140412135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12637,6 +12774,9 @@ MonoBehaviour:
   gerak: 5
   barisPos: 0
   kolomPos: 4
+  ke:
+  - {fileID: 404454608}
+  - {fileID: 407926299}
 --- !u!61 &1212284566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13164,6 +13304,7 @@ MonoBehaviour:
   gerak: 4
   barisPos: 11
   kolomPos: 0
+  ke: []
 --- !u!61 &1295519437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13547,6 +13688,9 @@ MonoBehaviour:
   gerak: 5
   barisPos: 6
   kolomPos: 2
+  ke:
+  - {fileID: 248854828}
+  - {fileID: 1123810306}
 --- !u!61 &1314502663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13830,6 +13974,10 @@ MonoBehaviour:
   gerak: 5
   barisPos: 0
   kolomPos: 1
+  ke:
+  - {fileID: 524604794}
+  - {fileID: 46057284}
+  - {fileID: 439773919}
 --- !u!61 &1341998077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14474,6 +14622,15 @@ MonoBehaviour:
   gerak: 1
   barisPos: 4
   kolomPos: 3
+  ke:
+  - {fileID: 461694018}
+  - {fileID: 388330891}
+  - {fileID: 1140412133}
+  - {fileID: 1883791700}
+  - {fileID: 1015829888}
+  - {fileID: 248854828}
+  - {fileID: 969219965}
+  - {fileID: 109929618}
 --- !u!61 &1383860660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16105,6 +16262,9 @@ MonoBehaviour:
   gerak: 8
   barisPos: 6
   kolomPos: 0
+  ke:
+  - {fileID: 718376619}
+  - {fileID: 517301275}
 --- !u!61 &1545590363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16227,6 +16387,7 @@ MonoBehaviour:
   gerak: 7
   barisPos: 12
   kolomPos: 2
+  ke: []
 --- !u!61 &1578522545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16349,6 +16510,7 @@ MonoBehaviour:
   gerak: 2
   barisPos: 12
   kolomPos: 4
+  ke: []
 --- !u!61 &1591432959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16890,6 +17052,10 @@ MonoBehaviour:
   gerak: 4
   barisPos: 2
   kolomPos: 4
+  ke:
+  - {fileID: 407926299}
+  - {fileID: 1655443591}
+  - {fileID: 630654333}
 --- !u!61 &1616525074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17174,6 +17340,15 @@ MonoBehaviour:
   gerak: 1
   barisPos: 2
   kolomPos: 3
+  ke:
+  - {fileID: 1844610488}
+  - {fileID: 2049830105}
+  - {fileID: 407926299}
+  - {fileID: 634322305}
+  - {fileID: 1616525072}
+  - {fileID: 461694018}
+  - {fileID: 388330891}
+  - {fileID: 1140412133}
 --- !u!61 &1655443593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17309,6 +17484,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 13
   kolomPos: 1
+  ke: []
 --- !u!61 &1660922090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17591,6 +17767,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 10
   kolomPos: 1
+  ke: []
 --- !u!61 &1681273638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18298,6 +18475,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 13
   kolomPos: 3
+  ke: []
 --- !u!61 &1798178733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18420,6 +18598,7 @@ MonoBehaviour:
   gerak: 4
   barisPos: 11
   kolomPos: 4
+  ke: []
 --- !u!61 &1808549416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18864,6 +19043,13 @@ MonoBehaviour:
   gerak: 7
   barisPos: 1
   kolomPos: 2
+  ke:
+  - {fileID: 46057284}
+  - {fileID: 718376619}
+  - {fileID: 407926299}
+  - {fileID: 989684963}
+  - {fileID: 634322305}
+  - {fileID: 1655443591}
 --- !u!61 &1844610490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19247,6 +19433,11 @@ MonoBehaviour:
   gerak: 5
   barisPos: 4
   kolomPos: 2
+  ke:
+  - {fileID: 461694018}
+  - {fileID: 75850557}
+  - {fileID: 1383860658}
+  - {fileID: 248854828}
 --- !u!61 &1883791702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19369,6 +19560,10 @@ MonoBehaviour:
   gerak: 3
   barisPos: 5
   kolomPos: 1
+  ke:
+  - {fileID: 777989582}
+  - {fileID: 75850557}
+  - {fileID: 109929618}
 --- !u!61 &1886876868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20243,6 +20438,7 @@ MonoBehaviour:
   gerak: 4
   barisPos: 9
   kolomPos: 4
+  ke: []
 --- !u!61 &1950858813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20706,6 +20902,7 @@ MonoBehaviour:
   gerak: 5
   barisPos: 13
   kolomPos: 2
+  ke: []
 --- !u!61 &2013267690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20990,6 +21187,11 @@ MonoBehaviour:
   gerak: 3
   barisPos: 1
   kolomPos: 3
+  ke:
+  - {fileID: 404454608}
+  - {fileID: 718376619}
+  - {fileID: 407926299}
+  - {fileID: 1655443591}
 --- !u!61 &2049830107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21274,6 +21476,7 @@ MonoBehaviour:
   gerak: 2
   barisPos: 8
   kolomPos: 0
+  ke: []
 --- !u!61 &2088817839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21495,6 +21698,7 @@ MonoBehaviour:
   gerak: 8
   barisPos: 7
   kolomPos: 4
+  ke: []
 --- !u!61 &2117941048
 BoxCollider2D:
   m_ObjectHideFlags: 0
