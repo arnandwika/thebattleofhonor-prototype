@@ -326,6 +326,9 @@ public class AI : MonoBehaviour
                                         Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                                         Giliran.setGiliranPemain();
                                         Destroy(bidak);
+                                        timer = 2;
+                                        hasil = true;
+                                        strategy = Random.Range(1,3);
                                     }else if(output == "selesai"){
                                         print("GAME SELESAI");
                                         SceneManager.LoadScene("Main Menu");
