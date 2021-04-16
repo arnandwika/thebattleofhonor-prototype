@@ -29,11 +29,13 @@ public class AI : MonoBehaviour
     private int kolomPosAwal;
     private int barisPosTujuan;
     private int kolomPosTujuan;
-    private int strategy; //1 bertahan, 2 menyerang
+    private static int strategy; //1 bertahan, 2 menyerang
     public GameObject[] listBidak;
     private float timer = 2;
     private int gerak;
     private static List<Cases> listKasus = new List<Cases>();
+    private List<int> jumlahLangkah;
+    private Dictionary<GameObject, List<int>> map;
     // Start is called before the first frame update
     void Start()
     {
@@ -341,6 +343,79 @@ public class AI : MonoBehaviour
                 }
             }
         }
+        if(strategy == 3 && !giliranPemain){
+            map = new Dictionary<GameObject, List<int>>();
+            GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+            foreach(var bidakPemain in listBidakPemain){
+                if(bidakPemain != null && bidakPemain.GetComponentInChildren<Text>()){
+                    jumlahLangkah = new List<int>();
+                    string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
+                    int predictionPangkatPemain = 0;
+                    if(predictionNamaPemain == ""){
+                        continue;
+                    }else{
+                        predictionPangkatPemain = Data.nilaiPangkat(predictionNamaPemain);
+                        foreach(var bidakAI in listBidak){
+                            if(bidakAI != null){
+                                if(bidakAI.GetComponent<Bidak>().pangkat > predictionPangkatPemain){
+                                    int barisPosAI = bidakAI.GetComponent<Bidak>().baris;
+                                    int kolomPosAI = bidakAI.GetComponent<Bidak>().kolom;
+                                    int barisPosPemain = bidakPemain.GetComponent<Bidak>().baris;
+                                    int kolomPosPemain = bidakPemain.GetComponent<Bidak>().kolom;
+                                    int langkah = 0;
+                                    GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
+                                    GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
+                                    int hasil = cekPath(posisiAI, posisiPemain, langkah);
+                                    print(hasil);
+                                    print(predictionNamaPemain);
+                                    print(bidakAI.GetComponent<Bidak>().nama);
+                                    print(jumlahLangkah[0]);
+                                    print(jumlahLangkah[1]);
+                                }
+                            }
+                        }
+                    }
+                    map.Add(bidakPemain, jumlahLangkah);
+                }else{
+                    continue;
+                }
+            }
+        }
+    }
+
+    public int cekPath(GameObject posisiAI, GameObject posisiPemain, int langkah){
+        //print(posisiAI.GetComponent<Posisi>().name);
+        //bool ketemu = false;
+        int barisAI = posisiAI.GetComponent<Posisi>().barisPos;
+        int kolomAI = posisiAI.GetComponent<Posisi>().kolomPos;
+        int barisPemain = posisiPemain.GetComponent<Posisi>().barisPos;
+        int kolomPemain = posisiPemain.GetComponent<Posisi>().kolomPos;
+        if(barisAI == barisPemain && kolomAI == kolomPemain || jumlahLangkah.Count >= 500){
+            jumlahLangkah.Add(langkah);
+            return langkah;
+        }else if(barisAI == barisPemain && (barisAI == 1 || barisAI == 5 || barisAI == 8 || barisAI == 12)){//ubah
+            jumlahLangkah.Add(langkah+1);
+            return langkah+1;
+        }else if(kolomAI == kolomPemain && barisAI > 0 && barisAI < 7 && barisPemain > 0 && barisPemain < 7){
+            jumlahLangkah.Add(langkah+1);
+            return langkah+1;
+        }else if(kolomAI == kolomPemain && barisAI > 6 && barisAI < 13 && barisPemain > 6 && barisPemain < 13){
+            jumlahLangkah.Add(langkah+1);
+            return langkah+1;
+        }else if(langkah >= 6 || (barisAI == 0 && kolomAI == 0) || (barisAI == 0 && kolomAI == 4) || (barisAI == 13 && kolomAI == 0) || (barisAI == 13 && kolomAI == 4)){
+            jumlahLangkah.Add(langkah);
+            return langkah;
+        }
+        GameObject[] listKe = posisiAI.GetComponent<Posisi>().ke;
+        int size = listKe.Length;
+        for(int i=0; i<size; i++){
+            if(barisPemain > barisAI){
+                cekPath(listKe[size-i-1], posisiPemain, langkah+1);
+            }else{
+                cekPath(listKe[i], posisiPemain, langkah+1);
+            }
+        }
+        return jumlahLangkah.Count;
     }
 
     public static void markBidak(int pangkatAI, GameObject bidakPemain, int barisPosAI, int kolomPosAI){
@@ -364,7 +439,8 @@ public class AI : MonoBehaviour
             string pangkat = Data.namaPangkat(predictionPangkatPemain);
             bidakPemain.GetComponentInChildren<Text>().text = pangkat;
         }
-        Cases kasus = new Cases(pangkatAI, predictionPangkatPemain, barisPosAI, kolomPosAI);
-        listKasus.Add(kasus);
+        strategy = 3;
+        //Cases kasus = new Cases(pangkatAI, predictionPangkatPemain, barisPosAI, kolomPosAI);
+        //listKasus.Add(kasus);
     }
 }
