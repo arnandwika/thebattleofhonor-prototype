@@ -3172,8 +3172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207a08418c9edcb41ac9f03824cc1c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nama: letnan
-  pangkat: 4
+  nama: letjen
+  pangkat: 9
   kepemilikan: 108
   baris: 0
   kolom: 0

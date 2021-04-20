@@ -185,12 +185,14 @@ public class GerakBidak : MonoBehaviour
                         kolomPosAwal = kolomPosTujuan;
                     }
                 }else{
+                    print("ERROR 2");
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
                     cek_taruh = true;
                     //obyek.tag = "Untagged";
                 }
             }else{
+                print("ERROR 1");
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
                 cek_asal = false;
                 cek_taruh = true;
