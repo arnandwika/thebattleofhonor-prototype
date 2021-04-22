@@ -66,8 +66,6 @@ public class GerakBidak : MonoBehaviour
         }else{
             if(gameObject.tag == "Pemain"){
                 print("Giliran lawan");
-            }else if(gameObject.tag == "Lawan"){
-                print("Giliran pemain");
             }
         }
     }
@@ -226,7 +224,6 @@ public class GerakBidak : MonoBehaviour
                 //obyek.tag = "Untagged";
             }
         }
-        AturanGerak.allow = true;
     }
 
     void OnTriggerEnter2D(Collider2D collision){

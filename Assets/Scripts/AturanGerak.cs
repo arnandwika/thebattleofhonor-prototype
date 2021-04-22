@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AturanGerak : MonoBehaviour
 {
-    public static bool allow = true;
     private static int loop;
     // Start is called before the first frame update
     void Start()
@@ -191,7 +190,8 @@ public class AturanGerak : MonoBehaviour
         return false;
     }
 
-    private static bool cekLompatBaris(int barisPosAwal, int barisPosTujuan, int kolom){
+    public static bool cekLompatBaris(int barisPosAwal, int barisPosTujuan, int kolom){
+        bool allow = true;
         if(barisPosAwal > barisPosTujuan && barisPosAwal - barisPosTujuan > 1){
             loop = barisPosAwal - barisPosTujuan;
             for(int i = 1; i < loop; i++){
@@ -210,7 +210,8 @@ public class AturanGerak : MonoBehaviour
         return allow;
     }
 
-    private static bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
+    public static bool cekLompatKolom(int kolomPosAwal, int kolomPosTujuan, int baris){
+        bool allow = true;
         if(kolomPosAwal > kolomPosTujuan && kolomPosAwal - kolomPosTujuan > 1){
             loop = kolomPosAwal - kolomPosTujuan;
             for(int i = 1; i < loop; i++){

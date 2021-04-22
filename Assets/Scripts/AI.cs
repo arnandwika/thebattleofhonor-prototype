@@ -501,8 +501,106 @@ public class AI : MonoBehaviour
         int size = listKe.Length;
         for(int i=0; i<size; i++){
             if(barisPemain > barisAI){
+                int barisKe = listKe[size-i-1].GetComponent<Posisi>().barisPos;
+                int kolomKe = listKe[size-i-1].GetComponent<Posisi>().kolomPos;
+                if(barisAI == barisKe && (kolomAI - kolomKe > 1 || kolomKe - kolomAI > 1)){
+                    bool hasil = AturanGerak.cekLompatKolom(kolomAI, kolomKe, barisAI);
+                    if(!hasil && kolomAI > kolomKe){
+                        for(int j = kolomKe+1; j<kolomAI; j++){
+                            if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }else if(!hasil && kolomAI < kolomKe){
+                        for(int j = kolomAI+1; j<kolomKe; j++){
+                            if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }
+                }else if(kolomAI == kolomKe && (barisAI - barisKe > 1 || barisKe - barisAI > 1)){
+                    bool hasil = AturanGerak.cekLompatBaris(barisAI, barisKe, kolomAI);
+                    if(!hasil && barisAI > barisKe){
+                        for(int j = barisKe+1; j<barisAI; j++){
+                            if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }else if(!hasil && barisAI < barisKe){
+                        for(int j = barisAI+1; j<barisKe; j++){
+                            if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }
+                }
                 cekPath(listKe[size-i-1], posisiPemain, langkah+1, posisiNextAI, bidakAI);
             }else{
+                int barisKe = listKe[i].GetComponent<Posisi>().barisPos;
+                int kolomKe = listKe[i].GetComponent<Posisi>().kolomPos;
+                if(barisAI == barisKe && (kolomAI - kolomKe > 1 || kolomKe - kolomAI > 1)){
+                    bool hasil = AturanGerak.cekLompatKolom(kolomAI, kolomKe, barisAI);
+                    if(!hasil && kolomAI > kolomKe){
+                        for(int j = kolomKe+1; j<kolomAI; j++){
+                            if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }else if(!hasil && kolomAI < kolomKe){
+                        for(int j = kolomAI+1; j<kolomKe; j++){
+                            if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }
+                }else if(kolomAI == kolomKe && (barisAI - barisKe > 1 || barisKe - barisAI > 1)){
+                    bool hasil = AturanGerak.cekLompatBaris(barisAI, barisKe, kolomAI);
+                    if(!hasil && barisAI > barisKe){
+                        for(int j = barisKe+1; j<barisAI; j++){
+                            if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }else if(!hasil && barisAI < barisKe){
+                        for(int j = barisAI+1; j<barisKe; j++){
+                            if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                                return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
+                                langkah+=1;
+                            }
+                        }
+                    }
+                }
                 cekPath(listKe[i], posisiPemain, langkah+1, posisiNextAI, bidakAI);
             }
         }
