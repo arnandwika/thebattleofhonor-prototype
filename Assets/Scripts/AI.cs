@@ -376,7 +376,6 @@ public class AI : MonoBehaviour
                     cekLangkah = new List<int>();
                     listPathPosisi = new List<GameObject>();
                     bidakAIGerak = new List<GameObject>();
-                    hasilPathPosisi = new GameObject();
                     string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
                     int predictionPangkatPemain = 0;
                     if(predictionNamaPemain == ""){
@@ -399,30 +398,30 @@ public class AI : MonoBehaviour
                                     GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
                                     GameObject posisiNextAI = posisiPemain;
                                     int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI);
-                                    jumlahLangkah.Sort();
-                                    //print(hasil);
-                                    //print(predictionNamaPemain);
-                                    //print(bidakAI.GetComponent<Bidak>().nama);
-                                    //print(jumlahLangkah[0]);
-                                    bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
-                                    cekLangkah.Add(jumlahLangkah[0]);
-                                    listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                    if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
+                                        jumlahLangkah.Sort();
+                                        bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
+                                        cekLangkah.Add(jumlahLangkah[0]);
+                                        listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                    }
                                 }
                             }
                         }
-                        min = cekLangkah[0];
-                        tempBidak = bidakAIGerak[0];
-                        hasilPathPosisi = listPathPosisi[0];
-                        //print(hasilPathPosisi);
-                        for(int i = 1; i<cekLangkah.Count; i++){
-                            if(cekLangkah[i] < min ){
-                                min = cekLangkah[i];
-                                tempBidak = bidakAIGerak[i];
-                                hasilPathPosisi = listPathPosisi[i];
+                        if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
+                            min = cekLangkah[0];
+                            tempBidak = bidakAIGerak[0];
+                            hasilPathPosisi = listPathPosisi[0];
+                            //print(hasilPathPosisi);
+                            for(int i = 1; i<cekLangkah.Count; i++){
+                                if(cekLangkah[i] < min ){
+                                    min = cekLangkah[i];
+                                    tempBidak = bidakAIGerak[i];
+                                    hasilPathPosisi = listPathPosisi[i];
+                                }
                             }
+                            Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
+                            listTarget.Add(target);
                         }
-                        Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
-                        listTarget.Add(target);
                     }
                     
                 }else{
@@ -430,11 +429,14 @@ public class AI : MonoBehaviour
                 }
             }
             strategy = 2;
-            print("Jumlah target : "+listTarget.Count);
-            foreach(var target in listTarget){
-                print("Bidak AI :"+target.bidakAI);
-                print("Perkiraan Bidak Pemain :"+target.bidakPemain.GetComponentInChildren<Text>().text);
-                print("Langkah Pertama Bidak AI :"+target.hasilPathPosisi);
+            if(listTarget.Count > 0){
+                print("Jumlah target : "+listTarget.Count);
+                foreach(var target in listTarget){
+                    print("Bidak AI : "+target.bidakAI.GetComponent<Bidak>().nama);
+                    print("Perkiraan Bidak Pemain : "+target.bidakPemain.GetComponentInChildren<Text>().text);
+                    print("Langkah Pertama Bidak AI : "+target.hasilPathPosisi);
+                    print("Jumlah Langkah : "+target.jumlahLangkah);
+                }
             }
         }
     }
@@ -451,6 +453,10 @@ public class AI : MonoBehaviour
         int barisPemain = posisiPemain.GetComponent<Posisi>().barisPos;
         int kolomPemain = posisiPemain.GetComponent<Posisi>().kolomPos;
         if(langkah >= 6 || jumlahLangkah.Count >= 10000){
+            return langkah;
+        }
+
+        if(langkah > 0 && Data.getKepemilikan(barisAI, kolomAI) == 'l' && (Data.getPangkat(barisAI, kolomAI) == -1 || Data.getPangkat(barisAI, kolomAI) == 1)){
             return langkah;
         }
         
@@ -507,7 +513,7 @@ public class AI : MonoBehaviour
         string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
         int predictionPangkatPemain = 0;
         if(predictionNamaPemain == ""){
-            if(pangkatAI == -2){
+            if(pangkatAI == -1){
                 predictionPangkatPemain = 2;
             }else if(pangkatAI > 0){
                 predictionPangkatPemain = pangkatAI + 1;
@@ -516,7 +522,7 @@ public class AI : MonoBehaviour
             bidakPemain.GetComponentInChildren<Text>().text = pangkat;
         }else{
             predictionPangkatPemain = Data.nilaiPangkat(predictionNamaPemain);
-            if(pangkatAI == -2){
+            if(pangkatAI == -1){
                 predictionPangkatPemain = 2;
             }else if(pangkatAI > predictionPangkatPemain){
                 predictionPangkatPemain = pangkatAI + 1;

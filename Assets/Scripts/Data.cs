@@ -154,9 +154,9 @@ public class Data : MonoBehaviour
 
     public static string namaPangkat(int pangkat){
         if(pangkat == -2){
-            return "Dinamit";
-        }else if(pangkat == -1){
             return "Bom";
+        }else if(pangkat == -1){
+            return "Dinamit";
         }else if(pangkat == 0){
             return "Error";
         }else if(pangkat == 1){
@@ -185,9 +185,9 @@ public class Data : MonoBehaviour
     }
 
     public static int nilaiPangkat(string nama){
-        if(nama == "Dinamit"){
+        if(nama == "Bom"){
             return -2;
-        }else if(nama == "Bom"){
+        }else if(nama == "Dinamit"){
             return -1;
         }else if(nama == "Error"){
             return 0;
