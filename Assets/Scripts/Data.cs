@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System.IO;
 
 public class Data : MonoBehaviour
 {
@@ -50,10 +52,12 @@ public class Data : MonoBehaviour
                                                                     {null , null , null , null , null},
                                                                     {null , null , null , null , null}};
 
+    public static GameObject[ , ] posisiBidak;
+
     public GameObject[] posisi;
-    public List<int[,]> dataPangkatBidak = new List<int[,]>();
-    public List<char[,]> dataKepemilikanBidak = new List<char[,]>();
-    public List<GameObject[,]> dataListPosisi = new List<GameObject[,]>();
+    public static List<char[,]> dataKepemilikanBidak = new List<char[,]>();
+    public static List<GameObject[,]> dataPosisiBidak = new List<GameObject[,]>();
+    private static int turn = 0;
     void Start()
     {
         int indeks = 0;
@@ -121,6 +125,7 @@ public class Data : MonoBehaviour
     public static void dataKepemilikanPindah(int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan, char kepemilikan){
         insertKepemilikan(barisPosTujuan, kolomPosTujuan, kepemilikan);
         noneKepemilikan(barisPosAwal, kolomPosAwal);
+        dataKepemilikanBidak.Add(kepemilikanBidak);
     }
 
     public static void insertKepemilikan(int baris, int kolom, char kepemilikan){
@@ -133,6 +138,41 @@ public class Data : MonoBehaviour
 
     public static char getKepemilikan(int baris, int kolom){
         return kepemilikanBidak[baris,kolom];
+    }
+
+    public static void updatePosisiBidak(){
+        posisiBidak = new GameObject[14,5]{{null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null},
+                                        {null , null , null , null , null}};
+        GameObject[] bidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+        GameObject[] bidakAI = GameObject.FindGameObjectsWithTag("Lawan");
+        foreach(var bidak in bidakPemain){
+            if(bidak!=null && bidak.GetComponent<Bidak>()){
+                int baris = bidak.GetComponent<Bidak>().baris;
+                int kolom = bidak.GetComponent<Bidak>().kolom;
+                posisiBidak[baris,kolom] = bidak;
+            }
+        }
+        foreach(var bidak in bidakAI){
+            if(bidak!=null && bidak.GetComponent<Bidak>()){
+                int baris = bidak.GetComponent<Bidak>().baris;
+                int kolom = bidak.GetComponent<Bidak>().kolom;
+                posisiBidak[baris,kolom] = bidak;
+            }
+        }
+        dataPosisiBidak.Add(posisiBidak);
+        WriteString();
     }
 
     public static string bidakBertabrakan(int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan){
@@ -219,7 +259,60 @@ public class Data : MonoBehaviour
         }
     }
 
-    public static void updateData(){
+    [MenuItem("Tools/Write file")]
+    static void WriteString()
+    {
+        string path = "Assets/Resources/data.txt";
 
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(path, true);
+        bool giliranPemain = Giliran.getGiliran();
+        string giliran = "";
+        if(giliranPemain){
+            giliran = "Player";
+        }else{
+            giliran = "AI";
+        }
+        writer.WriteLine("Phase "+turn+", "+giliran+" turn");
+        
+        for(int i = 0; i < 14; i++){
+            bool first = true;
+            for(int j = 0; j < 5; j++){
+                if(first && posisiBidak[i,j] != null){
+                    writer.Write("| "+posisiBidak[i,j].GetComponent<Bidak>().nama+"("+posisiBidak[i,j].GetComponent<Bidak>().kepemilikan+")"+" | ");
+                    first = false;
+                }else if(!first && posisiBidak[i,j] != null){
+                    writer.Write(posisiBidak[i,j].GetComponent<Bidak>().nama+"("+posisiBidak[i,j].GetComponent<Bidak>().kepemilikan+")"+" | ");
+                }else if(first && posisiBidak[i,j] == null){
+                    writer.Write("|   KOSONG   | ");
+                    first = false;
+                }else if(!first && posisiBidak[i,j] == null){
+                    writer.Write("  KOSONG   | ");
+                }
+            }
+            writer.WriteLine(" ");
+        }
+        turn+=1;
+        writer.WriteLine(" ");
+        
+        writer.Close();
+
+        //Re-import the file to update the reference in the editor
+        //AssetDatabase.ImportAsset(path); 
+        //TextAsset asset = Resources.Load("test");
+
+        //Print the text from the file
+        //Debug.Log(asset.text);
+    }
+
+    [MenuItem("Tools/Read file")]
+    static void ReadString()
+    {
+        string path = "Assets/Resources/data.txt";
+
+        //Read the text from directly from the test.txt file
+        StreamReader reader = new StreamReader(path); 
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
     }
 }

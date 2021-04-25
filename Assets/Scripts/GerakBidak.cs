@@ -111,6 +111,7 @@ public class GerakBidak : MonoBehaviour
                                 Destroy(obyek_bidak.gameObject);
                                 barisPosAwal = barisPosTujuan;
                                 kolomPosAwal = kolomPosTujuan;
+                                Data.updatePosisiBidak();
                             }else if(hasil == "draw"){
                                 obyek_akhir.tag = "Untagged";
                                 obyek_asal.tag = "Untagged";
@@ -134,6 +135,7 @@ public class GerakBidak : MonoBehaviour
                                 Destroy(gameObject);
                                 barisPosAwal = barisPosTujuan;
                                 kolomPosAwal = kolomPosTujuan;
+                                Data.updatePosisiBidak();
                             }else if(hasil == "kalah"){
                                 obyek_asal.tag = "Untagged";
                                 cek_asal = false;
@@ -153,6 +155,7 @@ public class GerakBidak : MonoBehaviour
                                 Destroy(gameObject);
                                 barisPosAwal = barisPosTujuan;
                                 kolomPosAwal = kolomPosTujuan;
+                                Data.updatePosisiBidak();
                             }else if(hasil == "selesai"){
                                 print("GAME SELESAI");
                                 SceneManager.LoadScene("Main Menu");
@@ -181,6 +184,7 @@ public class GerakBidak : MonoBehaviour
                         }
                         barisPosAwal = barisPosTujuan;
                         kolomPosAwal = kolomPosTujuan;
+                        Data.updatePosisiBidak();
                     }
                 }else{
                     print("ERROR 2");

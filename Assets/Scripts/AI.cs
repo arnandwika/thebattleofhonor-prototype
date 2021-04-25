@@ -116,6 +116,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 3;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }  
@@ -139,6 +140,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 1;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }
@@ -162,6 +164,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 3;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }
@@ -191,6 +194,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 3;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }
@@ -214,6 +218,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 1;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }
@@ -237,6 +242,7 @@ public class AI : MonoBehaviour
                                 bidak.GetComponent<Bidak>().kolom = 3;
                                 bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                 timer = 2;
+                                Data.updatePosisiBidak();
                             }
                         }
                     }
@@ -285,6 +291,7 @@ public class AI : MonoBehaviour
                                     timer = 2;
                                     hasil = true;
                                     strategy = Random.Range(1,3);
+                                    Data.updatePosisiBidak();
                                 }else if(posisi.tag == "Pemain"){
                                     if((barisPosTujuan == TempatIstirahat.barisIstirahat[0] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[0]) || 
                                     (barisPosTujuan == TempatIstirahat.barisIstirahat[1] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[1]) ||
@@ -318,6 +325,7 @@ public class AI : MonoBehaviour
                                         timer = 2;
                                         hasil = true;
                                         strategy = Random.Range(1,3);
+                                        Data.updatePosisiBidak();
                                         print("AI menang bertabrakan dengan pemain");
                                     }else if(output == "draw"){
                                         posisi.tag = "Untagged";
@@ -342,6 +350,7 @@ public class AI : MonoBehaviour
                                         timer = 2;
                                         hasil = true;
                                         strategy = Random.Range(1,3);
+                                        Data.updatePosisiBidak();
                                         print("Draw");
                                     }else if(output == "kalah"){
                                         GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
@@ -363,6 +372,7 @@ public class AI : MonoBehaviour
                                         timer = 2;
                                         hasil = true;
                                         strategy = Random.Range(1,3);
+                                        Data.updatePosisiBidak();
                                         print("AI kalah bertabrakan dengan pemain");
                                     }else if(output == "selesai"){
                                         print("GAME SELESAI");
@@ -471,6 +481,7 @@ public class AI : MonoBehaviour
                         target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                         timer = 2;
                         moved = true;
+                        Data.updatePosisiBidak();
                         print("AI berusaha menjatuhkan bidak pemain yang diperkirakan berpangkat "+target.bidakPemain.GetComponentInChildren<Text>().text);
                     }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                         print(target.hasilPathPosisi.GetComponent<Posisi>().tag);
@@ -498,6 +509,7 @@ public class AI : MonoBehaviour
                                     bidakFirstPath.GetComponent<Bidak>().gerak = posisiGerak.GetComponent<Posisi>().gerak;
                                     timer = 2;
                                     moved = true;
+                                    Data.updatePosisiBidak();
                                     print("AI berusaha menjatuhkan bidak pemain yang diperkirakan berpangkat "+target.bidakPemain.GetComponentInChildren<Text>().text);
                                 }
                             }
@@ -534,6 +546,7 @@ public class AI : MonoBehaviour
                                 }
                                 timer = 2;
                                 moved = true;
+                                Data.updatePosisiBidak();
                                 print("AI menang bertabrakan dengan pemain");
                             }else if(output == "draw"){
                                 target.hasilPathPosisi.tag = "Untagged";
@@ -556,6 +569,7 @@ public class AI : MonoBehaviour
                                 Destroy(target.bidakAI);
                                 timer = 2;
                                 moved = true;
+                                Data.updatePosisiBidak();
                                 print("Draw");
                             }else if(output == "kalah"){
                                 foreach(var bidakPemain in listBidakPemain){
@@ -575,6 +589,7 @@ public class AI : MonoBehaviour
                                 Destroy(target.bidakAI);
                                 timer = 2;
                                 moved = true;
+                                Data.updatePosisiBidak();
                                 print("AI kalah bertabrakan dengan pemain");
                             }else if(output == "selesai"){
                                 print("GAME SELESAI");
@@ -587,7 +602,7 @@ public class AI : MonoBehaviour
             if(moved){
                 strategy = 3;
             }else if(!moved){
-                print("Random Move");
+                print("Random Move karena persyaratan tidak terpenuhi");
                 strategy = Random.Range(1,3);
             }
         }
