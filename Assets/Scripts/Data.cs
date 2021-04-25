@@ -51,6 +51,9 @@ public class Data : MonoBehaviour
                                                                     {null , null , null , null , null}};
 
     public GameObject[] posisi;
+    public List<int[,]> dataPangkatBidak = new List<int[,]>();
+    public List<char[,]> dataKepemilikanBidak = new List<char[,]>();
+    public List<GameObject[,]> dataListPosisi = new List<GameObject[,]>();
     void Start()
     {
         int indeks = 0;
@@ -214,5 +217,9 @@ public class Data : MonoBehaviour
         }else{
             return 0;
         }
+    }
+
+    public static void updateData(){
+
     }
 }
