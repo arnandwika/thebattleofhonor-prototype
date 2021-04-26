@@ -57,7 +57,7 @@ public class Data : MonoBehaviour
     public GameObject[] posisi;
     public static List<char[,]> dataKepemilikanBidak = new List<char[,]>();
     public static List<GameObject[,]> dataPosisiBidak = new List<GameObject[,]>();
-    private static int turn = 0;
+    private static int turn = 1;
     void Start()
     {
         int indeks = 0;
@@ -175,20 +175,34 @@ public class Data : MonoBehaviour
         WriteString();
     }
 
+    public static void WriteResponseAI(string response){
+        WriteTxt(response);
+    }
+
     public static string bidakBertabrakan(int barisPosAwal, int kolomPosAwal, int barisPosTujuan, int kolomPosTujuan){
         int pangkatMenabrak = getPangkat(barisPosAwal, kolomPosAwal);
         int pangkatDitabrak = getPangkat(barisPosTujuan, kolomPosTujuan);
         if(pangkatDitabrak == -2 || pangkatMenabrak == -2){
+            if((pangkatDitabrak == 10 && getKepemilikan(barisPosTujuan, kolomPosTujuan) == 'p') || (pangkatMenabrak == 10 && getKepemilikan(barisPosAwal, kolomPosAwal) == 'p')){
+                AI.benderaExposed = true;
+            }
             return "draw";
         }else if(pangkatDitabrak == -1 && pangkatMenabrak == 2){
             return "menang";
         }else if(pangkatDitabrak == -1 && pangkatMenabrak !=2){
+            if(pangkatMenabrak == 10 && getKepemilikan(barisPosAwal, kolomPosAwal) == 'p'){
+                AI.benderaExposed = true;
+            }
             return "draw";
         }else if(pangkatDitabrak == 1){
+            WriteTxt("GAME OVER");
             return "selesai";
         }else if(pangkatMenabrak > pangkatDitabrak){
             return "menang";
         }else if(pangkatMenabrak == pangkatDitabrak){
+            if(pangkatDitabrak == 10 || pangkatMenabrak == 10){
+                AI.benderaExposed = true;
+            }
             return "draw";
         }else{
             return "kalah";
@@ -253,7 +267,7 @@ public class Data : MonoBehaviour
         }else if(nama == "Letjen"){
             return 9;
         }else if(nama == "Panglima"){
-            return 0;
+            return 10;
         }else{
             return 0;
         }
@@ -269,9 +283,9 @@ public class Data : MonoBehaviour
         bool giliranPemain = Giliran.getGiliran();
         string giliran = "";
         if(giliranPemain){
-            giliran = "Player";
-        }else{
             giliran = "AI";
+        }else{
+            giliran = "Player";
         }
         writer.WriteLine("Phase "+turn+", "+giliran+" turn");
         
@@ -303,6 +317,16 @@ public class Data : MonoBehaviour
 
         //Print the text from the file
         //Debug.Log(asset.text);
+    }
+
+    [MenuItem("Tools/Write file")]
+    static void WriteTxt(string response){
+        string path = "Assets/Resources/data.txt";
+
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(response);
+        writer.WriteLine(" ");
+        writer.Close();
     }
 
     [MenuItem("Tools/Read file")]
