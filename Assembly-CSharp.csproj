@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Scene.cs" />
      <Compile Include="Assets\Scripts\TempatIstirahat.cs" />
      <None Include="Assets\Resources\data.txt" />
+     <None Include="Assets\Resources\case.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Perkuliahan/Game Engine/unity2019/The Battle of Honor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

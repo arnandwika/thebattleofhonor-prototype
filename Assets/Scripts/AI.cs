@@ -6,18 +6,30 @@ using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
-    struct Cases
+    public struct Cases
     {
-        public int pangkatAI;
-        public int predictionPangkatPemain;
-        public int barisPos;
-        public int kolomPos;
+        public int pemainMemasukiWilayahAI;
+        public int jalurKeretaKolomAIKosong;
+        public int AIMemasukiWilayahPemain;
+        public int jalurKeretaKolomPemainKosong;
+        public int tempatIstirahatAIKosong;
+        public int tempatIstirahatPemainKosong;
+        public int bidakTelahDiperkirakanPangkatnya;
+        public int bidakTelahDiperkirakanPangkatnyaDiIstirahat;
+        public int benderaPemainDiketahui;
+        public int solusiStrategi;
 
-        public Cases(int pangkatAI, int predictionPangkatPemain, int barisPos, int kolomPos){
-            this.pangkatAI = pangkatAI;
-            this.predictionPangkatPemain = predictionPangkatPemain;
-            this.barisPos = barisPos;
-            this.kolomPos = kolomPos;
+        public Cases(int pemainMemasukiWilayahAI, int jalurKeretaKolomAIKosong, int AIMemasukiWilayahPemain, int jalurKeretaKolomPemainKosong, int tempatIstirahatAIKosong, int tempatIstirahatPemainKosong, int bidakTelahDiperkirakanPangkatnya, int bidakTelahDiperkirakanPangkatnyaDiIstirahat, int benderaPemainDiketahui, int solusiStrategi){
+            this.pemainMemasukiWilayahAI = pemainMemasukiWilayahAI;
+            this.jalurKeretaKolomAIKosong = jalurKeretaKolomAIKosong;
+            this.AIMemasukiWilayahPemain = AIMemasukiWilayahPemain;
+            this.jalurKeretaKolomPemainKosong = jalurKeretaKolomPemainKosong;
+            this.tempatIstirahatAIKosong = tempatIstirahatAIKosong;
+            this.tempatIstirahatPemainKosong = tempatIstirahatPemainKosong;
+            this.bidakTelahDiperkirakanPangkatnya = bidakTelahDiperkirakanPangkatnya;
+            this.benderaPemainDiketahui = benderaPemainDiketahui;
+            this.solusiStrategi = solusiStrategi;
+            this.bidakTelahDiperkirakanPangkatnyaDiIstirahat = bidakTelahDiperkirakanPangkatnyaDiIstirahat;
         }
     }
     
@@ -62,12 +74,40 @@ public class AI : MonoBehaviour
     private Dictionary<int, GameObject> tempBidakAI;
     private int counter;
     public static bool benderaExposed = false;
+    public static bool cekInsertKasus = true;
+    public static Cases lastCase;
     // Start is called before the first frame update
     void Start()
     {
-        strategy = Random.Range(1,3);
         listBidak = GameObject.FindGameObjectsWithTag("Lawan");
         giliranPemain = Giliran.getGiliran();
+        Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 1);
+        Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 1);
+        Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 2);
+        Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 2);
+        Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 2);
+        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 0, 0, 1, 0, 0, 3);
+        Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 3);
+        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 3);
+        Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 4);
+        Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 4);
+        Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 4);
+        listKasus.Add(kasus1_strategy1);
+        listKasus.Add(kasus2_strategy1);
+        listKasus.Add(kasus3_strategy1);
+        listKasus.Add(kasus1_strategy2);
+        listKasus.Add(kasus2_strategy2);
+        listKasus.Add(kasus3_strategy2);
+        listKasus.Add(kasus1_strategy3);
+        listKasus.Add(kasus2_strategy3);
+        listKasus.Add(kasus3_strategy3);
+        listKasus.Add(kasus1_strategy4);
+        listKasus.Add(kasus2_strategy4);
+        listKasus.Add(kasus3_strategy4);
+        foreach(var kasus in listKasus){
+            Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.benderaPemainDiketahui+","+kasus.solusiStrategi);
+        }
     }
 
     // Update is called once per frame
@@ -78,6 +118,10 @@ public class AI : MonoBehaviour
             if(timer > 0){
                 timer -= Time.deltaTime;
             }else{
+                if(!cekInsertKasus){
+                    newCase();
+                    cekInsertKasus = true;
+                }
                 randomMovement();
                 timer -= Time.deltaTime;
                 if(timer < -10){
@@ -120,7 +164,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }  
@@ -146,7 +192,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }
@@ -172,7 +220,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }
@@ -204,7 +254,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }
@@ -230,7 +282,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }
@@ -256,7 +310,9 @@ public class AI : MonoBehaviour
                                 timer = 2;
                                 Data.WriteResponseAI("AI filling their Tempat Istirahat");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 1;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             }
                         }
                     }
@@ -308,6 +364,9 @@ public class AI : MonoBehaviour
                                     strategy = Random.Range(1,3);
                                     Data.WriteResponseAI("AI moving forward");
                                     Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 2;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                     
                                 }else if(posisi.tag == "Pemain"){
                                     if((barisPosTujuan == TempatIstirahat.barisIstirahat[0] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[0]) || 
@@ -344,7 +403,9 @@ public class AI : MonoBehaviour
                                         strategy = Random.Range(1,3);
                                         Data.WriteResponseAI("AI moving forward and win");
                                         Data.updatePosisiBidak();
-                                        
+                                        lastCase.solusiStrategi = 1;
+                                        listKasus.Add(lastCase);
+                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                         print("AI menang bertabrakan dengan pemain");
                                     }else if(output == "draw"){
                                         posisi.tag = "Untagged";
@@ -371,7 +432,9 @@ public class AI : MonoBehaviour
                                         strategy = Random.Range(1,3);
                                         Data.WriteResponseAI("AI moving forward and draw");
                                         Data.updatePosisiBidak();
-                                        
+                                        lastCase.solusiStrategi = 1;
+                                        listKasus.Add(lastCase);
+                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                         print("Draw");
                                     }else if(output == "kalah"){
                                         GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
@@ -394,7 +457,9 @@ public class AI : MonoBehaviour
                                         hasil = true;
                                         Data.WriteResponseAI("AI moving forward and lose");
                                         Data.updatePosisiBidak();
-                                        
+                                        lastCase.solusiStrategi = 1;
+                                        listKasus.Add(lastCase);
+                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                         print("AI kalah bertabrakan dengan pemain");
                                     }else if(output == "selesai"){
                                         print("GAME SELESAI");
@@ -494,6 +559,7 @@ public class AI : MonoBehaviour
                                     (barisPosPemain == TempatIstirahat.barisIstirahat[5] && kolomPosPemain == TempatIstirahat.kolomIstirahat[5]) ||
                                     (barisPosPemain == TempatIstirahat.barisIstirahat[6] && kolomPosPemain == TempatIstirahat.kolomIstirahat[6]) ||
                                     (barisPosPemain == TempatIstirahat.barisIstirahat[7] && kolomPosPemain == TempatIstirahat.kolomIstirahat[7])){
+                                        Data.WriteResponseAI("Target on Tempat Istirahat");
                                         break;
                                     }
                                     int langkah = 0;
@@ -566,7 +632,9 @@ public class AI : MonoBehaviour
                         moved = true;
                         Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
                         Data.updatePosisiBidak();
-                        
+                        lastCase.solusiStrategi = 3;
+                        listKasus.Add(lastCase);
+                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                         print("AI berusaha menjatuhkan bidak pemain yang diperkirakan berpangkat "+target.bidakPemain.GetComponentInChildren<Text>().text);
                     }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                         print(target.hasilPathPosisi.GetComponent<Posisi>().tag);
@@ -597,7 +665,9 @@ public class AI : MonoBehaviour
                                     moved = true;
                                     Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
                                     Data.updatePosisiBidak();
-                                    
+                                    lastCase.solusiStrategi = 3;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                     print("AI berusaha menjatuhkan bidak pemain yang diperkirakan berpangkat "+target.bidakPemain.GetComponentInChildren<Text>().text);
                                 }
                             }
@@ -637,7 +707,9 @@ public class AI : MonoBehaviour
                                 moved = true;
                                 Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 3;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                 print("AI menang bertabrakan dengan pemain");
                             }else if(output == "draw"){
                                 target.hasilPathPosisi.tag = "Untagged";
@@ -662,7 +734,9 @@ public class AI : MonoBehaviour
                                 moved = true;
                                 Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" draw");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 3;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                 print("Draw");
                             }else if(output == "kalah"){
                                 foreach(var bidakPemain in listBidakPemain){
@@ -684,7 +758,9 @@ public class AI : MonoBehaviour
                                 moved = true;
                                 Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" lose");
                                 Data.updatePosisiBidak();
-                                
+                                lastCase.solusiStrategi = 3;
+                                listKasus.Add(lastCase);
+                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                 print("AI kalah bertabrakan dengan pemain");
                             }else if(output == "selesai"){
                                 print("GAME SELESAI");
@@ -694,9 +770,7 @@ public class AI : MonoBehaviour
                     }
                 }
             }
-            if(moved){
-                strategy = 3;
-            }else if(!moved){
+            if(!moved){
                 Data.WriteResponseAI("Try another strategy than 3");
                 print("Random Move karena persyaratan tidak terpenuhi");
                 strategy = Random.Range(1,3);
@@ -806,7 +880,9 @@ public class AI : MonoBehaviour
                             moved = true;
                             Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
                             Data.updatePosisiBidak();
-                            
+                            lastCase.solusiStrategi = 4;
+                            listKasus.Add(lastCase);
+                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                             print("AI berusaha menjatuhkan bendera");
                         }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                             print(target.hasilPathPosisi.GetComponent<Posisi>().tag);
@@ -837,7 +913,9 @@ public class AI : MonoBehaviour
                                         moved = true;
                                         Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
                                         Data.updatePosisiBidak();
-                                        
+                                        lastCase.solusiStrategi = 4;
+                                        listKasus.Add(lastCase);
+                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                         print("AI berusaha menjatuhkan bendera");
                                     }
                                 }
@@ -876,7 +954,9 @@ public class AI : MonoBehaviour
                                     moved = true;
                                     Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
                                     Data.updatePosisiBidak();
-                                    
+                                    lastCase.solusiStrategi = 4;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                     print("AI menang bertabrakan dengan pemain");
                                 }else if(output == "draw"){
                                     target.hasilPathPosisi.tag = "Untagged";
@@ -901,7 +981,9 @@ public class AI : MonoBehaviour
                                     moved = true;
                                     Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and draw");
                                     Data.updatePosisiBidak();
-                                    
+                                    lastCase.solusiStrategi = 4;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                     print("Draw");
                                 }else if(output == "kalah"){
                                     foreach(var bidakPemain in listBidakPemain){
@@ -923,7 +1005,9 @@ public class AI : MonoBehaviour
                                     moved = true;
                                     Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and lose");
                                     Data.updatePosisiBidak();
-                                    
+                                    lastCase.solusiStrategi = 4;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
                                     print("AI kalah bertabrakan dengan pemain");
                                 }else if(output == "selesai"){
                                     print("GAME SELESAI");
@@ -933,9 +1017,7 @@ public class AI : MonoBehaviour
                         }
                     }
                 }
-                if(moved){
-                    strategy = 4;
-                }else if(!moved){
+                if(!moved){
                     Data.WriteResponseAI("Try another strategy than 4");
                     print("Random Move karena persyaratan tidak terpenuhi");
                     strategy = Random.Range(1,4);
@@ -1212,12 +1294,9 @@ public class AI : MonoBehaviour
             string pangkat = Data.namaPangkat(predictionPangkatPemain);
             bidakPemain.GetComponentInChildren<Text>().text = pangkat;
         }
-        strategy = 3;
-        //Cases kasus = new Cases(pangkatAI, predictionPangkatPemain, barisPosAI, kolomPosAI);
-        //listKasus.Add(kasus);
     }
 
-    public static void similarity(){
+    public static void newCase(){
         int pemainMemasukiWilayahAI=0;
         int jalurKeretaKolomAIKosong=0;
         int AIMemasukiWilayahPemain=0;
@@ -1226,6 +1305,7 @@ public class AI : MonoBehaviour
         int tempatIstirahatPemainKosong=0;
         int bidakTelahDiperkirakanPangkatnya=0;
         int benderaPemainDiketahui=0;
+        int bidakTelahDiperkirakanPangkatnyaDiIstirahat=0;
         char[,] dataKepemilikanBidak = Data.dataKepemilikanBidak[Data.dataKepemilikanBidak.Count - 1];
         GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
         int jumlahPenghalangAI0 = 0;
@@ -1285,9 +1365,118 @@ public class AI : MonoBehaviour
             if(bidakPemain != null && bidakPemain.GetComponent<Bidak>() && bidakPemain.GetComponentInChildren<Text>()){
                 string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
                 if(predictionNamaPemain != " "){
-                    bidakTelahDiperkirakanPangkatnya = 1;
+                    bidakTelahDiperkirakanPangkatnya += 1;
+                    int baris = bidakPemain.GetComponent<Bidak>().baris;
+                    int kolom = bidakPemain.GetComponent<Bidak>().kolom;
+                    if((baris == TempatIstirahat.barisIstirahat[0] && kolom == TempatIstirahat.kolomIstirahat[0]) || 
+                    (baris == TempatIstirahat.barisIstirahat[1] && kolom == TempatIstirahat.kolomIstirahat[1]) ||
+                    (baris == TempatIstirahat.barisIstirahat[2] && kolom == TempatIstirahat.kolomIstirahat[2]) ||
+                    (baris == TempatIstirahat.barisIstirahat[3] && kolom == TempatIstirahat.kolomIstirahat[3]) ||
+                    (baris == TempatIstirahat.barisIstirahat[4] && kolom == TempatIstirahat.kolomIstirahat[4]) ||
+                    (baris == TempatIstirahat.barisIstirahat[5] && kolom == TempatIstirahat.kolomIstirahat[5]) ||
+                    (baris == TempatIstirahat.barisIstirahat[6] && kolom == TempatIstirahat.kolomIstirahat[6]) ||
+                    (baris == TempatIstirahat.barisIstirahat[7] && kolom == TempatIstirahat.kolomIstirahat[7])){
+                        bidakTelahDiperkirakanPangkatnyaDiIstirahat += 1;
+                    }
                 }
             }
         }
+        Cases kasus = new Cases(pemainMemasukiWilayahAI, jalurKeretaKolomAIKosong, AIMemasukiWilayahPemain, jalurKeretaKolomPemainKosong, tempatIstirahatAIKosong, tempatIstirahatPemainKosong, bidakTelahDiperkirakanPangkatnya, bidakTelahDiperkirakanPangkatnyaDiIstirahat, benderaPemainDiketahui, 0);
+        similarity(kasus);
+        print(pemainMemasukiWilayahAI+","+jalurKeretaKolomAIKosong+","+AIMemasukiWilayahPemain+","+jalurKeretaKolomPemainKosong+","+tempatIstirahatAIKosong+","+tempatIstirahatPemainKosong+","+bidakTelahDiperkirakanPangkatnya+","+bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+benderaPemainDiketahui+","+ 0);
+    }
+
+    public static void similarity(Cases kasusBaru){
+        List<double> listSimilarity= new List<double>();
+        double f1=0;
+        double f2=0;
+        double f3=0;
+        double f4=0;
+        double f5=0;
+        double f6=0;
+        double f7=0;
+        double f8=0;
+        double f9=0;
+        double bobot1=2;
+        double bobot2=4;
+        double bobot3=2;
+        double bobot4=4;
+        double bobot5=2;
+        double bobot6=2;
+        double bobot7=4;
+        double bobot8=5;
+        double bobot9=5;
+        double totalBobot = bobot1 + bobot2 + bobot3 + bobot4 + bobot5 + bobot6 + bobot7 + bobot8 + bobot9;
+        foreach(var kasus in listKasus){
+            if(kasusBaru.pemainMemasukiWilayahAI == kasus.pemainMemasukiWilayahAI){
+                f1 = 1;
+            }else if(kasusBaru.pemainMemasukiWilayahAI != kasus.pemainMemasukiWilayahAI){
+                f1 = 0.3;
+            }
+            if(kasusBaru.jalurKeretaKolomAIKosong == kasus.jalurKeretaKolomAIKosong){
+                f2 = 1;
+            }else if(kasusBaru.jalurKeretaKolomAIKosong != kasus.jalurKeretaKolomAIKosong){
+                f2 = 0.5;
+            }
+            if(kasusBaru.AIMemasukiWilayahPemain == kasus.AIMemasukiWilayahPemain){
+                f3 = 1;
+            }else if(kasusBaru.AIMemasukiWilayahPemain != kasus.AIMemasukiWilayahPemain){
+                f3 = 0.3;
+            }
+            if(kasusBaru.jalurKeretaKolomPemainKosong == kasus.jalurKeretaKolomPemainKosong){
+                f4 = 1;
+            }else if(kasusBaru.jalurKeretaKolomPemainKosong != kasus.jalurKeretaKolomPemainKosong){
+                f4 = 0.5;
+            }
+            if(kasusBaru.tempatIstirahatAIKosong == kasus.tempatIstirahatAIKosong){
+                f5 = 1;
+            }else if(kasusBaru.tempatIstirahatAIKosong != kasus.tempatIstirahatAIKosong){
+                f5 = 0;
+            }
+            if(kasusBaru.tempatIstirahatPemainKosong == kasus.tempatIstirahatPemainKosong){
+                f6 = 1;
+            }else if(kasusBaru.tempatIstirahatPemainKosong != kasus.tempatIstirahatPemainKosong){
+                f6 = 0;
+            }
+            if(kasusBaru.bidakTelahDiperkirakanPangkatnya == kasus.bidakTelahDiperkirakanPangkatnya){
+                f7 = 1;
+            }else if(kasusBaru.bidakTelahDiperkirakanPangkatnya != kasus.bidakTelahDiperkirakanPangkatnya){
+                f7 = 0;
+            }
+            if(kasusBaru.benderaPemainDiketahui == kasus.benderaPemainDiketahui){
+                f8 = 1;
+            }else if(kasusBaru.benderaPemainDiketahui != kasus.benderaPemainDiketahui){
+                f8 = 0;
+            }
+            if(kasusBaru.bidakTelahDiperkirakanPangkatnyaDiIstirahat == kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat){
+                f9 = 1;
+            }else if(kasusBaru.bidakTelahDiperkirakanPangkatnyaDiIstirahat != kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat){
+                f9 = 0.3;
+            }
+            double bobotxsim1 = f1*bobot1;
+            double bobotxsim2 = f2*bobot2;
+            double bobotxsim3 = f3*bobot3;
+            double bobotxsim4 = f4*bobot4;
+            double bobotxsim5 = f5*bobot5;
+            double bobotxsim6 = f6*bobot6;
+            double bobotxsim7 = f7*bobot7;
+            double bobotxsim8 = f8*bobot8;
+            double bobotxsim9 = f9*bobot9;
+            double total = bobotxsim1 + bobotxsim2 + bobotxsim3+ bobotxsim4 + bobotxsim5 + bobotxsim6 + bobotxsim7 + bobotxsim8 + bobotxsim9;
+            double hasil = total/totalBobot;
+            listSimilarity.Add(hasil);
+        }
+        List<double> sortedListSimilarity = new List<double>(listSimilarity);
+        sortedListSimilarity.Sort();
+        double maxSimilarity = sortedListSimilarity[sortedListSimilarity.Count - 1];
+        int indeks = listSimilarity.IndexOf(maxSimilarity);
+        print(indeks);
+        print(listSimilarity[indeks]);
+        strategy = listKasus[indeks].solusiStrategi;
+        print("AI give solution strategy "+strategy+" from case index "+indeks);
+        Data.WriteResponseAI("AI give solution strategy "+strategy);
+        lastCase = kasusBaru;
+        //listKasus.Add(kasusBaru);
+        //Data.WriteCase(kasusBaru.pemainMemasukiWilayahAI+","+kasusBaru.jalurKeretaKolomAIKosong+","+kasusBaru.AIMemasukiWilayahPemain+","+kasusBaru.jalurKeretaKolomPemainKosong+","+kasusBaru.tempatIstirahatAIKosong+","+kasusBaru.tempatIstirahatPemainKosong+","+kasusBaru.bidakTelahDiperkirakanPangkatnya+","+kasusBaru.benderaPemainDiketahui+","+kasusBaru.solusiStrategi);
     }
 }

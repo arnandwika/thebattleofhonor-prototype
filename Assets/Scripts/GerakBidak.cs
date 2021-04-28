@@ -125,6 +125,7 @@ public class GerakBidak : MonoBehaviour
                                 Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                                 Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
                                 if(gameObject.tag == "Pemain"){
+                                    AI.cekInsertKasus = false;
                                     Giliran.setGiliranLawan();
                                     giliranPemain = Giliran.getGiliran();
                                 }else if(gameObject.tag == "Lawan"){
@@ -146,6 +147,7 @@ public class GerakBidak : MonoBehaviour
                                 Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                                 Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                                 if(gameObject.tag == "Pemain"){
+                                    AI.cekInsertKasus = false;
                                     Giliran.setGiliranLawan();
                                     giliranPemain = Giliran.getGiliran();
                                 }else if(gameObject.tag == "Lawan"){
@@ -176,6 +178,7 @@ public class GerakBidak : MonoBehaviour
                         Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, pangkatBidak);
                         Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                         if(gameObject.tag == "Pemain"){
+                            AI.cekInsertKasus = false;
                             Giliran.setGiliranLawan();
                             giliranPemain = Giliran.getGiliran();
                         }else if(gameObject.tag == "Lawan"){

@@ -329,6 +329,16 @@ public class Data : MonoBehaviour
         writer.Close();
     }
 
+    [MenuItem("Tools/Write file")]
+    public static void WriteCase(string response){
+        string path = "Assets/Resources/case.txt";
+
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(response);
+        writer.WriteLine(" ");
+        writer.Close();
+    }
+
     [MenuItem("Tools/Read file")]
     static void ReadString()
     {

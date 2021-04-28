@@ -14,16 +14,18 @@ Phase 1, Player turn
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI moving forward
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
  
 Phase 2, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
 | kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
 | brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) |   KOSONG   | sersan(l) |   KOSONG   | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) | kolonel(l) |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) |   KOSONG   | prajurit(l) |  
+| kolonel(l) |   KOSONG   | bom(l) | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
@@ -37,9 +39,9 @@ Phase 3, Player turn
 | kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
 | brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) |   KOSONG   | sersan(l) |   KOSONG   | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) | kolonel(l) |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) |   KOSONG   | prajurit(l) |  
+| kolonel(l) |   KOSONG   | bom(l) | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
@@ -48,6 +50,8 @@ Phase 3, Player turn
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
+AI give solution strategy 1
+ 
 AI filling their Tempat Istirahat
  
 Phase 4, AI turn
@@ -55,9 +59,9 @@ Phase 4, AI turn
 | kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
 | brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) |   KOSONG   | sersan(l) | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
@@ -71,9 +75,9 @@ Phase 5, Player turn
 | kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
 | brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) |   KOSONG   | sersan(l) | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
@@ -82,16 +86,18 @@ Phase 5, Player turn
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
+AI give solution strategy 1
+ 
 AI filling their Tempat Istirahat
  
 Phase 6, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
-| brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
@@ -102,80 +108,84 @@ Phase 6, AI turn
  
 Phase 7, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
-| brigjen(l) |   KOSONG   | letjen(l) |   KOSONG   | brigjen(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) | letjen(l) |   KOSONG   | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
-| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
-| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) |   KOSONG   | kolonel(p) |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) | letjen(p) | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
  
 AI filling their Tempat Istirahat
  
 Phase 8, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | letnan(p) | kolonel(p) |  
-| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
-| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) |   KOSONG   | kolonel(p) |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) | letjen(p) | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 9, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
 | sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) |   KOSONG   | kolonel(p) |  
-| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
-| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) | letjen(p) | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI filling their Tempat Istirahat
+AI give solution strategy 1
+ 
+AI moving forward
  
 Phase 10, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | letnan(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) |   KOSONG   | kolonel(p) |  
-| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
-| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) | letjen(p) | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 11, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | letnan(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
@@ -184,17 +194,19 @@ Phase 11, Player turn
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
+AI give solution strategy 2
+ 
 AI moving forward
  
 Phase 12, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | letnan(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+|   KOSONG   | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
 | prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
@@ -204,13 +216,13 @@ Phase 12, AI turn
  
 Phase 13, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | letnan(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+|   KOSONG   | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
 | prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
@@ -218,17 +230,19 @@ Phase 13, Player turn
 | kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
+AI give solution strategy 2
+ 
 AI moving forward
  
 Phase 14, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
 | kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
 | prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
@@ -238,605 +252,1141 @@ Phase 14, AI turn
  
 Phase 15, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-| kolonel(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
 | prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 2
  
 AI moving forward
  
 Phase 16, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
 | prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 17, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) |   KOSONG   | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) | letnan(l) | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI filling their Tempat Istirahat
+AI give solution strategy 2
+ 
+AI moving forward
  
 Phase 18, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
-| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
- 
-Phase 19, Player turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letnan(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) | panglima(p) | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI moving forward
+Phase 19, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | kolonel(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 20, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) | letnan(l) | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) | prajurit(l) |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) | panglima(p) | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Phase 21, Player turn
+Phase 21, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) | letjen(l) | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) |   KOSONG   |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) | letnan(l) | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) | prajurit(l) |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
-| prajurit(p) | bom(p) | sersan(p) | panglima(p) | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
- 
-AI moving forward
  
 Phase 22, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) | letnan(l) | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) | brigjen(l) |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | letjen(p) |  
-| prajurit(p) | bom(p) | sersan(p) | panglima(p) | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
-| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
- 
-Phase 23, Player turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) | letnan(l) | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   | letjen(p) |  
 | kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) | panglima(p) | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
-| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
- 
-AI moving forward
- 
-Phase 24, AI turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   | letjen(p) |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) | panglima(p) | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
-| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
- 
-Phase 25, Player turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   | bom(l) |   KOSONG   | letjen(p) |  
-| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) | panglima(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI moving forward and draw
- 
-Phase 26, AI turn
+Phase 23, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | kapten(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
 | kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 24, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | sersan(l) | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
-| kolonel(p) | letnan(p) | bom(l) | kolonel(p) | panglima(p) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Phase 27, Player turn
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 25, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | kolonel(l) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) | panglima(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+| kolonel(p) | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI moving forward
- 
-Phase 28, AI turn
+Phase 26, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) | kolonel(l) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) | panglima(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+AI try to take down predicted Letjen by bom with 2 step
+ 
+Phase 27, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | bom(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 28, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | bom(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
  
 Phase 29, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) | kolonel(l) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) | panglima(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 30, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | bom(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) | panglima(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Try another strategy than 3
+AI give solution strategy 3
  
-AI moving forward
+AI try to take down predicted Letjen by bom with 3 step
  
 Phase 31, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | bom(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) | panglima(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 32, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) | prajurit(l) |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | bom(l) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI moving forward
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
  
 Phase 33, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | prajurit(l) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) | letnan(l) |   KOSONG   | letnan(l) | bom(l) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Phase 34, AI turn
+Phase 34, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | prajurit(l) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) | letnan(l) | letnan(p) | letnan(l) | bom(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+AI targeting   draw
  
 Phase 35, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   | prajurit(l) |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | letnan(l) | letnan(l) | bom(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Phase 36, AI turn
+Phase 36, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) | brigjen(l) |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) | bom(l) |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+AI try to take down predicted Letjen by bom with 2 step
  
 Phase 37, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | kapten(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | bom(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) |   KOSONG   |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 38, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | bom(l) |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) | letjen(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
  
 AI try to take down predicted Letjen by bom with 2 step
  
 Phase 39, AI turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | bom(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | bom(l) |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) | letjen(p) |  
 | prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Phase 40, AI turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | bom(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) | letnan(l) |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+Phase 40, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | bom(l) |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+Target on Tempat Istirahat
+ 
+Try another strategy than 3
+ 
+AI moving forward
  
 Phase 41, AI turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | bom(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) | bom(l) |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) | sersan(p) |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 42, Player turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | bom(l) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | panglima(p) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | bom(l) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) | bom(l) |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI targeting Letjen draw
+AI give solution strategy 2
+ 
+AI moving forward
  
 Phase 43, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   | letjen(p) |   KOSONG   |  
-|   KOSONG   | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | bom(l) |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 44, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   | letjen(p) |  
-|   KOSONG   | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
 |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Try another strategy than 3
+AI give solution strategy 2
  
 AI moving forward
  
 Phase 45, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
-| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
-| sersan(l) | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) | sersan(p) |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 46, Player turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | letjen(p) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) | letjen(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
 | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-AI filling their Tempat Istirahat
+AI give solution strategy 2
+ 
+AI moving forward
  
 Phase 47, AI turn
 | prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) | letjen(p) |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letjen(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
-| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
 Phase 48, Player turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | letjen(p) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   | mayor(l) |   KOSONG   |  
-| sersan(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letjen(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
 | brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 49, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 50, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | bom(l) |  
+| brigjen(l) | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+|   KOSONG   | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 2
+ 
+AI moving forward
+ 
+Phase 51, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+| kapten(p) | dinamit(p) | panglima(p) | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 52, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
 | kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Try another strategy than 3
+AI give solution strategy 2
  
-Try another strategy than 3
+AI moving forward
  
-Try another strategy than 3
+Phase 53, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Try another strategy than 3
+Phase 54, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
  
-Try another strategy than 3
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 55, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) | bom(p) | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 56, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) | bom(p) | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
  
 Try another strategy than 3
  
 AI moving forward
  
-Phase 49, AI turn
-| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | letjen(p) |  
-| kapten(l) | dinamit(l) |   KOSONG   | dinamit(l) |   KOSONG   |  
-| brigjen(l) | panglima(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | mayor(l) |   KOSONG   |   KOSONG   | mayor(l) |  
-| sersan(l) | letjen(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-| sersan(l) | letnan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
-|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
-| kolonel(p) | letnan(p) |   KOSONG   | kolonel(p) |   KOSONG   |  
-| prajurit(p) | bom(p) | sersan(p) |   KOSONG   | sersan(p) |  
-| prajurit(p) | mayor(p) | mayor(p) |   KOSONG   | sersan(p) |  
-| brigjen(p) | letnan(p) |   KOSONG   |   KOSONG   | brigjen(p) |  
+Phase 57, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) | kapten(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) | bom(p) | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
 | kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
 | bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 58, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) | kapten(l) |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) | bom(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 59, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) | bom(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 60, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) | bom(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+Try another strategy than 3
+ 
+AI moving forward
+ 
+Phase 61, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letjen(p) | kolonel(p) | bom(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 62, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | mayor(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | bom(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 63, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | bom(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 64, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | mayor(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | bom(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 2
+ 
+AI moving forward
+ 
+Phase 65, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) | mayor(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | bom(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) | letjen(p) |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 66, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) | mayor(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | bom(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | letjen(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 67, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) | mayor(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | bom(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | letjen(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 68, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) | mayor(l) |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | bom(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | letjen(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+AI targeting   draw
+ 
+Phase 69, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | mayor(l) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) | letjen(p) |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 70, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+Try another strategy than 3
+ 
+AI moving forward
+ 
+Phase 71, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 72, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(l) | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 1
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 73, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   | letjen(p) |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 74, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | letjen(p) |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+| sersan(l) | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+Try another strategy than 3
+ 
+AI moving forward
+ 
+Phase 75, AI turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) |   KOSONG   |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) | letjen(p) |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+Phase 76, Player turn
+| prajurit(l) |   KOSONG   | dinamit(l) | bendera(l) | letjen(p) |  
+|   KOSONG   | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+AI give solution strategy 3
+ 
+Try another strategy than 3
+ 
+AI moving forward
+ 
+Phase 77, AI turn
+|   KOSONG   |   KOSONG   | dinamit(l) | bendera(l) | letjen(p) |  
+| prajurit(l) | dinamit(l) | panglima(l) | dinamit(l) |   KOSONG   |  
+|   KOSONG   | kapten(l) |   KOSONG   | letjen(l) |   KOSONG   |  
+| brigjen(l) | mayor(l) |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   | sersan(l) |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   | letnan(l) |   KOSONG   |  
+| sersan(l) |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   | letnan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   | kolonel(p) |   KOSONG   |  
+| prajurit(p) |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+| prajurit(p) | mayor(p) |   KOSONG   | mayor(p) |   KOSONG   |  
+| brigjen(p) | letnan(p) |   KOSONG   | panglima(p) | brigjen(p) |  
+| kapten(p) | dinamit(p) |   KOSONG   | dinamit(p) | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) |   KOSONG   | prajurit(p) |  
+ 
+GAME OVER
  
