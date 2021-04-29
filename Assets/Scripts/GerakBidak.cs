@@ -21,10 +21,10 @@ public class GerakBidak : MonoBehaviour
         cek_asal = false;
         cek_taruh = true;
 
-        GameObject UIText = new GameObject("UIText");
-        UIText.transform.SetParent(this.transform);
-        Text myText = UIText.AddComponent<Text>();
-        myText.text = "TEKS";
+        // GameObject UIText = new GameObject("UIText");
+        // UIText.transform.SetParent(this.transform);
+        // Text myText = UIText.AddComponent<Text>();
+        // myText.text = "TEKS";
     }
 
     // Update is called once per frame
@@ -77,7 +77,7 @@ public class GerakBidak : MonoBehaviour
         }
     }
     void OnMouseUp(){
-        if(scene_name == "Rookie" && (gameObject.tag == "Pemain" && giliranPemain)){
+        if(scene_name == "Pengujian Dasar" && (gameObject.tag == "Pemain" && giliranPemain)){
             if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal) && !(barisPosAwal == barisPosTujuan && kolomPosAwal == kolomPosTujuan)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
@@ -160,6 +160,10 @@ public class GerakBidak : MonoBehaviour
                                 Data.updatePosisiBidak();
                             }else if(hasil == "selesai"){
                                 print("GAME SELESAI");
+                                double akurasi = AI.listKasus.Count - AI.failedSolution;
+                                akurasi *= 100;
+                                akurasi /= AI.listKasus.Count;
+                                Data.WriteCase("Accuration : "+akurasi+"%");
                                 SceneManager.LoadScene("Main Menu");
                             }
                         }
@@ -190,46 +194,46 @@ public class GerakBidak : MonoBehaviour
                         Data.updatePosisiBidak();
                     }
                 }else{
-                    print("ERROR 2");
+                    //print("ERROR 2");
                     transform.position = new Vector3(firstX, firstY, transform.position.z);
                     cek_asal = false;
                     cek_taruh = true;
                     //obyek.tag = "Untagged";
                 }
             }else{
-                print("ERROR 1");
+                //print("ERROR 1");
                 transform.position = new Vector3(firstX, firstY, transform.position.z);
                 cek_asal = false;
                 cek_taruh = true;
                 //obyek.tag = "Untagged";
             }
         }else if(scene_name == "Expert"){
-            if(newY >= firstY && status){
-                if((newX == TempatIstirahat.xIstirahat[0] && newY == TempatIstirahat.yIstirahat[0]) || 
-                (newX == TempatIstirahat.xIstirahat[1] && newY == TempatIstirahat.yIstirahat[1]) ||
-                (newX == TempatIstirahat.xIstirahat[2] && newY == TempatIstirahat.yIstirahat[2]) ||
-                (newX == TempatIstirahat.xIstirahat[3] && newY == TempatIstirahat.yIstirahat[3]) ||
-                (newX == TempatIstirahat.xIstirahat[4] && newY == TempatIstirahat.yIstirahat[4]) ||
-                (newX == TempatIstirahat.xIstirahat[5] && newY == TempatIstirahat.yIstirahat[5]) ||
-                (newX == TempatIstirahat.xIstirahat[6] && newY == TempatIstirahat.yIstirahat[6]) ||
-                (newX == TempatIstirahat.xIstirahat[7] && newY == TempatIstirahat.yIstirahat[7])){
-                    transform.position = new Vector3(firstX, firstY, transform.position.z);
-                    cek_asal = false;
-                    cek_taruh = true;
-                    //obyek.tag = "Untagged";
-                }else{
-                    transform.position = new Vector3(newX, newY, transform.position.z);
-                    obyek_akhir.tag = "Pemain";
-                    obyek_asal.tag = "Untagged";
-                    cek_asal = false;
-                    cek_taruh = true;
-                }
-            }else{
-                transform.position = new Vector3(firstX, firstY, transform.position.z);
-                cek_asal = false;
-                cek_taruh = true;
-                //obyek.tag = "Untagged";
-            }
+            // if(newY >= firstY && status){
+            //     if((newX == TempatIstirahat.xIstirahat[0] && newY == TempatIstirahat.yIstirahat[0]) || 
+            //     (newX == TempatIstirahat.xIstirahat[1] && newY == TempatIstirahat.yIstirahat[1]) ||
+            //     (newX == TempatIstirahat.xIstirahat[2] && newY == TempatIstirahat.yIstirahat[2]) ||
+            //     (newX == TempatIstirahat.xIstirahat[3] && newY == TempatIstirahat.yIstirahat[3]) ||
+            //     (newX == TempatIstirahat.xIstirahat[4] && newY == TempatIstirahat.yIstirahat[4]) ||
+            //     (newX == TempatIstirahat.xIstirahat[5] && newY == TempatIstirahat.yIstirahat[5]) ||
+            //     (newX == TempatIstirahat.xIstirahat[6] && newY == TempatIstirahat.yIstirahat[6]) ||
+            //     (newX == TempatIstirahat.xIstirahat[7] && newY == TempatIstirahat.yIstirahat[7])){
+            //         transform.position = new Vector3(firstX, firstY, transform.position.z);
+            //         cek_asal = false;
+            //         cek_taruh = true;
+            //         //obyek.tag = "Untagged";
+            //     }else{
+            //         transform.position = new Vector3(newX, newY, transform.position.z);
+            //         obyek_akhir.tag = "Pemain";
+            //         obyek_asal.tag = "Untagged";
+            //         cek_asal = false;
+            //         cek_taruh = true;
+            //     }
+            // }else{
+            //     transform.position = new Vector3(firstX, firstY, transform.position.z);
+            //     cek_asal = false;
+            //     cek_taruh = true;
+            //     //obyek.tag = "Untagged";
+            // }
         }
     }
 

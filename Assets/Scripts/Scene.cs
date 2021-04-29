@@ -17,10 +17,16 @@ public class Scene : MonoBehaviour
         
     }
 
-    public void Rookie(){
-        SceneManager.LoadScene("Rookie");
+    public void PengujianDasar(){
+        SceneManager.LoadScene("Pengujian Dasar");
     }
-    public void Expert(){
-        SceneManager.LoadScene("Expert");
+    public void PengujianSkenarioEasy(){
+        SceneManager.LoadScene("Pengujian Skenario Easy");
+    }
+    public void PengujianSkenarioMedium(){
+        SceneManager.LoadScene("Pengujian Skenario Medium");
+    }
+    public void PengujianSkenarioHard(){
+        SceneManager.LoadScene("Pengujian Skenario Hard");
     }
 }
