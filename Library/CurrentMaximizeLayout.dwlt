@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 348}
   m_MaxSize: {x: 12008, y: 8048}
   vertical: 0
-  controlID: 1433
+  controlID: 4222
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 348}
   m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
-  controlID: 1393
+  controlID: 4190
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 1372
+  controlID: 4169
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,7 +212,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b0f8ffffbaf8ffff28faffff6efbffffd6fbffff6c3000009e300000ae300000b8300000a0360000
+      m_ExpandedIDs: 80fbffffd6fbffffa6290000f6290000002a0000482a0000942a00001e2b0000542b0000762b0000842b00008e2b0000ac2b0000b62b0000d22b0000f02b00005e2c00008a2c0000c82c0000142d00001e2d0000282d0000362d00004c2d0000602d00006e2d00008a2d0000b02d0000be2d0000de2d0000ec2d0000182e0000342e00003e2e0000542e0000622e0000782e0000822e0000982e0000b82e0000c22e0000602f00006e2f0000782f0000d02f0000da2f0000143000001e3000003230000058300000743000008c300000a4300000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -255,8 +255,8 @@ MonoBehaviour:
     y: 0
     width: 826
     height: 450
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -452,8 +452,8 @@ MonoBehaviour:
     y: 450
     width: 1171
     height: 321
-  m_MinSize: {x: 102, y: 124}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 12}
@@ -498,19 +498,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Perkuliahan\Game Engine\unity2019\The Battle of Honor
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc0a0000
-    m_LastClickedID: 2748
+    m_SelectedIDs: e80b0000
+    m_LastClickedID: 3048
     m_ExpandedIDs: 0000000086090000fa09000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -564,8 +564,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 7c090000
+    m_LastClickedInstanceID: 2428
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009a09000000000000
     m_RenameOverlay:

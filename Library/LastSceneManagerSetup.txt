@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Rookie.unity
+- path: Assets/Scenes/Pengujian Dasar.unity
   isLoaded: 1
   isActive: 1

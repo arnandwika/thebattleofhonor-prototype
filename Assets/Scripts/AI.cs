@@ -91,12 +91,15 @@ public class AI : MonoBehaviour
         Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 2);
         Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 2);
         Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 2);
-        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 3);
+        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 1, 1, 0, 0, 3);
         Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 3);
-        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 3);
+        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 1, 1, 1, 0, 3);
+        Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 3);
+        Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 3);
         Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 4);
         Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 4);
         Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 4);
+        Cases kasus4_strategy4 = new Cases(0, 1, 1, 1, 1, 1, 2, 1, 0, 4);
         listKasus.Add(kasus1_strategy1);
         listKasus.Add(kasus2_strategy1);
         listKasus.Add(kasus3_strategy1);
@@ -106,6 +109,8 @@ public class AI : MonoBehaviour
         listKasus.Add(kasus1_strategy3);
         listKasus.Add(kasus2_strategy3);
         listKasus.Add(kasus3_strategy3);
+        listKasus.Add(kasus4_strategy3);
+        listKasus.Add(kasus5_strategy3);
         listKasus.Add(kasus1_strategy4);
         listKasus.Add(kasus2_strategy4);
         listKasus.Add(kasus3_strategy4);
@@ -341,14 +346,14 @@ public class AI : MonoBehaviour
             if(bidak != null){
                 barisPosAwal = bidak.GetComponent<Bidak>().baris;
                 kolomPosAwal = bidak.GetComponent<Bidak>().kolom;
-                if((barisPosAwal == TempatIstirahat.barisIstirahat[0] && barisPosAwal == TempatIstirahat.kolomIstirahat[0]) || 
-                (barisPosAwal == TempatIstirahat.barisIstirahat[1] && barisPosAwal == TempatIstirahat.kolomIstirahat[1]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[2] && barisPosAwal == TempatIstirahat.kolomIstirahat[2]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[3] && barisPosAwal == TempatIstirahat.kolomIstirahat[3]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[4] && barisPosAwal == TempatIstirahat.kolomIstirahat[4]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[5] && barisPosAwal == TempatIstirahat.kolomIstirahat[5]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[6] && barisPosAwal == TempatIstirahat.kolomIstirahat[6]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[7] && barisPosAwal == TempatIstirahat.kolomIstirahat[7])){
+                if((barisPosAwal == TempatIstirahat.barisIstirahat[0] && kolomPosAwal == TempatIstirahat.kolomIstirahat[0]) || 
+                (barisPosAwal == TempatIstirahat.barisIstirahat[1] && kolomPosAwal == TempatIstirahat.kolomIstirahat[1]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[2] && kolomPosAwal == TempatIstirahat.kolomIstirahat[2]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[3] && kolomPosAwal == TempatIstirahat.kolomIstirahat[3]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[4] && kolomPosAwal == TempatIstirahat.kolomIstirahat[4]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[5] && kolomPosAwal == TempatIstirahat.kolomIstirahat[5]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[6] && kolomPosAwal == TempatIstirahat.kolomIstirahat[6]) ||
+                (barisPosAwal == TempatIstirahat.barisIstirahat[7] && kolomPosAwal == TempatIstirahat.kolomIstirahat[7])){
                     cekDiTempatIstirahat += 1;
                     if(cekDiTempatIstirahat > 20){
                         Data.WriteResponseAI("Try another strategy than 2");
@@ -498,7 +503,7 @@ public class AI : MonoBehaviour
                                             double akurasi = AI.listKasus.Count - AI.failedSolution;
                                             akurasi *= 100;
                                             akurasi /= AI.listKasus.Count;
-                                            Data.WriteCase("Accuration : "+akurasi+"%");
+                                            Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
                                             SceneManager.LoadScene("Main Menu");
                                         }
                                     }
@@ -533,16 +538,17 @@ public class AI : MonoBehaviour
                     bidakAIGerak = new List<GameObject>();
                     string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
                     int predictionPangkatPemain = 0;
-                    int jumlahPenghalang = 0;
-                    if(predictionNamaPemain == " " && bidakPemain.GetComponent<Bidak>().baris < 7){
+                    int jumlahPenghalang0 = 0;
+                    int jumlahPenghalang4 = 0;
+                    if((predictionNamaPemain == " " || predictionNamaPemain != " ") && bidakPemain.GetComponent<Bidak>().baris < 7){
                         foreach(var bidakAI in listBidak){
-                            if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 0 && bidakPemain.GetComponent<Bidak>().kolom == 0 && bidakAI.GetComponent<Bidak>().baris < 6){
-                                jumlahPenghalang+=1;
-                            }else if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 4 && bidakPemain.GetComponent<Bidak>().kolom == 4 && bidakAI.GetComponent<Bidak>().baris < 6){
-                                jumlahPenghalang+=1;
+                            if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 0 && bidakPemain.GetComponent<Bidak>().kolom == 0 && bidakAI.GetComponent<Bidak>().baris < 7){
+                                jumlahPenghalang0 +=1;
+                            }else if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 4 && bidakPemain.GetComponent<Bidak>().kolom == 4 && bidakAI.GetComponent<Bidak>().baris < 7){
+                                jumlahPenghalang4 +=1;
                             }
                         }
-                        if(jumlahPenghalang < 2){
+                        if(jumlahPenghalang0 < 2 || jumlahPenghalang4 < 2){
                             foreach(var bidakAI in listBidak){
                                 if(bidakAI != null){
                                     if(bidakAI.GetComponent<Bidak>().pangkat > 1){
@@ -814,7 +820,7 @@ public class AI : MonoBehaviour
                                 double akurasi = AI.listKasus.Count - AI.failedSolution;
                                 akurasi *= 100;
                                 akurasi /= AI.listKasus.Count;
-                                Data.WriteCase("Accuration : "+akurasi+"%");
+                                Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
                                 SceneManager.LoadScene("Main Menu");
                             }
                         }
@@ -847,9 +853,16 @@ public class AI : MonoBehaviour
                     barisPosBendera = 13;
                     kolomPosBendera = 3;
                 }
+                foreach(var bidakBendera in listBidakPemain){
+                    if(bidakBendera != null && bidakBendera.GetComponent<Bidak>()){
+                        if(bidakBendera.GetComponent<Bidak>().baris == barisPosBendera && bidakBendera.GetComponent<Bidak>().kolom == kolomPosBendera){
+                            bidakBenderaPemain = bidakBendera;
+                        }
+                    }
+                }
             }else{
                 foreach(var bidakBendera in listBidakPemain){
-                    if(bidakBendera.GetComponent<Bidak>().nama == "bendera"){
+                    if(bidakBendera != null && bidakBendera.GetComponent<Bidak>().nama == "bendera"){
                         barisPosBendera = bidakBendera.GetComponent<Bidak>().baris;
                         kolomPosBendera = bidakBendera.GetComponent<Bidak>().kolom;
                         bidakBenderaPemain = bidakBendera;
@@ -1070,7 +1083,7 @@ public class AI : MonoBehaviour
                                     double akurasi = AI.listKasus.Count - AI.failedSolution;
                                     akurasi *= 100;
                                     akurasi /= AI.listKasus.Count;
-                                    Data.WriteCase("Accuration : "+akurasi+"%");
+                                    Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
                                     SceneManager.LoadScene("Main Menu");
                                 }
                             }
@@ -1401,7 +1414,7 @@ public class AI : MonoBehaviour
                         if(dataKepemilikanBidak[i, j] == 'l' && j == 4){
                             jumlahPenghalangAI4+=1;
                         }
-                        if(jumlahPenghalangAI0 < 2 && jumlahPenghalangAI4 < 2){
+                        if(jumlahPenghalangAI0 < 2 || jumlahPenghalangAI4 < 2){
                             jalurKeretaKolomAIKosong = 1;
                         }
                     }
@@ -1422,7 +1435,7 @@ public class AI : MonoBehaviour
                         if(dataKepemilikanBidak[i, j] == 'p' && j == 4){
                             jumlahPenghalangPemain4+=1;
                         }
-                        if(jumlahPenghalangPemain0 < 2 && jumlahPenghalangPemain4 < 2){
+                        if(jumlahPenghalangPemain0 < 2 || jumlahPenghalangPemain4 < 2){
                             jalurKeretaKolomPemainKosong = 1;
                         }
                     }
@@ -1471,8 +1484,8 @@ public class AI : MonoBehaviour
         double bobot4=4;
         double bobot5=2;
         double bobot6=2;
-        double bobot7=4;
-        double bobot8=5;
+        double bobot7=5;
+        double bobot8=4;
         double bobot9=5;
         double totalBobot = bobot1 + bobot2 + bobot3 + bobot4 + bobot5 + bobot6 + bobot7 + bobot8 + bobot9;
         foreach(var kasus in listKasus){
@@ -1511,15 +1524,15 @@ public class AI : MonoBehaviour
             }else if(kasusBaru.bidakTelahDiperkirakanPangkatnya != kasus.bidakTelahDiperkirakanPangkatnya){
                 f7 = 0;
             }
-            if(kasusBaru.benderaPemainDiketahui == kasus.benderaPemainDiketahui){
-                f8 = 1;
-            }else if(kasusBaru.benderaPemainDiketahui != kasus.benderaPemainDiketahui){
-                f8 = 0;
-            }
             if(kasusBaru.bidakTelahDiperkirakanPangkatnyaDiIstirahat == kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat){
-                f9 = 1;
+                f8 = 1;
             }else if(kasusBaru.bidakTelahDiperkirakanPangkatnyaDiIstirahat != kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat){
-                f9 = 0.3;
+                f8 = 0.3;
+            }
+            if(kasusBaru.benderaPemainDiketahui == kasus.benderaPemainDiketahui){
+                f9 = 1;
+            }else if(kasusBaru.benderaPemainDiketahui != kasus.benderaPemainDiketahui){
+                f9 = 0;
             }
             double bobotxsim1 = f1*bobot1;
             double bobotxsim2 = f2*bobot2;
@@ -1542,7 +1555,7 @@ public class AI : MonoBehaviour
         // print(listSimilarity[indeks]);
         strategy = listKasus[indeks].solusiStrategi;
         // print("AI give solution strategy "+strategy+" from case index "+indeks);
-        Data.WriteResponseAI("AI give solution strategy "+strategy+" from case index "+indeks);
+        Data.WriteResponseAI("CBR give solution strategy "+strategy+" from case index "+indeks);
         lastCase = kasusBaru;
         //listKasus.Add(kasusBaru);
         //Data.WriteCase(kasusBaru.pemainMemasukiWilayahAI+","+kasusBaru.jalurKeretaKolomAIKosong+","+kasusBaru.AIMemasukiWilayahPemain+","+kasusBaru.jalurKeretaKolomPemainKosong+","+kasusBaru.tempatIstirahatAIKosong+","+kasusBaru.tempatIstirahatPemainKosong+","+kasusBaru.bidakTelahDiperkirakanPangkatnya+","+kasusBaru.benderaPemainDiketahui+","+kasusBaru.solusiStrategi);

@@ -95,6 +95,7 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                         }else{
                             if(hasil == "menang"){
+                                Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and win");
                                 AI.markBidak(Data.getPangkat(barisPosTujuan,kolomPosTujuan), gameObject, barisPosTujuan, kolomPosTujuan);
                                 transform.position = new Vector3(newX, newY, transform.position.z);
                                 obyek_akhir.tag = gameObject.tag;
@@ -113,6 +114,7 @@ public class GerakBidak : MonoBehaviour
                                 kolomPosAwal = kolomPosTujuan;
                                 Data.updatePosisiBidak();
                             }else if(hasil == "draw"){
+                                Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and draw");
                                 obyek_akhir.tag = "Untagged";
                                 obyek_asal.tag = "Untagged";
                                 cek_asal = false;
@@ -138,6 +140,7 @@ public class GerakBidak : MonoBehaviour
                                 kolomPosAwal = kolomPosTujuan;
                                 Data.updatePosisiBidak();
                             }else if(hasil == "kalah"){
+                                Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and lose");
                                 obyek_asal.tag = "Untagged";
                                 cek_asal = false;
                                 cek_taruh = true;
@@ -163,12 +166,13 @@ public class GerakBidak : MonoBehaviour
                                 double akurasi = AI.listKasus.Count - AI.failedSolution;
                                 akurasi *= 100;
                                 akurasi /= AI.listKasus.Count;
-                                Data.WriteCase("Accuration : "+akurasi+"%");
+                                Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
                                 SceneManager.LoadScene("Main Menu");
                             }
                         }
                         
                     }else{
+                        Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+")");
                         transform.position = new Vector3(newX, newY, transform.position.z);
                         obyek_akhir.tag = gameObject.tag;
                         obyek_asal.tag = "Untagged";
