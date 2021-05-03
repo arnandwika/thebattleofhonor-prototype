@@ -91,9 +91,9 @@ public class AI : MonoBehaviour
         Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 2);
         Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 2);
         Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 2);
-        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 1, 1, 0, 0, 3);
+        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 3);
         Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 3);
-        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 1, 1, 1, 0, 3);
+        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 3);
         Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 3);
         Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 3);
         Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 4);
@@ -114,6 +114,7 @@ public class AI : MonoBehaviour
         listKasus.Add(kasus1_strategy4);
         listKasus.Add(kasus2_strategy4);
         listKasus.Add(kasus3_strategy4);
+        listKasus.Add(kasus4_strategy4);
         foreach(var kasus in listKasus){
             Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.benderaPemainDiketahui+","+kasus.solusiStrategi);
         }
@@ -565,7 +566,7 @@ public class AI : MonoBehaviour
                                         GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
                                         GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
                                         GameObject posisiNextAI = posisiPemain;
-                                        int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI);
+                                        int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
                                         if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
                                             jumlahLangkah.Sort();
                                             bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
@@ -620,7 +621,7 @@ public class AI : MonoBehaviour
                                     GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
                                     GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
                                     GameObject posisiNextAI = posisiPemain;
-                                    int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI);
+                                    int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
                                     if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
                                         jumlahLangkah.Sort();
                                         bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
@@ -888,7 +889,7 @@ public class AI : MonoBehaviour
                         GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
                         GameObject posisiPemain = Data.listPosisi[barisPosBendera, kolomPosBendera];
                         GameObject posisiNextAI = posisiPemain;
-                        int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI);
+                        int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, true);
                         if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
                             jumlahLangkah.Sort();
                             bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
@@ -1111,7 +1112,7 @@ public class AI : MonoBehaviour
         }
     }
 
-    public int cekPath(GameObject posisiAI, GameObject posisiPemain, int langkah, GameObject posisiNextAI, GameObject bidakAI){
+    public int cekPath(GameObject posisiAI, GameObject posisiPemain, int langkah, GameObject posisiNextAI, GameObject bidakAI, bool kejarBendera){
         //print(posisiAI.GetComponent<Posisi>().name);
         //bool ketemu = false;
         if(langkah == 1){
@@ -1123,7 +1124,7 @@ public class AI : MonoBehaviour
         int barisPemain = posisiPemain.GetComponent<Posisi>().barisPos;
         int kolomPemain = posisiPemain.GetComponent<Posisi>().kolomPos;
         langkah+=counter;
-        if(langkah >= 6 || jumlahLangkah.Count >= 10000){
+        if(langkah >= 7 || jumlahLangkah.Count >= 10000){
             return langkah;
         }
 
@@ -1150,8 +1151,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomPemain+1; j<kolomAI; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 langkah+=1;
                             }
@@ -1160,8 +1163,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomAI+1; j<kolomPemain; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 langkah+=1;
                             }
@@ -1183,8 +1188,10 @@ public class AI : MonoBehaviour
                         for(int j = barisPemain+1; j<barisAI; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 langkah+=1;
                             }
@@ -1193,8 +1200,10 @@ public class AI : MonoBehaviour
                         for(int j = barisAI+1; j<barisPemain; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 langkah+=1;
                             }
@@ -1216,8 +1225,10 @@ public class AI : MonoBehaviour
                         for(int j = barisPemain+1; j<barisAI; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 langkah+=1;
                             }
@@ -1226,8 +1237,10 @@ public class AI : MonoBehaviour
                         for(int j = barisAI+1; j<barisPemain; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                langkah+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 langkah+=1;
                             }
@@ -1252,8 +1265,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomKe+1; j<kolomAI; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 counter+=1;
                             }
@@ -1262,8 +1277,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomAI+1; j<kolomKe; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 counter+=1;
                             }
@@ -1275,8 +1292,10 @@ public class AI : MonoBehaviour
                         for(int j = barisKe+1; j<barisAI; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 counter+=1;
                             }
@@ -1285,8 +1304,10 @@ public class AI : MonoBehaviour
                         for(int j = barisAI+1; j<barisKe; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 counter+=1;
                             }
@@ -1295,7 +1316,7 @@ public class AI : MonoBehaviour
                 }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l'){
                     counter+=1;
                 }
-                cekPath(listKe[size-i-1], posisiPemain, langkah+1, posisiNextAI, bidakAI);
+                cekPath(listKe[size-i-1], posisiPemain, langkah+1, posisiNextAI, bidakAI, kejarBendera);
             }else if(barisPemain < barisAI){
                 int barisKe = listKe[i].GetComponent<Posisi>().barisPos;
                 int kolomKe = listKe[i].GetComponent<Posisi>().kolomPos;
@@ -1305,8 +1326,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomKe+1; j<kolomAI; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 counter+=1;
                             }
@@ -1315,8 +1338,10 @@ public class AI : MonoBehaviour
                         for(int j = kolomAI+1; j<kolomKe; j++){
                             if(Data.getKepemilikan(barisAI, j) == 'l' && (Data.getPangkat(barisAI, j) == -1 || Data.getPangkat(barisAI, j) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(barisAI, j) == 'p'){
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(barisAI, j) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(barisAI, j) == 'l'){
                                 counter+=1;
                             }
@@ -1328,8 +1353,10 @@ public class AI : MonoBehaviour
                         for(int j = barisKe+1; j<barisAI; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 counter+=1;
                             }
@@ -1338,8 +1365,10 @@ public class AI : MonoBehaviour
                         for(int j = barisAI+1; j<barisKe; j++){
                             if(Data.getKepemilikan(j, kolomAI) == 'l' && (Data.getPangkat(j, kolomAI) == -1 || Data.getPangkat(j, kolomAI) == 1)){
                                 return langkah;
-                            }else if(Data.getKepemilikan(j, kolomAI) == 'p'){
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && !kejarBendera){
                                 return langkah;
+                            }else if(Data.getKepemilikan(j, kolomAI) == 'p' && kejarBendera){
+                                counter+=1;
                             }else if(Data.getKepemilikan(j, kolomAI) == 'l'){
                                 counter+=1;
                             }
@@ -1348,7 +1377,7 @@ public class AI : MonoBehaviour
                 }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l'){
                     counter+=1;
                 }
-                cekPath(listKe[i], posisiPemain, langkah+1, posisiNextAI, bidakAI);
+                cekPath(listKe[i], posisiPemain, langkah+1, posisiNextAI, bidakAI, kejarBendera);
             }
         }
         return jumlahLangkah.Count;

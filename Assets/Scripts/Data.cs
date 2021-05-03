@@ -276,7 +276,7 @@ public class Data : MonoBehaviour
     [MenuItem("Tools/Write file")]
     static void WriteString()
     {
-        string path = "Assets/Resources/data.txt";
+        string path = "Assets/Resources/dataPenguji1.txt";
 
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, true);
@@ -321,7 +321,7 @@ public class Data : MonoBehaviour
 
     [MenuItem("Tools/Write file")]
     static void WriteTxt(string response){
-        string path = "Assets/Resources/data.txt";
+        string path = "Assets/Resources/dataPenguji1.txt";
 
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(response);
@@ -331,7 +331,7 @@ public class Data : MonoBehaviour
 
     [MenuItem("Tools/Write file")]
     public static void WriteCase(string response){
-        string path = "Assets/Resources/case.txt";
+        string path = "Assets/Resources/casePenguji1.txt";
 
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(response);

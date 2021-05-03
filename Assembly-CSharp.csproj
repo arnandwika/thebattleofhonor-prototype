@@ -63,8 +63,14 @@
      <Compile Include="Assets\Scripts\Posisi.cs" />
      <Compile Include="Assets\Scripts\Scene.cs" />
      <Compile Include="Assets\Scripts\TempatIstirahat.cs" />
-     <None Include="Assets\Resources\data.txt" />
-     <None Include="Assets\Resources\case.txt" />
+     <None Include="Assets\Resources\casePenguji2.txt" />
+     <None Include="Assets\Resources\dataPenguji3.txt" />
+     <None Include="Assets\Resources\casePenguji3.txt" />
+     <None Include="Assets\Resources\casePenguji1.txt" />
+     <None Include="Assets\Resources\dataTemp.txt" />
+     <None Include="Assets\Resources\caseTemp.txt" />
+     <None Include="Assets\Resources\dataPenguji1.txt" />
+     <None Include="Assets\Resources\dataPenguji2.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Perkuliahan/Game Engine/unity2019/The Battle of Honor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
