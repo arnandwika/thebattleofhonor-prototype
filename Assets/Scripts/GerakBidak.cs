@@ -95,6 +95,7 @@ public class GerakBidak : MonoBehaviour
                             cek_taruh = true;
                         }else{
                             if(hasil == "menang"){
+                                print("Pemain win against AI and you can move again ...");
                                 Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and win");
                                 AI.markBidak(Data.getPangkat(barisPosTujuan,kolomPosTujuan), gameObject, barisPosTujuan, kolomPosTujuan);
                                 transform.position = new Vector3(newX, newY, transform.position.z);
@@ -114,6 +115,7 @@ public class GerakBidak : MonoBehaviour
                                 kolomPosAwal = kolomPosTujuan;
                                 Data.updatePosisiBidak();
                             }else if(hasil == "draw"){
+                                print("Pemain draw against AI, both Bidak destroyed");
                                 Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and draw");
                                 obyek_akhir.tag = "Untagged";
                                 obyek_asal.tag = "Untagged";
@@ -140,6 +142,7 @@ public class GerakBidak : MonoBehaviour
                                 kolomPosAwal = kolomPosTujuan;
                                 Data.updatePosisiBidak();
                             }else if(hasil == "kalah"){
+                                print("AI lose the battle against your Bidak and destroyed");
                                 Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and lose");
                                 obyek_asal.tag = "Untagged";
                                 cek_asal = false;
