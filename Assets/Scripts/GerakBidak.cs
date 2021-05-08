@@ -77,7 +77,7 @@ public class GerakBidak : MonoBehaviour
         }
     }
     void OnMouseUp(){
-        if(scene_name == "Pengujian Dasar" && (gameObject.tag == "Pemain" && giliranPemain)){
+        if(gameObject.tag == "Pemain" && giliranPemain){
             if(status && AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal) && !(barisPosAwal == barisPosTujuan && kolomPosAwal == kolomPosTujuan)){
                 if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
                     if((gameObject.tag == "Pemain" && obyek_akhir.tag == "Lawan") || (gameObject.tag == "Lawan" && obyek_akhir.tag == "Pemain")){
@@ -142,7 +142,7 @@ public class GerakBidak : MonoBehaviour
                                 kolomPosAwal = kolomPosTujuan;
                                 Data.updatePosisiBidak();
                             }else if(hasil == "kalah"){
-                                print("AI lose the battle against your Bidak and destroyed");
+                                print("You lose the battle against AI's Bidak and destroyed");
                                 Data.WriteResponseAI("Player move from ("+barisPosAwal+","+kolomPosAwal+") to ("+barisPosTujuan+","+kolomPosTujuan+") and lose");
                                 obyek_asal.tag = "Untagged";
                                 cek_asal = false;

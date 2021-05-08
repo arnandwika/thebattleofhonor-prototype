@@ -18,8 +18,9 @@ public class AI : MonoBehaviour
         public int bidakTelahDiperkirakanPangkatnyaDiIstirahat;
         public int benderaPemainDiketahui;
         public int solusiStrategi;
+        public int benderaAIDiketahui;
 
-        public Cases(int pemainMemasukiWilayahAI, int jalurKeretaKolomAIKosong, int AIMemasukiWilayahPemain, int jalurKeretaKolomPemainKosong, int tempatIstirahatAIKosong, int tempatIstirahatPemainKosong, int bidakTelahDiperkirakanPangkatnya, int bidakTelahDiperkirakanPangkatnyaDiIstirahat, int benderaPemainDiketahui, int solusiStrategi){
+        public Cases(int pemainMemasukiWilayahAI, int jalurKeretaKolomAIKosong, int AIMemasukiWilayahPemain, int jalurKeretaKolomPemainKosong, int tempatIstirahatAIKosong, int tempatIstirahatPemainKosong, int bidakTelahDiperkirakanPangkatnya, int bidakTelahDiperkirakanPangkatnyaDiIstirahat, int benderaPemainDiketahui, int benderaAIDiketahui, int solusiStrategi){
             this.pemainMemasukiWilayahAI = pemainMemasukiWilayahAI;
             this.jalurKeretaKolomAIKosong = jalurKeretaKolomAIKosong;
             this.AIMemasukiWilayahPemain = AIMemasukiWilayahPemain;
@@ -30,6 +31,7 @@ public class AI : MonoBehaviour
             this.benderaPemainDiketahui = benderaPemainDiketahui;
             this.solusiStrategi = solusiStrategi;
             this.bidakTelahDiperkirakanPangkatnyaDiIstirahat = bidakTelahDiperkirakanPangkatnyaDiIstirahat;
+            this.benderaAIDiketahui = benderaAIDiketahui;
         }
     }
     
@@ -74,6 +76,7 @@ public class AI : MonoBehaviour
     private Dictionary<int, GameObject> tempBidakAI;
     private int counter;
     public static bool benderaExposed = false;
+    public static bool benderaAIExposed = false;
     public static bool cekInsertKasus = true;
     public static Cases lastCase;
     private static bool cekFalseSolution = false;
@@ -81,26 +84,30 @@ public class AI : MonoBehaviour
     private static int cekDiTempatIstirahat = 0;
     private static int cekBisaBergerak = 0;
     private GameObject posisiTujuan;
+    private int loopStrategy1 = 0;
     // Start is called before the first frame update
     void Start()
     {
         listBidak = GameObject.FindGameObjectsWithTag("Lawan");
         giliranPemain = Giliran.getGiliran();
-        Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 1);
-        Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 1);
-        Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 2);
-        Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 2);
-        Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 2);
-        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 3);
-        Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 3);
-        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 3);
-        Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 3);
-        Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 3);
-        Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 4);
-        Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 4);
-        Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 4);
-        Cases kasus4_strategy4 = new Cases(0, 1, 1, 1, 1, 1, 2, 1, 0, 4);
+        Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1);
+        Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1);
+        Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1);
+        Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2);
+        Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2);
+        Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 2);
+        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 3);
+        Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 0, 3);
+        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 3);
+        Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 0, 3);
+        Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 3);
+        Cases kasus6_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 3);
+        Cases kasus7_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 3);
+        Cases kasus8_strategy3 = new Cases(1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3);
+        Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 4);
+        Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 4);
+        Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 0, 4);
+        Cases kasus4_strategy4 = new Cases(0, 1, 1, 1, 1, 1, 2, 1, 0, 0, 4);
         listKasus.Add(kasus1_strategy1);
         listKasus.Add(kasus2_strategy1);
         listKasus.Add(kasus3_strategy1);
@@ -112,12 +119,15 @@ public class AI : MonoBehaviour
         listKasus.Add(kasus3_strategy3);
         listKasus.Add(kasus4_strategy3);
         listKasus.Add(kasus5_strategy3);
+        listKasus.Add(kasus6_strategy3);
+        listKasus.Add(kasus7_strategy3);
+        listKasus.Add(kasus8_strategy3);
         listKasus.Add(kasus1_strategy4);
         listKasus.Add(kasus2_strategy4);
         listKasus.Add(kasus3_strategy4);
         listKasus.Add(kasus4_strategy4);
         foreach(var kasus in listKasus){
-            Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.benderaPemainDiketahui+","+kasus.solusiStrategi);
+            Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+kasus.benderaPemainDiketahui+","+kasus.benderaAIDiketahui+","+kasus.solusiStrategi);
         }
     }
 
@@ -133,21 +143,28 @@ public class AI : MonoBehaviour
                     posisiTujuan.GetComponent<SpriteRenderer>().color = Color.red;
                 }
                 if(!cekInsertKasus){
+                    listBidak = GameObject.FindGameObjectsWithTag("Lawan");
                     newCase();
                     cekInsertKasus = true;
                     cekFalseSolution = false;
                 }
                 randomMovement();
                 timer -= Time.deltaTime;
-                if(timer < -9){
+                if(timer < -35){
                     Data.WriteResponseAI("Error AI think too long");
                     print("Error AI think to long");
-                    if(!cekFalseSolution){
-                        failedSolution+=1;
-                        cekFalseSolution = true;
-                        Data.WriteResponseAI("Total false solution :"+failedSolution);
-                    }
-                    strategy = 2;
+                    // if(!cekFalseSolution){
+                    //     failedSolution+=1;
+                    //     cekFalseSolution = true;
+                    //     Data.WriteResponseAI("Total false solution :"+failedSolution);
+                    // }
+                    // strategy = 2;
+                }
+                if(timer < -45){
+                    Data.WriteResponseAI("Error AI think AI don't have Bidak that can move");
+                    print("Error AI think AI don't have Bidak that can move");
+                    timer = 4;
+                    Time.timeScale = 0;
                 }
             }
         }
@@ -155,6 +172,7 @@ public class AI : MonoBehaviour
 
     public void randomMovement(){
         giliranPemain = Giliran.getGiliran();
+        listBidak = GameObject.FindGameObjectsWithTag("Lawan");
         if(strategy == 1 && !giliranPemain){
             tempatIstirahat1 = Data.getKepemilikan(2, 1);
             tempatIstirahat2 = Data.getKepemilikan(2, 3);
@@ -170,27 +188,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 4 && kolomPosAwal == 3)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 4");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 4;
-                                bidak.GetComponent<Bidak>().kolom = 3;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 4");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 4;
+                                    bidak.GetComponent<Bidak>().kolom = 3;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }  
@@ -202,27 +222,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 4 && kolomPosAwal == 1)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 2");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 1, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 1, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 4;
-                                bidak.GetComponent<Bidak>().kolom = 1;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 2");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 1, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 1, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 4;
+                                    bidak.GetComponent<Bidak>().kolom = 1;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }
@@ -234,27 +256,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 4 && kolomPosAwal == 3)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 4");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 4;
-                                bidak.GetComponent<Bidak>().kolom = 3;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 5, kolom 4");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 4, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 4;
+                                    bidak.GetComponent<Bidak>().kolom = 3;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }
@@ -270,27 +294,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 2 && kolomPosAwal == 3)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
                                 
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 4");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 2;
-                                bidak.GetComponent<Bidak>().kolom = 3;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 4");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 2;
+                                    bidak.GetComponent<Bidak>().kolom = 3;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }
@@ -302,27 +328,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 2 && kolomPosAwal == 1)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 2");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 1, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 1, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 2;
-                                bidak.GetComponent<Bidak>().kolom = 1;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 2");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 1, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 1, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 2;
+                                    bidak.GetComponent<Bidak>().kolom = 1;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }
@@ -334,27 +362,29 @@ public class AI : MonoBehaviour
                         foreach(var bidak in listBidak){
                             if(bidak == null || (barisPosAwal == 2 && kolomPosAwal == 3)){
                                 continue;
-                            }else if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
-                                posisiTujuan = bidak;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 4");
-                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                posisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                posisiAwal.tag = "Untagged";
-                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                Giliran.setGiliranPemain();
-                                bidak.GetComponent<Bidak>().baris = 2;
-                                bidak.GetComponent<Bidak>().kolom = 3;
-                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                timer = 4;
-                                Data.WriteResponseAI("AI filling their Tempat Istirahat");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 1;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                            }else if(bidak.GetComponent<Bidak>()){
+                                if(bidak.GetComponent<Bidak>().baris == barisPosAwal && bidak.GetComponent<Bidak>().kolom == kolomPosAwal){
+                                    posisiTujuan = bidak;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(bidak.GetComponent<Bidak>().baris+1)+", kolom "+(bidak.GetComponent<Bidak>().kolom+1)+" to baris 3, kolom 4");
+                                    bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                    posisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                    Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, 2, 3, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                    Giliran.setGiliranPemain();
+                                    bidak.GetComponent<Bidak>().baris = 2;
+                                    bidak.GetComponent<Bidak>().kolom = 3;
+                                    bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
+                                    timer = 4;
+                                    Data.WriteResponseAI("AI filling their Tempat Istirahat");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 1;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }
                             }
                         }
                     }
@@ -368,214 +398,237 @@ public class AI : MonoBehaviour
                 }
                 strategy = Random.Range(2,4);
             }
+            loopStrategy1++;
+            if(loopStrategy1 > 10){
+                Data.WriteResponseAI("Try another strategy than 1");
+                if(!cekFalseSolution){
+                    failedSolution+=1;
+                    cekFalseSolution = true;
+                    Data.WriteResponseAI("Total false solution :"+failedSolution);
+                }
+                strategy = Random.Range(2,4);
+                loopStrategy1 = 0;
+            }
         }
         if(strategy == 2 && !giliranPemain){
             int indeks = Random.Range(0, listBidak.Length);
             GameObject bidak = listBidak[indeks];
+            bool jalan = false;
             if(bidak != null){
-                barisPosAwal = bidak.GetComponent<Bidak>().baris;
-                kolomPosAwal = bidak.GetComponent<Bidak>().kolom;
-                if((barisPosAwal == TempatIstirahat.barisIstirahat[0] && kolomPosAwal == TempatIstirahat.kolomIstirahat[0]) || 
-                (barisPosAwal == TempatIstirahat.barisIstirahat[1] && kolomPosAwal == TempatIstirahat.kolomIstirahat[1]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[2] && kolomPosAwal == TempatIstirahat.kolomIstirahat[2]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[3] && kolomPosAwal == TempatIstirahat.kolomIstirahat[3]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[4] && kolomPosAwal == TempatIstirahat.kolomIstirahat[4]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[5] && kolomPosAwal == TempatIstirahat.kolomIstirahat[5]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[6] && kolomPosAwal == TempatIstirahat.kolomIstirahat[6]) ||
-                (barisPosAwal == TempatIstirahat.barisIstirahat[7] && kolomPosAwal == TempatIstirahat.kolomIstirahat[7])){
-                    cekDiTempatIstirahat += 1;
-                    if(cekDiTempatIstirahat > 20){
-                        Data.WriteResponseAI("Try another strategy than 2");
-                        if(!cekFalseSolution){
-                            failedSolution+=1;
-                            cekFalseSolution = true;
-                            Data.WriteResponseAI("Total false solution :"+failedSolution);
-                        }
-                        cekDiTempatIstirahat = 0;
-                        strategy = Random.Range(3,5);
+                if(bidak.GetComponent<Bidak>()){
+                    barisPosAwal = bidak.GetComponent<Bidak>().baris;
+                    kolomPosAwal = bidak.GetComponent<Bidak>().kolom;
+                    if((barisPosAwal == TempatIstirahat.barisIstirahat[0] && kolomPosAwal == TempatIstirahat.kolomIstirahat[0]) || 
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[1] && kolomPosAwal == TempatIstirahat.kolomIstirahat[1]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[2] && kolomPosAwal == TempatIstirahat.kolomIstirahat[2]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[3] && kolomPosAwal == TempatIstirahat.kolomIstirahat[3]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[4] && kolomPosAwal == TempatIstirahat.kolomIstirahat[4]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[5] && kolomPosAwal == TempatIstirahat.kolomIstirahat[5]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[6] && kolomPosAwal == TempatIstirahat.kolomIstirahat[6]) ||
+                    (barisPosAwal == TempatIstirahat.barisIstirahat[7] && kolomPosAwal == TempatIstirahat.kolomIstirahat[7])){
+                        jalan = false;
+                        cekDiTempatIstirahat += 1;
+                        // if(cekDiTempatIstirahat > 20){
+                        //     Data.WriteResponseAI("Try another strategy than 2");
+                        //     if(!cekFalseSolution){
+                        //         failedSolution+=1;
+                        //         cekFalseSolution = true;
+                        //         Data.WriteResponseAI("Total false solution :"+failedSolution);
+                        //     }
+                        //     cekDiTempatIstirahat = 0;
+                        //     strategy = Random.Range(3,5);
+                        // }
+                    }else{
+                        jalan = true;
                     }
-                }else{
-                    if(AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
-                        gerak = bidak.GetComponent<Bidak>().gerak;
-                        bool hasil = false;
-                        int loop = 0;
-                        while(hasil == false){
-                            if(loop >15){
-                                break;
-                            }
-                            if(loop < 10){
-                                if(bidak.GetComponent<Bidak>().baris < 7){
-                                    barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris+1, 8);
-                                    kolomPosTujuan = Random.Range(0, 5);
-                                }else{
-                                    barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris+1, 14);
-                                    kolomPosTujuan = Random.Range(0, 5);
+                    if(jalan || cekDiTempatIstirahat > 8){
+                        if(AturanGerak.cekPangkatBergerak(barisPosAwal, kolomPosAwal)){
+                            cekDiTempatIstirahat = 0;
+                            gerak = bidak.GetComponent<Bidak>().gerak;
+                            bool hasil = false;
+                            int loop = 0;
+                            while(hasil == false){
+                                if(loop >20){
+                                    break;
                                 }
-                            }else{
-                                if(bidak.GetComponent<Bidak>().baris < 7){
-                                    barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris, 8);
-                                    kolomPosTujuan = Random.Range(0, 5);
+                                if(loop < 12){
+                                    if(bidak.GetComponent<Bidak>().baris < 7){
+                                        barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris+1, 8);
+                                        kolomPosTujuan = Random.Range(0, 5);
+                                    }else{
+                                        barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris+1, 14);
+                                        kolomPosTujuan = Random.Range(0, 5);
+                                    }
                                 }else{
-                                    barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris, 14);
-                                    kolomPosTujuan = Random.Range(0, 5);
+                                    if(bidak.GetComponent<Bidak>().baris < 7){
+                                        barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris, 8);
+                                        kolomPosTujuan = Random.Range(0, 5);
+                                    }else{
+                                        barisPosTujuan = Random.Range(bidak.GetComponent<Bidak>().baris, 14);
+                                        kolomPosTujuan = Random.Range(0, 5);
+                                    }
                                 }
-                            }
-                            if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
-                                GameObject posisi = Data.listPosisi[barisPosTujuan,kolomPosTujuan];
-                                if(posisi != null && posisi.tag != "Lawan"){
-                                    if(posisi.tag == "Untagged"){
-                                        posisiTujuan = bidak;
-                                
-                                        posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                        print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
-                                        bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
-                                        posisi.tag = "Lawan";
-                                        GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                        posisiAwal.tag = "Untagged";
-                                        Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getPangkat(barisPosAwal, kolomPosAwal));
-                                        Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                        Giliran.setGiliranPemain();
-                                        bidak.GetComponent<Bidak>().baris = posisi.GetComponent<Posisi>().barisPos;
-                                        bidak.GetComponent<Bidak>().kolom = posisi.GetComponent<Posisi>().kolomPos;
-                                        bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
-                                        timer = 4;
-                                        hasil = true;
-                                        strategy = Random.Range(1,3);
-                                        Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+")");
-                                        Data.updatePosisiBidak();
-                                        lastCase.solusiStrategi = 2;
-                                        listKasus.Add(lastCase);
-                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                        
-                                    }else if(posisi.tag == "Pemain"){
-                                        if((barisPosTujuan == TempatIstirahat.barisIstirahat[0] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[0]) || 
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[1] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[1]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[2] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[2]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[3] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[3]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[4] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[4]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[5] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[5]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[6] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[6]) ||
-                                        (barisPosTujuan == TempatIstirahat.barisIstirahat[7] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[7])){
-                                            break;
-                                        }
-                                        string output = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
-                                        if(output == "menang"){
+                                if(AturanGerak.opsiGerak(gerak, barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan)){
+                                    GameObject posisi = Data.listPosisi[barisPosTujuan,kolomPosTujuan];
+                                    if(posisi != null && posisi.tag != "Lawan"){
+                                        if(posisi.tag == "Untagged"){
                                             posisiTujuan = bidak;
-                                
+                                    
                                             posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
                                             print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
-                                            print("AI win against your Bidak and AI can move again ...");
                                             bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
                                             posisi.tag = "Lawan";
                                             GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
                                             posisiAwal.tag = "Untagged";
-                                            bidak.GetComponent<Bidak>().baris = barisPosTujuan;
-                                            bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                            bidak.GetComponent<Bidak>().gerak = gerak;
-                                            Giliran.setGiliranLawan();
                                             Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getPangkat(barisPosAwal, kolomPosAwal));
                                             Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
-                                            GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
-                                            foreach(var bidakPemain in listBidakPemain){
-                                                if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
-                                                    Destroy(bidakPemain);
-                                                    break;
-                                                }
-                                            }
+                                            Giliran.setGiliranPemain();
+                                            bidak.GetComponent<Bidak>().baris = posisi.GetComponent<Posisi>().barisPos;
+                                            bidak.GetComponent<Bidak>().kolom = posisi.GetComponent<Posisi>().kolomPos;
+                                            bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                             timer = 4;
                                             hasil = true;
                                             strategy = Random.Range(1,3);
-                                            Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and win");
+                                            Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+")");
                                             Data.updatePosisiBidak();
                                             lastCase.solusiStrategi = 2;
                                             listKasus.Add(lastCase);
-                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                        }else if(output == "draw"){
-                                            posisiTujuan = bidak;
-                                
-                                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                            print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
-                                            print("AI draw against Pemain, both Bidak destroyed");
-                                            posisi.tag = "Untagged";
-                                            GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                            posisiAwal.tag = "Untagged";
-                                            bidak.GetComponent<Bidak>().baris = barisPosTujuan;
-                                            bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                            bidak.GetComponent<Bidak>().gerak = gerak;
-                                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
-                                            Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
-                                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
-                                            Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
-                                            Giliran.setGiliranPemain();
-                                            GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
-                                            foreach(var bidakPemain in listBidakPemain){
-                                                if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
-                                                    Destroy(bidakPemain);
-                                                    break;
-                                                }
+                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            
+                                        }else if(posisi.tag == "Pemain"){
+                                            if((barisPosTujuan == TempatIstirahat.barisIstirahat[0] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[0]) || 
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[1] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[1]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[2] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[2]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[3] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[3]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[4] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[4]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[5] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[5]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[6] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[6]) ||
+                                            (barisPosTujuan == TempatIstirahat.barisIstirahat[7] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[7])){
+                                                break;
                                             }
-                                            Destroy(bidak);
-                                            timer = 4;
-                                            hasil = true;
-                                            strategy = Random.Range(1,3);
-                                            Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and draw");
-                                            Data.updatePosisiBidak();
-                                            lastCase.solusiStrategi = 2;
-                                            listKasus.Add(lastCase);
-                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                        }else if(output == "kalah"){
-                                            posisiTujuan = bidak;
-                                
-                                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                            print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
-                                            print("AI lose the battle against your Bidak and destroyed");
-                                            GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
-                                            foreach(var bidakPemain in listBidakPemain){
-                                                if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
-                                                    AI.markBidak(bidak.GetComponent<Bidak>().pangkat, bidakPemain, barisPosTujuan, kolomPosTujuan);
-                                                    break;
+                                            string output = Data.bidakBertabrakan(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan);
+                                            if(output == "menang"){
+                                                posisiTujuan = bidak;
+                                    
+                                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                                print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
+                                                print("AI win against your Bidak and AI can move again ...");
+                                                bidak.transform.position = new Vector3(posisi.transform.position.x, posisi.transform.position.y, posisi.transform.position.z);
+                                                posisi.tag = "Lawan";
+                                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                                posisiAwal.tag = "Untagged";
+                                                bidak.GetComponent<Bidak>().baris = barisPosTujuan;
+                                                bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                Giliran.setGiliranLawan();
+                                                Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getPangkat(barisPosAwal, kolomPosAwal));
+                                                Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
+                                                GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+                                                foreach(var bidakPemain in listBidakPemain){
+                                                    if(bidakPemain.GetComponent<Bidak>()){
+                                                        if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
+                                                            Destroy(bidakPemain);
+                                                            break;
+                                                        }
+                                                    }
                                                 }
+                                                timer = 4;
+                                                hasil = true;
+                                                strategy = Random.Range(1,3);
+                                                Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and win");
+                                                Data.updatePosisiBidak();
+                                                lastCase.solusiStrategi = 2;
+                                                listKasus.Add(lastCase);
+                                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            }else if(output == "draw"){
+                                                posisiTujuan = bidak;
+                                    
+                                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                                print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
+                                                print("AI draw against Pemain, both Bidak destroyed");
+                                                posisi.tag = "Untagged";
+                                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                                posisiAwal.tag = "Untagged";
+                                                bidak.GetComponent<Bidak>().baris = barisPosTujuan;
+                                                bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                                                Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
+                                                Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
+                                                Data.noneKepemilikan(barisPosTujuan, kolomPosTujuan);
+                                                Giliran.setGiliranPemain();
+                                                GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+                                                foreach(var bidakPemain in listBidakPemain){
+                                                    if(bidak.GetComponent<Bidak>()){
+                                                        if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
+                                                            Destroy(bidakPemain);
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                Destroy(bidak);
+                                                timer = 4;
+                                                hasil = true;
+                                                strategy = Random.Range(1,3);
+                                                Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and draw");
+                                                Data.updatePosisiBidak();
+                                                lastCase.solusiStrategi = 2;
+                                                listKasus.Add(lastCase);
+                                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            }else if(output == "kalah"){
+                                                posisiTujuan = bidak;
+                                    
+                                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                                print("AI move from baris "+(barisPosAwal+1)+", kolom "+(kolomPosAwal+1)+" to baris "+(barisPosTujuan+1)+", kolom "+(kolomPosTujuan+1)+"");
+                                                print("AI lose the battle against your Bidak and destroyed");
+                                                GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
+                                                foreach(var bidakPemain in listBidakPemain){
+                                                    if(bidakPemain.GetComponent<Bidak>().baris == barisPosTujuan && bidakPemain.GetComponent<Bidak>().kolom == kolomPosTujuan){
+                                                        AI.markBidak(bidak.GetComponent<Bidak>().pangkat, bidakPemain, barisPosTujuan, kolomPosTujuan);
+                                                        break;
+                                                    }
+                                                }
+                                                GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
+                                                posisiAwal.tag = "Untagged";
+                                                bidak.GetComponent<Bidak>().baris = barisPosTujuan;
+                                                bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
+                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                Data.zeroPangkat(barisPosAwal, kolomPosAwal);
+                                                Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
+                                                Giliran.setGiliranPemain();
+                                                Destroy(bidak);
+                                                timer = 4;
+                                                hasil = true;
+                                                Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and lose");
+                                                Data.updatePosisiBidak();
+                                                lastCase.solusiStrategi = 2;
+                                                listKasus.Add(lastCase);
+                                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            }else if(output == "selesai"){
+                                                print("GAME SELESAI");
+                                                double akurasi = AI.listKasus.Count - AI.failedSolution;
+                                                akurasi *= 100;
+                                                akurasi /= AI.listKasus.Count;
+                                                Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
+                                                SceneManager.LoadScene("Main Menu");
                                             }
-                                            GameObject posisiAwal = Data.listPosisi[barisPosAwal, kolomPosAwal];
-                                            posisiAwal.tag = "Untagged";
-                                            bidak.GetComponent<Bidak>().baris = barisPosTujuan;
-                                            bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                            bidak.GetComponent<Bidak>().gerak = gerak;
-                                            Data.zeroPangkat(barisPosAwal, kolomPosAwal);
-                                            Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
-                                            Giliran.setGiliranPemain();
-                                            Destroy(bidak);
-                                            timer = 4;
-                                            hasil = true;
-                                            Data.WriteResponseAI("AI "+bidak.GetComponent<Bidak>().nama+" moving forward to ("+posisi.GetComponent<Posisi>().barisPos+","+posisi.GetComponent<Posisi>().kolomPos+") and lose");
-                                            Data.updatePosisiBidak();
-                                            lastCase.solusiStrategi = 2;
-                                            listKasus.Add(lastCase);
-                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                        }else if(output == "selesai"){
-                                            print("GAME SELESAI");
-                                            double akurasi = AI.listKasus.Count - AI.failedSolution;
-                                            akurasi *= 100;
-                                            akurasi /= AI.listKasus.Count;
-                                            Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
-                                            SceneManager.LoadScene("Main Menu");
                                         }
                                     }
                                 }
+                                loop++;
                             }
-                            loop++;
-                        }
-                    }else{
-                        cekBisaBergerak += 1;
-                        if(cekBisaBergerak > 20){
-                            Data.WriteResponseAI("Try another strategy than 2");
-                            if(!cekFalseSolution){
-                                failedSolution+=1;
-                                cekFalseSolution = true;
-                                Data.WriteResponseAI("Total false solution :"+failedSolution);
+                        }else{
+                            cekBisaBergerak += 1;
+                            if(cekBisaBergerak > 40){
+                                Data.WriteResponseAI("Try another strategy than 2");
+                                if(!cekFalseSolution){
+                                    failedSolution+=1;
+                                    cekFalseSolution = true;
+                                    Data.WriteResponseAI("Total false solution :"+failedSolution);
+                                }
+                                cekBisaBergerak = 0;
+                                strategy = Random.Range(3,5);
                             }
-                            cekBisaBergerak = 0;
-                            strategy = Random.Range(3,5);
                         }
                     }
                 }
@@ -585,122 +638,139 @@ public class AI : MonoBehaviour
             listTarget = new List<Target>();
             GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
             foreach(var bidakPemain in listBidakPemain){
-                if(bidakPemain != null && bidakPemain.GetComponentInChildren<Text>()){
-                    min=0;
-                    cekLangkah = new List<int>();
-                    listPathPosisi = new List<GameObject>();
-                    bidakAIGerak = new List<GameObject>();
-                    string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
-                    int predictionPangkatPemain = 0;
-                    int jumlahPenghalang0 = 0;
-                    int jumlahPenghalang4 = 0;
-                    if((predictionNamaPemain == " " || predictionNamaPemain != " ") && bidakPemain.GetComponent<Bidak>().baris < 7){
-                        foreach(var bidakAI in listBidak){
-                            if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 0 && bidakPemain.GetComponent<Bidak>().kolom == 0 && bidakAI.GetComponent<Bidak>().baris < 7){
-                                jumlahPenghalang0 +=1;
-                            }else if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 4 && bidakPemain.GetComponent<Bidak>().kolom == 4 && bidakAI.GetComponent<Bidak>().baris < 7){
-                                jumlahPenghalang4 +=1;
-                            }
-                        }
-                        if(jumlahPenghalang0 < 2 || jumlahPenghalang4 < 2){
+                if(bidakPemain != null){
+                    if(bidakPemain.GetComponentInChildren<Text>()){
+                        min=0;
+                        cekLangkah = new List<int>();
+                        listPathPosisi = new List<GameObject>();
+                        bidakAIGerak = new List<GameObject>();
+                        string predictionNamaPemain = bidakPemain.GetComponentInChildren<Text>().text;
+                        int predictionPangkatPemain = 0;
+                        int jumlahPenghalang0 = 0;
+                        int jumlahPenghalang4 = 0;
+                        if((predictionNamaPemain == " " || predictionNamaPemain != " ") && bidakPemain.GetComponent<Bidak>().baris < 7){
                             foreach(var bidakAI in listBidak){
                                 if(bidakAI != null){
-                                    if(bidakAI.GetComponent<Bidak>().pangkat > 1){
-                                        counter = 0;
-                                        jumlahLangkah = new List<int>();
-                                        tempPathPosisi = new Dictionary<int, GameObject>();
-                                        tempBidakAI = new Dictionary<int, GameObject>();
-                                        // pathPosisi = new List<GameObject>();
-                                        int barisPosAI = bidakAI.GetComponent<Bidak>().baris;
-                                        int kolomPosAI = bidakAI.GetComponent<Bidak>().kolom;
-                                        int barisPosPemain = bidakPemain.GetComponent<Bidak>().baris;
-                                        int kolomPosPemain = bidakPemain.GetComponent<Bidak>().kolom;
-                                        int langkah = 0;
-                                        GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
-                                        GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
-                                        GameObject posisiNextAI = posisiPemain;
-                                        int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
-                                        if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
-                                            jumlahLangkah.Sort();
-                                            bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
-                                            cekLangkah.Add(jumlahLangkah[0]);
-                                            listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                    if(bidakAI.GetComponent<Bidak>()){
+                                        if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 0 && bidakPemain.GetComponent<Bidak>().kolom == 0 && bidakAI.GetComponent<Bidak>().baris < 7){
+                                            jumlahPenghalang0 +=1;
+                                        }else if(bidakAI != null && bidakAI.GetComponent<Bidak>().kolom == 4 && bidakPemain.GetComponent<Bidak>().kolom == 4 && bidakAI.GetComponent<Bidak>().baris < 7){
+                                            jumlahPenghalang4 +=1;
                                         }
                                     }
                                 }
                             }
-                            if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
-                                min = cekLangkah[0];
-                                tempBidak = bidakAIGerak[0];
-                                hasilPathPosisi = listPathPosisi[0];
-                                //print(hasilPathPosisi);
-                                for(int i = 1; i<cekLangkah.Count; i++){
-                                    if(cekLangkah[i] < min ){
-                                        min = cekLangkah[i];
-                                        tempBidak = bidakAIGerak[i];
-                                        hasilPathPosisi = listPathPosisi[i];
+                            if((jumlahPenghalang0 < 2 && bidakPemain.GetComponent<Bidak>().kolom == 0) || (jumlahPenghalang4 < 2 && bidakPemain.GetComponent<Bidak>().kolom == 4)){
+                                foreach(var bidakAI in listBidak){
+                                    if(bidakAI != null){
+                                        if(bidakAI.GetComponent<Bidak>()){
+                                            if(bidakAI.GetComponent<Bidak>().pangkat > 1){
+                                                counter = 0;
+                                                jumlahLangkah = new List<int>();
+                                                tempPathPosisi = new Dictionary<int, GameObject>();
+                                                tempBidakAI = new Dictionary<int, GameObject>();
+                                                // pathPosisi = new List<GameObject>();
+                                                int barisPosAI = bidakAI.GetComponent<Bidak>().baris;
+                                                int kolomPosAI = bidakAI.GetComponent<Bidak>().kolom;
+                                                int barisPosPemain = bidakPemain.GetComponent<Bidak>().baris;
+                                                int kolomPosPemain = bidakPemain.GetComponent<Bidak>().kolom;
+                                                int langkah = 0;
+                                                GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
+                                                GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
+                                                GameObject posisiNextAI = posisiPemain;
+                                                int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
+                                                if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
+                                                    if(tempBidakAI[jumlahLangkah[0]] != null && tempPathPosisi[jumlahLangkah[0]] != null){
+                                                        jumlahLangkah.Sort();
+                                                        bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
+                                                        cekLangkah.Add(jumlahLangkah[0]);
+                                                        listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
-                                Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
-                                listTarget.Add(target);
-                            }
-                        }
-                    }else if(predictionNamaPemain != " "){
-                        predictionPangkatPemain = Data.nilaiPangkat(predictionNamaPemain);
-                        foreach(var bidakAI in listBidak){
-                            if(bidakAI != null){
-                                if(bidakAI.GetComponent<Bidak>().pangkat > predictionPangkatPemain || (predictionPangkatPemain > 8 && bidakAI.GetComponent<Bidak>().pangkat == -2)){
-                                    counter = 0;
-                                    jumlahLangkah = new List<int>();
-                                    tempPathPosisi = new Dictionary<int, GameObject>();
-                                    tempBidakAI = new Dictionary<int, GameObject>();
-                                    // pathPosisi = new List<GameObject>();
-                                    int barisPosAI = bidakAI.GetComponent<Bidak>().baris;
-                                    int kolomPosAI = bidakAI.GetComponent<Bidak>().kolom;
-                                    int barisPosPemain = bidakPemain.GetComponent<Bidak>().baris;
-                                    int kolomPosPemain = bidakPemain.GetComponent<Bidak>().kolom;
-                                    if((barisPosPemain == TempatIstirahat.barisIstirahat[0] && kolomPosPemain == TempatIstirahat.kolomIstirahat[0]) || 
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[1] && kolomPosPemain == TempatIstirahat.kolomIstirahat[1]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[2] && kolomPosPemain == TempatIstirahat.kolomIstirahat[2]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[3] && kolomPosPemain == TempatIstirahat.kolomIstirahat[3]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[4] && kolomPosPemain == TempatIstirahat.kolomIstirahat[4]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[5] && kolomPosPemain == TempatIstirahat.kolomIstirahat[5]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[6] && kolomPosPemain == TempatIstirahat.kolomIstirahat[6]) ||
-                                    (barisPosPemain == TempatIstirahat.barisIstirahat[7] && kolomPosPemain == TempatIstirahat.kolomIstirahat[7])){
-                                        Data.WriteResponseAI("Target on Tempat Istirahat");
-                                        break;
-                                    }
-                                    int langkah = 0;
-                                    GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
-                                    GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
-                                    GameObject posisiNextAI = posisiPemain;
-                                    int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
-                                    if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
-                                        jumlahLangkah.Sort();
-                                        bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
-                                        cekLangkah.Add(jumlahLangkah[0]);
-                                        listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                if(cekLangkah != null && bidakAIGerak != null && listPathPosisi != null){
+                                    if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
+                                        min = cekLangkah[0];
+                                        tempBidak = bidakAIGerak[0];
+                                        hasilPathPosisi = listPathPosisi[0];
+                                        //print(hasilPathPosisi);
+                                        for(int i = 1; i<cekLangkah.Count; i++){
+                                            if(cekLangkah[i] < min ){
+                                                min = cekLangkah[i];
+                                                tempBidak = bidakAIGerak[i];
+                                                hasilPathPosisi = listPathPosisi[i];
+                                            }
+                                        }
+                                        Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
+                                        listTarget.Add(target);
                                     }
                                 }
                             }
-                        }
-                        if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
-                            min = cekLangkah[0];
-                            tempBidak = bidakAIGerak[0];
-                            hasilPathPosisi = listPathPosisi[0];
-                            //print(hasilPathPosisi);
-                            for(int i = 1; i<cekLangkah.Count; i++){
-                                if(cekLangkah[i] < min ){
-                                    min = cekLangkah[i];
-                                    tempBidak = bidakAIGerak[i];
-                                    hasilPathPosisi = listPathPosisi[i];
+                        }if(predictionNamaPemain != " "){
+                            predictionPangkatPemain = Data.nilaiPangkat(predictionNamaPemain);
+                            foreach(var bidakAI in listBidak){
+                                if(bidakAI != null){
+                                    if(bidakAI.GetComponent<Bidak>()){
+                                        if(bidakAI.GetComponent<Bidak>().pangkat > predictionPangkatPemain || (predictionPangkatPemain > 8 && bidakAI.GetComponent<Bidak>().pangkat == -2)){
+                                            counter = 0;
+                                            jumlahLangkah = new List<int>();
+                                            tempPathPosisi = new Dictionary<int, GameObject>();
+                                            tempBidakAI = new Dictionary<int, GameObject>();
+                                            // pathPosisi = new List<GameObject>();
+                                            int barisPosAI = bidakAI.GetComponent<Bidak>().baris;
+                                            int kolomPosAI = bidakAI.GetComponent<Bidak>().kolom;
+                                            int barisPosPemain = bidakPemain.GetComponent<Bidak>().baris;
+                                            int kolomPosPemain = bidakPemain.GetComponent<Bidak>().kolom;
+                                            if((barisPosPemain == TempatIstirahat.barisIstirahat[0] && kolomPosPemain == TempatIstirahat.kolomIstirahat[0]) || 
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[1] && kolomPosPemain == TempatIstirahat.kolomIstirahat[1]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[2] && kolomPosPemain == TempatIstirahat.kolomIstirahat[2]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[3] && kolomPosPemain == TempatIstirahat.kolomIstirahat[3]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[4] && kolomPosPemain == TempatIstirahat.kolomIstirahat[4]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[5] && kolomPosPemain == TempatIstirahat.kolomIstirahat[5]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[6] && kolomPosPemain == TempatIstirahat.kolomIstirahat[6]) ||
+                                            (barisPosPemain == TempatIstirahat.barisIstirahat[7] && kolomPosPemain == TempatIstirahat.kolomIstirahat[7])){
+                                                Data.WriteResponseAI("Target on Tempat Istirahat");
+                                                break;
+                                            }
+                                            int langkah = 0;
+                                            GameObject posisiAI = Data.listPosisi[barisPosAI, kolomPosAI];
+                                            GameObject posisiPemain = Data.listPosisi[barisPosPemain, kolomPosPemain];
+                                            GameObject posisiNextAI = posisiPemain;
+                                            int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, false);
+                                            if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
+                                                if(tempBidakAI[jumlahLangkah[0]] != null && tempPathPosisi[jumlahLangkah[0]] != null){
+                                                    jumlahLangkah.Sort();
+                                                    bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
+                                                    cekLangkah.Add(jumlahLangkah[0]);
+                                                    listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                            Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
-                            listTarget.Add(target);
+                            if(cekLangkah != null && bidakAIGerak != null && listPathPosisi != null){
+                                if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
+                                    min = cekLangkah[0];
+                                    tempBidak = bidakAIGerak[0];
+                                    hasilPathPosisi = listPathPosisi[0];
+                                    //print(hasilPathPosisi);
+                                    for(int i = 1; i<cekLangkah.Count; i++){
+                                        if(cekLangkah[i] < min ){
+                                            min = cekLangkah[i];
+                                            tempBidak = bidakAIGerak[i];
+                                            hasilPathPosisi = listPathPosisi[i];
+                                        }
+                                    }
+                                    Target target = new Target(bidakPemain, tempBidak, min, hasilPathPosisi);
+                                    listTarget.Add(target);
+                                }
+                            }
                         }
                     }
-                    
                 }else{
                     continue;
                 }
@@ -719,181 +789,199 @@ public class AI : MonoBehaviour
                     if(moved){
                         break;
                     }
-                    int barisAwal = target.bidakAI.GetComponent<Bidak>().baris;
-                    int kolomAwal = target.bidakAI.GetComponent<Bidak>().kolom;
-                    int gerak = target.bidakAI.GetComponent<Bidak>().gerak;
-                    int barisKe = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
-                    int kolomKe = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
-                    if(Data.getKepemilikan(barisKe, kolomKe) == 'n' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                        posisiTujuan = target.bidakAI;
-                                
-                        posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                        print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                        target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
-                        target.hasilPathPosisi.tag = "Lawan";
-                        GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                        posisiAwal.tag = "Untagged";
-                        Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
-                        Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
-                        Giliran.setGiliranPemain();
-                        target.bidakAI.GetComponent<Bidak>().baris = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
-                        target.bidakAI.GetComponent<Bidak>().kolom = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
-                        target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
-                        timer = 4;
-                        moved = true;
-                        Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
-                        Data.updatePosisiBidak();
-                        lastCase.solusiStrategi = 3;
-                        listKasus.Add(lastCase);
-                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                    }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                        
-                        GameObject[] listPosisiGerak = target.hasilPathPosisi.GetComponent<Posisi>().ke;
-                        foreach(var posisiGerak in listPosisiGerak){
-                            int tempBaris = posisiGerak.GetComponent<Posisi>().barisPos;
-                            int tempKolom = posisiGerak.GetComponent<Posisi>().kolomPos;
-                            gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
-                            if(Data.getKepemilikan(tempBaris, tempKolom) == 'n' ){
-                                GameObject bidakFirstPath = null;
-                                foreach(var bidak in listBidak){
-                                    if(bidak != null && bidak.GetComponent<Bidak>().baris == barisKe && bidak.GetComponent<Bidak>().kolom == kolomKe){
-                                        bidakFirstPath = bidak;
+                    if(target.bidakAI != null){
+                        int barisAwal = target.bidakAI.GetComponent<Bidak>().baris;
+                        int kolomAwal = target.bidakAI.GetComponent<Bidak>().kolom;
+                        int gerak = target.bidakAI.GetComponent<Bidak>().gerak;
+                        int barisKe = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
+                        int kolomKe = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
+                        if(Data.getKepemilikan(barisKe, kolomKe) == 'n' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
+                            posisiTujuan = target.bidakAI;
+                                    
+                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                            print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                            target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
+                            target.hasilPathPosisi.tag = "Lawan";
+                            GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                            posisiAwal.tag = "Untagged";
+                            Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
+                            Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
+                            Giliran.setGiliranPemain();
+                            target.bidakAI.GetComponent<Bidak>().baris = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
+                            target.bidakAI.GetComponent<Bidak>().kolom = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
+                            target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
+                            timer = 4;
+                            moved = true;
+                            Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
+                            Data.updatePosisiBidak();
+                            lastCase.solusiStrategi = 3;
+                            listKasus.Add(lastCase);
+                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                        }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
+                            
+                            GameObject[] listPosisiGerak = target.hasilPathPosisi.GetComponent<Posisi>().ke;
+                            foreach(var posisiGerak in listPosisiGerak){
+                                int tempBaris = posisiGerak.GetComponent<Posisi>().barisPos;
+                                int tempKolom = posisiGerak.GetComponent<Posisi>().kolomPos;
+                                gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
+                                if(Data.getKepemilikan(tempBaris, tempKolom) == 'n' ){
+                                    GameObject bidakFirstPath = null;
+                                    foreach(var bidak in listBidak){
+                                        if(bidak != null){
+                                            if(bidak.GetComponent<Bidak>()){
+                                                if(bidak.GetComponent<Bidak>().baris == barisKe && bidak.GetComponent<Bidak>().kolom == kolomKe){
+                                                    bidakFirstPath = bidak;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if(bidakFirstPath != null && AturanGerak.opsiGerak(gerak, barisKe, kolomKe, tempBaris, tempKolom)){
+                                        posisiTujuan = target.bidakAI;
+                                    
+                                        posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                        print("AI move from baris "+(barisKe+1)+", kolom "+(kolomKe+1)+" to baris "+(tempBaris+1)+", kolom "+(tempKolom+1)+"");
+                                        bidakFirstPath.transform.position = new Vector3(posisiGerak.transform.position.x, posisiGerak.transform.position.y, posisiGerak.transform.position.z);
+                                        posisiGerak.tag = "Lawan";
+                                        GameObject posisiAwal = Data.listPosisi[barisKe, kolomKe];
+                                        posisiAwal.tag = "Untagged";
+                                        Data.dataPangkatPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getPangkat(barisKe, kolomKe));
+                                        Data.dataKepemilikanPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getKepemilikan(barisKe, kolomKe));
+                                        Giliran.setGiliranPemain();
+                                        bidakFirstPath.GetComponent<Bidak>().baris = posisiGerak.GetComponent<Posisi>().barisPos;
+                                        bidakFirstPath.GetComponent<Bidak>().kolom = posisiGerak.GetComponent<Posisi>().kolomPos;
+                                        bidakFirstPath.GetComponent<Bidak>().gerak = posisiGerak.GetComponent<Posisi>().gerak;
+                                        timer = 4;
+                                        moved = true;
+                                        Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
+                                        Data.updatePosisiBidak();
+                                        lastCase.solusiStrategi = 3;
+                                        listKasus.Add(lastCase);
+                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                        
                                     }
                                 }
-                                if(bidakFirstPath != null && AturanGerak.opsiGerak(gerak, barisKe, kolomKe, tempBaris, tempKolom)){
+                            }
+                        }else if(Data.getKepemilikan(barisKe, kolomKe) == 'p' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
+                            
+                            if((barisKe == TempatIstirahat.barisIstirahat[0] && kolomKe == TempatIstirahat.kolomIstirahat[0]) || 
+                            (barisKe == TempatIstirahat.barisIstirahat[1] && kolomKe == TempatIstirahat.kolomIstirahat[1]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[2] && kolomKe == TempatIstirahat.kolomIstirahat[2]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[3] && kolomKe == TempatIstirahat.kolomIstirahat[3]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[4] && kolomKe == TempatIstirahat.kolomIstirahat[4]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[5] && kolomKe == TempatIstirahat.kolomIstirahat[5]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[6] && kolomKe == TempatIstirahat.kolomIstirahat[6]) ||
+                            (barisKe == TempatIstirahat.barisIstirahat[7] && kolomKe == TempatIstirahat.kolomIstirahat[7])){
+                                Data.WriteResponseAI("Targeted bidak in Tempat Istirahat");
+                            }else{
+                                string output = Data.bidakBertabrakan(barisAwal, kolomAwal, barisKe, kolomKe);
+                                if(output == "menang"){
                                     posisiTujuan = target.bidakAI;
-                                
+                                    
                                     posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                    print("AI move from baris "+(barisKe+1)+", kolom "+(kolomKe+1)+" to baris "+(tempBaris+1)+", kolom "+(tempKolom+1)+"");
-                                    bidakFirstPath.transform.position = new Vector3(posisiGerak.transform.position.x, posisiGerak.transform.position.y, posisiGerak.transform.position.z);
-                                    posisiGerak.tag = "Lawan";
-                                    GameObject posisiAwal = Data.listPosisi[barisKe, kolomKe];
+                                    print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                    print("AI win against your Bidak and AI can move again ...");
+                                    target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
+                                    target.hasilPathPosisi.tag = "Lawan";
+                                    GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
                                     posisiAwal.tag = "Untagged";
-                                    Data.dataPangkatPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getPangkat(barisKe, kolomKe));
-                                    Data.dataKepemilikanPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getKepemilikan(barisKe, kolomKe));
-                                    Giliran.setGiliranPemain();
-                                    bidakFirstPath.GetComponent<Bidak>().baris = posisiGerak.GetComponent<Posisi>().barisPos;
-                                    bidakFirstPath.GetComponent<Bidak>().kolom = posisiGerak.GetComponent<Posisi>().kolomPos;
-                                    bidakFirstPath.GetComponent<Bidak>().gerak = posisiGerak.GetComponent<Posisi>().gerak;
+                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    Giliran.setGiliranLawan();
+                                    Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
+                                    Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
+                                    foreach(var bidakPemain in listBidakPemain){
+                                        if(bidakPemain != null){
+                                            if(bidakPemain.GetComponent<Bidak>()){
+                                                if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                    Destroy(bidakPemain);
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
                                     timer = 4;
                                     moved = true;
-                                    Data.WriteResponseAI("AI try to take down predicted "+target.bidakPemain.GetComponentInChildren<Text>().text+" by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
+                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
                                     Data.updatePosisiBidak();
                                     lastCase.solusiStrategi = 3;
                                     listKasus.Add(lastCase);
-                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }else if(output == "draw"){
+                                    posisiTujuan = target.bidakAI;
                                     
-                                }
-                            }
-                        }
-                    }else if(Data.getKepemilikan(barisKe, kolomKe) == 'p' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                        
-                        if((barisKe == TempatIstirahat.barisIstirahat[0] && kolomKe == TempatIstirahat.kolomIstirahat[0]) || 
-                        (barisKe == TempatIstirahat.barisIstirahat[1] && kolomKe == TempatIstirahat.kolomIstirahat[1]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[2] && kolomKe == TempatIstirahat.kolomIstirahat[2]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[3] && kolomKe == TempatIstirahat.kolomIstirahat[3]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[4] && kolomKe == TempatIstirahat.kolomIstirahat[4]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[5] && kolomKe == TempatIstirahat.kolomIstirahat[5]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[6] && kolomKe == TempatIstirahat.kolomIstirahat[6]) ||
-                        (barisKe == TempatIstirahat.barisIstirahat[7] && kolomKe == TempatIstirahat.kolomIstirahat[7])){
-                            Data.WriteResponseAI("Targeted bidak in Tempat Istirahat");
-                        }else{
-                            string output = Data.bidakBertabrakan(barisAwal, kolomAwal, barisKe, kolomKe);
-                            if(output == "menang"){
-                                posisiTujuan = target.bidakAI;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                print("AI win against your Bidak and AI can move again ...");
-                                target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
-                                target.hasilPathPosisi.tag = "Lawan";
-                                GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                                posisiAwal.tag = "Untagged";
-                                target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                Giliran.setGiliranLawan();
-                                Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
-                                Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
-                                foreach(var bidakPemain in listBidakPemain){
-                                    if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                        Destroy(bidakPemain);
-                                        break;
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                    print("AI draw against Pemain, both Bidak destroyed");
+                                    target.hasilPathPosisi.tag = "Untagged";
+                                    GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    Data.zeroPangkat(barisAwal, kolomAwal);
+                                    Data.zeroPangkat(barisKe, kolomKe);
+                                    Data.noneKepemilikan(barisAwal, kolomAwal);
+                                    Data.noneKepemilikan(barisKe, kolomKe);
+                                    Giliran.setGiliranPemain();
+                                    foreach(var bidakPemain in listBidakPemain){
+                                        if(bidakPemain != null){
+                                            if(bidakPemain.GetComponent<Bidak>()){
+                                                if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                    Destroy(bidakPemain);
+                                                    break;
+                                                }
+                                            }
+                                        }
                                     }
-                                }
-                                timer = 4;
-                                moved = true;
-                                Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 3;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                            }else if(output == "draw"){
-                                posisiTujuan = target.bidakAI;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                print("AI draw against Pemain, both Bidak destroyed");
-                                target.hasilPathPosisi.tag = "Untagged";
-                                GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                                posisiAwal.tag = "Untagged";
-                                target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                Data.zeroPangkat(barisAwal, kolomAwal);
-                                Data.zeroPangkat(barisKe, kolomKe);
-                                Data.noneKepemilikan(barisAwal, kolomAwal);
-                                Data.noneKepemilikan(barisKe, kolomKe);
-                                Giliran.setGiliranPemain();
-                                foreach(var bidakPemain in listBidakPemain){
-                                    if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                        Destroy(bidakPemain);
-                                        break;
+                                    Destroy(target.bidakAI);
+                                    timer = 4;
+                                    moved = true;
+                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" draw");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 3;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }else if(output == "kalah"){
+                                    posisiTujuan = target.bidakAI;
+                                    
+                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                    print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                    print("AI lose the battle against your Bidak and destroyed");
+                                    foreach(var bidakPemain in listBidakPemain){
+                                        if(bidakPemain != null){
+                                            if(bidakPemain.GetComponent<Bidak>()){
+                                                if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                    AI.markBidak(target.bidakAI.GetComponent<Bidak>().pangkat, bidakPemain, barisKe, kolomKe);
+                                                    break;
+                                                }
+                                            }
+                                        }
                                     }
+                                    GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                                    posisiAwal.tag = "Untagged";
+                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    Data.zeroPangkat(barisAwal, kolomAwal);
+                                    Data.noneKepemilikan(barisAwal, kolomAwal);
+                                    Giliran.setGiliranPemain();
+                                    Destroy(target.bidakAI);
+                                    timer = 4;
+                                    moved = true;
+                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" lose");
+                                    Data.updatePosisiBidak();
+                                    lastCase.solusiStrategi = 3;
+                                    listKasus.Add(lastCase);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                }else if(output == "selesai"){
+                                    print("GAME SELESAI");
+                                    double akurasi = AI.listKasus.Count - AI.failedSolution;
+                                    akurasi *= 100;
+                                    akurasi /= AI.listKasus.Count;
+                                    Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
+                                    SceneManager.LoadScene("Main Menu");
                                 }
-                                Destroy(target.bidakAI);
-                                timer = 4;
-                                moved = true;
-                                Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" draw");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 3;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                            }else if(output == "kalah"){
-                                posisiTujuan = target.bidakAI;
-                                
-                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                print("AI lose the battle against your Bidak and destroyed");
-                                foreach(var bidakPemain in listBidakPemain){
-                                    if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                        AI.markBidak(target.bidakAI.GetComponent<Bidak>().pangkat, bidakPemain, barisKe, kolomKe);
-                                        break;
-                                    }
-                                }
-                                GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                                posisiAwal.tag = "Untagged";
-                                target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                Data.zeroPangkat(barisAwal, kolomAwal);
-                                Data.noneKepemilikan(barisAwal, kolomAwal);
-                                Giliran.setGiliranPemain();
-                                Destroy(target.bidakAI);
-                                timer = 4;
-                                moved = true;
-                                Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" lose");
-                                Data.updatePosisiBidak();
-                                lastCase.solusiStrategi = 3;
-                                listKasus.Add(lastCase);
-                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                            }else if(output == "selesai"){
-                                print("GAME SELESAI");
-                                double akurasi = AI.listKasus.Count - AI.failedSolution;
-                                akurasi *= 100;
-                                akurasi /= AI.listKasus.Count;
-                                Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
-                                SceneManager.LoadScene("Main Menu");
                             }
                         }
                     }
@@ -934,15 +1022,18 @@ public class AI : MonoBehaviour
                 }
             }else{
                 foreach(var bidakBendera in listBidakPemain){
-                    if(bidakBendera != null && bidakBendera.GetComponent<Bidak>().nama == "bendera"){
-                        barisPosBendera = bidakBendera.GetComponent<Bidak>().baris;
-                        kolomPosBendera = bidakBendera.GetComponent<Bidak>().kolom;
-                        bidakBenderaPemain = bidakBendera;
+                    if(bidakBendera != null && bidakBendera.GetComponent<Bidak>()){
+                        if(bidakBendera.GetComponent<Bidak>().nama == "bendera"){
+                            barisPosBendera = bidakBendera.GetComponent<Bidak>().baris;
+                            kolomPosBendera = bidakBendera.GetComponent<Bidak>().kolom;
+                            bidakBenderaPemain = bidakBendera;
+                        }
+                        
                     }
                 }
             }
             foreach(var bidakAI in listBidak){
-                if(bidakAI != null && bidakAI.GetComponent<Bidak>().baris > 5){
+                if(bidakAI != null && bidakAI.GetComponent<Bidak>()){
                     listBidakAIDepan.Add(bidakAI);
                 }
             }
@@ -962,233 +1053,258 @@ public class AI : MonoBehaviour
                         GameObject posisiNextAI = posisiPemain;
                         int hasil = cekPath(posisiAI, posisiPemain, langkah, posisiNextAI, bidakAI, true);
                         if(tempBidakAI.Count > 0 && jumlahLangkah.Count > 0 && tempPathPosisi.Count > 0){
-                            jumlahLangkah.Sort();
-                            bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
-                            cekLangkah.Add(jumlahLangkah[0]);
-                            listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                            if(tempBidakAI[jumlahLangkah[0]] != null && tempPathPosisi[jumlahLangkah[0]] != null){
+                                jumlahLangkah.Sort();
+                                bidakAIGerak.Add(tempBidakAI[jumlahLangkah[0]]);
+                                cekLangkah.Add(jumlahLangkah[0]);
+                                listPathPosisi.Add(tempPathPosisi[jumlahLangkah[0]]);
+                            }
                         }
                     }
                 }
-                if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0 && bidakBenderaPemain != null){
-                    min = cekLangkah[0];
-                    tempBidak = bidakAIGerak[0];
-                    hasilPathPosisi = listPathPosisi[0];
-                    //print(hasilPathPosisi);
-                    for(int i = 1; i<cekLangkah.Count; i++){
-                        if(cekLangkah[i] < min ){
-                            min = cekLangkah[i];
-                            tempBidak = bidakAIGerak[i];
-                            hasilPathPosisi = listPathPosisi[i];
+                if(cekLangkah != null && bidakAIGerak != null && listPathPosisi != null && bidakBenderaPemain != null){
+                    if(cekLangkah.Count > 0 && bidakAIGerak.Count > 0 && listPathPosisi.Count > 0){
+                        min = cekLangkah[0];
+                        tempBidak = bidakAIGerak[0];
+                        hasilPathPosisi = listPathPosisi[0];
+                        //print(hasilPathPosisi);
+                        for(int i = 1; i<cekLangkah.Count; i++){
+                            if(cekLangkah[i] < min ){
+                                min = cekLangkah[i];
+                                tempBidak = bidakAIGerak[i];
+                                hasilPathPosisi = listPathPosisi[i];
+                            }
                         }
+                        Target target = new Target(bidakBenderaPemain, tempBidak, min, hasilPathPosisi);
+                        listTarget.Add(target);
                     }
-                    Target target = new Target(bidakBenderaPemain, tempBidak, min, hasilPathPosisi);
-                    listTarget.Add(target);
                 }
                 bool moved = false;
-                listTarget.Sort((s1 , s2) => s1.jumlahLangkah.CompareTo(s2.jumlahLangkah));
-                if(listTarget.Count > 0){
-                    // print("Menarget Bendera");
-                    // foreach(var target in listTarget){
-                    //     print("Bidak AI : "+target.bidakAI.GetComponent<Bidak>().nama);
-                    //     print("Langkah Pertama Bidak AI : "+target.hasilPathPosisi);
-                    //     print("Jumlah Langkah : "+target.jumlahLangkah);
-                    // }
-                    foreach(var target in listTarget){
-                        if(moved){
-                            break;
-                        }
-                        int barisAwal = target.bidakAI.GetComponent<Bidak>().baris;
-                        int kolomAwal = target.bidakAI.GetComponent<Bidak>().kolom;
-                        int gerak = target.bidakAI.GetComponent<Bidak>().gerak;
-                        int barisKe = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
-                        int kolomKe = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
-                        if(Data.getKepemilikan(barisKe, kolomKe) == 'n' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                            posisiTujuan = target.bidakAI;
-                                
-                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                            print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                            target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
-                            target.hasilPathPosisi.tag = "Lawan";
-                            GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                            posisiAwal.tag = "Untagged";
-                            Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
-                            Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
-                            Giliran.setGiliranPemain();
-                            target.bidakAI.GetComponent<Bidak>().baris = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
-                            target.bidakAI.GetComponent<Bidak>().kolom = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
-                            target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
-                            timer = 4;
-                            moved = true;
-                            Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
-                            Data.updatePosisiBidak();
-                            lastCase.solusiStrategi = 4;
-                            listKasus.Add(lastCase);
-                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                            print("AI berusaha menjatuhkan bendera");
-                        }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                            
-                            GameObject[] listPosisiGerak = target.hasilPathPosisi.GetComponent<Posisi>().ke;
-                            foreach(var posisiGerak in listPosisiGerak){
-                                int tempBaris = posisiGerak.GetComponent<Posisi>().barisPos;
-                                int tempKolom = posisiGerak.GetComponent<Posisi>().kolomPos;
-                                gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
-                                if(Data.getKepemilikan(tempBaris, tempKolom) == 'n' ){
-                                    GameObject bidakFirstPath = null;
-                                    foreach(var bidak in listBidak){
-                                        if(bidak != null && bidak.GetComponent<Bidak>().baris == barisKe && bidak.GetComponent<Bidak>().kolom == kolomKe){
-                                            bidakFirstPath = bidak;
-                                        }
-                                    }
-                                    if(bidakFirstPath != null && AturanGerak.opsiGerak(gerak, barisKe, kolomKe, tempBaris, tempKolom)){
-                                        posisiTujuan = target.bidakAI;
-                                
-                                        posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                        print("AI move from baris "+(barisKe+1)+", kolom "+(kolomKe+1)+" to baris "+(tempBaris+1)+", kolom "+(tempKolom+1)+"");
-                                        bidakFirstPath.transform.position = new Vector3(posisiGerak.transform.position.x, posisiGerak.transform.position.y, posisiGerak.transform.position.z);
-                                        posisiGerak.tag = "Lawan";
-                                        GameObject posisiAwal = Data.listPosisi[barisKe, kolomKe];
-                                        posisiAwal.tag = "Untagged";
-                                        Data.dataPangkatPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getPangkat(barisKe, kolomKe));
-                                        Data.dataKepemilikanPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getKepemilikan(barisKe, kolomKe));
-                                        Giliran.setGiliranPemain();
-                                        bidakFirstPath.GetComponent<Bidak>().baris = posisiGerak.GetComponent<Posisi>().barisPos;
-                                        bidakFirstPath.GetComponent<Bidak>().kolom = posisiGerak.GetComponent<Posisi>().kolomPos;
-                                        bidakFirstPath.GetComponent<Bidak>().gerak = posisiGerak.GetComponent<Posisi>().gerak;
-                                        timer = 4;
-                                        moved = true;
-                                        Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
-                                        Data.updatePosisiBidak();
-                                        lastCase.solusiStrategi = 4;
-                                        listKasus.Add(lastCase);
-                                        Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                    }
-                                }
+                if(listTarget != null){
+                    listTarget.Sort((s1 , s2) => s1.jumlahLangkah.CompareTo(s2.jumlahLangkah));
+                    if(listTarget.Count > 0){
+                        // print("Menarget Bendera");
+                        // foreach(var target in listTarget){
+                        //     print("Bidak AI : "+target.bidakAI.GetComponent<Bidak>().nama);
+                        //     print("Langkah Pertama Bidak AI : "+target.hasilPathPosisi);
+                        //     print("Jumlah Langkah : "+target.jumlahLangkah);
+                        // }
+                        foreach(var target in listTarget){
+                            if(moved){
+                                break;
                             }
-                        }else if(Data.getKepemilikan(barisKe, kolomKe) == 'p' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
-                            
-                            if((barisKe == TempatIstirahat.barisIstirahat[0] && kolomKe == TempatIstirahat.kolomIstirahat[0]) || 
-                            (barisKe == TempatIstirahat.barisIstirahat[1] && kolomKe == TempatIstirahat.kolomIstirahat[1]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[2] && kolomKe == TempatIstirahat.kolomIstirahat[2]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[3] && kolomKe == TempatIstirahat.kolomIstirahat[3]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[4] && kolomKe == TempatIstirahat.kolomIstirahat[4]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[5] && kolomKe == TempatIstirahat.kolomIstirahat[5]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[6] && kolomKe == TempatIstirahat.kolomIstirahat[6]) ||
-                            (barisKe == TempatIstirahat.barisIstirahat[7] && kolomKe == TempatIstirahat.kolomIstirahat[7])){
-                                //print("Pemain di tempat istirahat");
-                            }else{
-                                string output = Data.bidakBertabrakan(barisAwal, kolomAwal, barisKe, kolomKe);
-                                if(output == "menang"){
+                            if(target.bidakAI != null && target.bidakAI.GetComponent<Bidak>()){
+                                int barisAwal = target.bidakAI.GetComponent<Bidak>().baris;
+                                int kolomAwal = target.bidakAI.GetComponent<Bidak>().kolom;
+                                int gerak = target.bidakAI.GetComponent<Bidak>().gerak;
+                                int barisKe = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
+                                int kolomKe = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
+                                if(Data.getKepemilikan(barisKe, kolomKe) == 'n' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                                     posisiTujuan = target.bidakAI;
-                                
+                                        
                                     posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
                                     print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                    print("AI win against your Bidak and AI can move again ...");
                                     target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
                                     target.hasilPathPosisi.tag = "Lawan";
                                     GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
                                     posisiAwal.tag = "Untagged";
-                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                    Giliran.setGiliranLawan();
                                     Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
                                     Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
-                                    foreach(var bidakPemain in listBidakPemain){
-                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                            Destroy(bidakPemain);
-                                            break;
-                                        }
-                                    }
-                                    timer = 4;
-                                    moved = true;
-                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
-                                    Data.updatePosisiBidak();
-                                    lastCase.solusiStrategi = 4;
-                                    listKasus.Add(lastCase);
-                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
-                                    
-                                }else if(output == "draw"){
-                                    posisiTujuan = target.bidakAI;
-                                
-                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                    print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                    print("AI draw against Pemain, both Bidak destroyed");
-                                    target.hasilPathPosisi.tag = "Untagged";
-                                    GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                                    posisiAwal.tag = "Untagged";
-                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                    Data.zeroPangkat(barisAwal, kolomAwal);
-                                    Data.zeroPangkat(barisKe, kolomKe);
-                                    Data.noneKepemilikan(barisAwal, kolomAwal);
-                                    Data.noneKepemilikan(barisKe, kolomKe);
                                     Giliran.setGiliranPemain();
-                                    foreach(var bidakPemain in listBidakPemain){
-                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                            Destroy(bidakPemain);
-                                            break;
-                                        }
-                                    }
-                                    Destroy(target.bidakAI);
+                                    target.bidakAI.GetComponent<Bidak>().baris = target.hasilPathPosisi.GetComponent<Posisi>().barisPos;
+                                    target.bidakAI.GetComponent<Bidak>().kolom = target.hasilPathPosisi.GetComponent<Posisi>().kolomPos;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                     timer = 4;
                                     moved = true;
-                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and draw");
+                                    Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
                                     Data.updatePosisiBidak();
                                     lastCase.solusiStrategi = 4;
                                     listKasus.Add(lastCase);
-                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                    print("AI berusaha menjatuhkan bendera");
+                                }else if(Data.getKepemilikan(barisKe, kolomKe) == 'l' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                                     
-                                }else if(output == "kalah"){
-                                    posisiTujuan = target.bidakAI;
-                                
-                                    posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
-                                    print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
-                                    print("AI lose the battle against your Bidak and destroyed");
-                                    foreach(var bidakPemain in listBidakPemain){
-                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
-                                            AI.markBidak(target.bidakAI.GetComponent<Bidak>().pangkat, bidakPemain, barisKe, kolomKe);
-                                            break;
+                                    GameObject[] listPosisiGerak = target.hasilPathPosisi.GetComponent<Posisi>().ke;
+                                    foreach(var posisiGerak in listPosisiGerak){
+                                        int tempBaris = posisiGerak.GetComponent<Posisi>().barisPos;
+                                        int tempKolom = posisiGerak.GetComponent<Posisi>().kolomPos;
+                                        gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
+                                        if(Data.getKepemilikan(tempBaris, tempKolom) == 'n' ){
+                                            GameObject bidakFirstPath = null;
+                                            foreach(var bidak in listBidak){
+                                                if(bidak != null){
+                                                    if(bidak.GetComponent<Bidak>()){
+                                                        if(bidak != null && bidak.GetComponent<Bidak>().baris == barisKe && bidak.GetComponent<Bidak>().kolom == kolomKe){
+                                                            bidakFirstPath = bidak;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            if(bidakFirstPath != null && AturanGerak.opsiGerak(gerak, barisKe, kolomKe, tempBaris, tempKolom)){
+                                                posisiTujuan = target.bidakAI;
+                                        
+                                                posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                                print("AI move from baris "+(barisKe+1)+", kolom "+(kolomKe+1)+" to baris "+(tempBaris+1)+", kolom "+(tempKolom+1)+"");
+                                                bidakFirstPath.transform.position = new Vector3(posisiGerak.transform.position.x, posisiGerak.transform.position.y, posisiGerak.transform.position.z);
+                                                posisiGerak.tag = "Lawan";
+                                                GameObject posisiAwal = Data.listPosisi[barisKe, kolomKe];
+                                                posisiAwal.tag = "Untagged";
+                                                Data.dataPangkatPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getPangkat(barisKe, kolomKe));
+                                                Data.dataKepemilikanPindah(barisKe, kolomKe, tempBaris, tempKolom, Data.getKepemilikan(barisKe, kolomKe));
+                                                Giliran.setGiliranPemain();
+                                                bidakFirstPath.GetComponent<Bidak>().baris = posisiGerak.GetComponent<Posisi>().barisPos;
+                                                bidakFirstPath.GetComponent<Bidak>().kolom = posisiGerak.GetComponent<Posisi>().kolomPos;
+                                                bidakFirstPath.GetComponent<Bidak>().gerak = posisiGerak.GetComponent<Posisi>().gerak;
+                                                timer = 4;
+                                                moved = true;
+                                                Data.WriteResponseAI("AI try to take down predicted bendera by "+target.bidakAI.GetComponent<Bidak>().nama+" with "+target.jumlahLangkah+" step");
+                                                Data.updatePosisiBidak();
+                                                lastCase.solusiStrategi = 4;
+                                                listKasus.Add(lastCase);
+                                                Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            }
                                         }
                                     }
-                                    GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
-                                    posisiAwal.tag = "Untagged";
-                                    target.bidakAI.GetComponent<Bidak>().baris = barisKe;
-                                    target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
-                                    Data.zeroPangkat(barisAwal, kolomAwal);
-                                    Data.noneKepemilikan(barisAwal, kolomAwal);
-                                    Giliran.setGiliranPemain();
-                                    Destroy(target.bidakAI);
-                                    timer = 4;
-                                    moved = true;
-                                    Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and lose");
-                                    Data.updatePosisiBidak();
-                                    lastCase.solusiStrategi = 4;
-                                    listKasus.Add(lastCase);
-                                    Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.benderaPemainDiketahui+","+lastCase.solusiStrategi);
+                                }else if(Data.getKepemilikan(barisKe, kolomKe) == 'p' && AturanGerak.opsiGerak(gerak, barisAwal, kolomAwal, barisKe, kolomKe)){
                                     
-                                }else if(output == "selesai"){
-                                    print("GAME SELESAI");
-                                    double akurasi = AI.listKasus.Count - AI.failedSolution;
-                                    akurasi *= 100;
-                                    akurasi /= AI.listKasus.Count;
-                                    Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
-                                    SceneManager.LoadScene("Main Menu");
+                                    if((barisKe == TempatIstirahat.barisIstirahat[0] && kolomKe == TempatIstirahat.kolomIstirahat[0]) || 
+                                    (barisKe == TempatIstirahat.barisIstirahat[1] && kolomKe == TempatIstirahat.kolomIstirahat[1]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[2] && kolomKe == TempatIstirahat.kolomIstirahat[2]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[3] && kolomKe == TempatIstirahat.kolomIstirahat[3]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[4] && kolomKe == TempatIstirahat.kolomIstirahat[4]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[5] && kolomKe == TempatIstirahat.kolomIstirahat[5]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[6] && kolomKe == TempatIstirahat.kolomIstirahat[6]) ||
+                                    (barisKe == TempatIstirahat.barisIstirahat[7] && kolomKe == TempatIstirahat.kolomIstirahat[7])){
+                                        //print("Pemain di tempat istirahat");
+                                    }else{
+                                        string output = Data.bidakBertabrakan(barisAwal, kolomAwal, barisKe, kolomKe);
+                                        if(output == "menang"){
+                                            posisiTujuan = target.bidakAI;
+                                        
+                                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                            print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                            print("AI win against your Bidak and AI can move again ...");
+                                            target.bidakAI.transform.position = new Vector3(target.hasilPathPosisi.transform.position.x, target.hasilPathPosisi.transform.position.y, target.hasilPathPosisi.transform.position.z);
+                                            target.hasilPathPosisi.tag = "Lawan";
+                                            GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                                            posisiAwal.tag = "Untagged";
+                                            target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                            target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            Giliran.setGiliranLawan();
+                                            Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
+                                            Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
+                                            foreach(var bidakPemain in listBidakPemain){
+                                                if(bidakPemain != null){
+                                                    if(bidakPemain.GetComponent<Bidak>()){
+                                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                            Destroy(bidakPemain);
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            timer = 4;
+                                            moved = true;
+                                            Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and win");
+                                            Data.updatePosisiBidak();
+                                            lastCase.solusiStrategi = 4;
+                                            listKasus.Add(lastCase);
+                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            
+                                        }else if(output == "draw"){
+                                            posisiTujuan = target.bidakAI;
+                                        
+                                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                            print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                            print("AI draw against Pemain, both Bidak destroyed");
+                                            target.hasilPathPosisi.tag = "Untagged";
+                                            GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                                            posisiAwal.tag = "Untagged";
+                                            target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                            target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            Data.zeroPangkat(barisAwal, kolomAwal);
+                                            Data.zeroPangkat(barisKe, kolomKe);
+                                            Data.noneKepemilikan(barisAwal, kolomAwal);
+                                            Data.noneKepemilikan(barisKe, kolomKe);
+                                            Giliran.setGiliranPemain();
+                                            foreach(var bidakPemain in listBidakPemain){
+                                                if(bidakPemain != null){
+                                                    if(bidakPemain.GetComponent<Bidak>()){
+                                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                            Destroy(bidakPemain);
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            Destroy(target.bidakAI);
+                                            timer = 4;
+                                            moved = true;
+                                            Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and draw");
+                                            Data.updatePosisiBidak();
+                                            lastCase.solusiStrategi = 4;
+                                            listKasus.Add(lastCase);
+                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            
+                                        }else if(output == "kalah"){
+                                            posisiTujuan = target.bidakAI;
+                                        
+                                            posisiTujuan.GetComponent<SpriteRenderer>().color = Color.yellow;
+                                            print("AI move from baris "+(barisAwal+1)+", kolom "+(kolomAwal+1)+" to baris "+(barisKe+1)+", kolom "+(kolomKe+1)+"");
+                                            print("AI lose the battle against your Bidak and destroyed");
+                                            foreach(var bidakPemain in listBidakPemain){
+                                                if(bidakPemain != null){
+                                                    if(bidakPemain.GetComponent<Bidak>()){
+                                                        if(bidakPemain.GetComponent<Bidak>().baris == barisKe && bidakPemain.GetComponent<Bidak>().kolom == kolomKe){
+                                                            AI.markBidak(target.bidakAI.GetComponent<Bidak>().pangkat, bidakPemain, barisKe, kolomKe);
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            GameObject posisiAwal = Data.listPosisi[barisAwal, kolomAwal];
+                                            posisiAwal.tag = "Untagged";
+                                            target.bidakAI.GetComponent<Bidak>().baris = barisKe;
+                                            target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            Data.zeroPangkat(barisAwal, kolomAwal);
+                                            Data.noneKepemilikan(barisAwal, kolomAwal);
+                                            Giliran.setGiliranPemain();
+                                            Destroy(target.bidakAI);
+                                            timer = 4;
+                                            moved = true;
+                                            Data.WriteResponseAI("AI targeting "+target.bidakPemain.GetComponentInChildren<Text>().text+" and lose");
+                                            Data.updatePosisiBidak();
+                                            lastCase.solusiStrategi = 4;
+                                            listKasus.Add(lastCase);
+                                            Data.WriteCase(lastCase.pemainMemasukiWilayahAI+","+lastCase.jalurKeretaKolomAIKosong+","+lastCase.AIMemasukiWilayahPemain+","+lastCase.jalurKeretaKolomPemainKosong+","+lastCase.tempatIstirahatAIKosong+","+lastCase.tempatIstirahatPemainKosong+","+lastCase.bidakTelahDiperkirakanPangkatnya+","+lastCase.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+lastCase.benderaPemainDiketahui+","+lastCase.benderaAIDiketahui+","+lastCase.solusiStrategi);
+                                            
+                                        }else if(output == "selesai"){
+                                            print("GAME SELESAI");
+                                            double akurasi = AI.listKasus.Count - AI.failedSolution;
+                                            akurasi *= 100;
+                                            akurasi /= AI.listKasus.Count;
+                                            Data.WriteCase("Total Cases  : "+AI.listKasus.Count+"; Total False Solutions: "+AI.failedSolution+"; Accuration : "+akurasi+"%");
+                                            SceneManager.LoadScene("Main Menu");
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                if(!moved){
-                    Data.WriteResponseAI("Try another strategy than 4");
-                    if(!cekFalseSolution){
-                        failedSolution+=1;
-                        cekFalseSolution = true;
-                        Data.WriteResponseAI("Total false solution :"+failedSolution);
+                    if(!moved){
+                        Data.WriteResponseAI("Try another strategy than 4");
+                        if(!cekFalseSolution){
+                            failedSolution+=1;
+                            cekFalseSolution = true;
+                            Data.WriteResponseAI("Total false solution :"+failedSolution);
+                        }
+                        strategy = Random.Range(1,4);
                     }
-                    strategy = Random.Range(1,4);
                 }
+                
             }else{
                 Data.WriteResponseAI("Try another strategy than 4");
                 if(!cekFalseSolution){
@@ -1262,6 +1378,9 @@ public class AI : MonoBehaviour
                         }
                     }
                 }
+                if(tempPathPosisi.ContainsKey(langkah+1)){
+                    return langkah+1;
+                }
                 tempPathPosisi.Add(langkah+1, posisiNextAI);
                 tempBidakAI.Add(langkah+1, bidakAI);
                 jumlahLangkah.Add(langkah+1);
@@ -1299,6 +1418,9 @@ public class AI : MonoBehaviour
                         }
                     }
                 }
+                if(tempPathPosisi.ContainsKey(langkah+1)){
+                    return langkah+1;
+                }
                 tempPathPosisi.Add(langkah+1, posisiNextAI);
                 tempBidakAI.Add(langkah+1, bidakAI);
                 jumlahLangkah.Add(langkah+1);
@@ -1335,6 +1457,9 @@ public class AI : MonoBehaviour
                             }
                         }
                     }
+                }
+                if(tempPathPosisi.ContainsKey(langkah+1)){
+                    return langkah+1;
                 }
                 tempPathPosisi.Add(langkah+1, posisiNextAI);
                 tempBidakAI.Add(langkah+1, bidakAI);
@@ -1504,6 +1629,7 @@ public class AI : MonoBehaviour
         int tempatIstirahatPemainKosong=0;
         int bidakTelahDiperkirakanPangkatnya=0;
         int benderaPemainDiketahui=0;
+        int benderaAIDiketahui = 0;
         int bidakTelahDiperkirakanPangkatnyaDiIstirahat=0;
         char[,] dataKepemilikanBidak = Data.dataKepemilikanBidak[Data.dataKepemilikanBidak.Count - 1];
         GameObject[] listBidakPemain = GameObject.FindGameObjectsWithTag("Pemain");
@@ -1513,6 +1639,9 @@ public class AI : MonoBehaviour
         int jumlahPenghalangPemain4 = 0;
         if(benderaExposed){
             benderaPemainDiketahui = 1;
+        }
+        if(benderaAIExposed){
+            benderaAIDiketahui = 1;
         }
         for(int i = 0; i < 14; i++){
             for(int j = 0; j < 5; j++){
@@ -1580,7 +1709,7 @@ public class AI : MonoBehaviour
                 }
             }
         }
-        Cases kasus = new Cases(pemainMemasukiWilayahAI, jalurKeretaKolomAIKosong, AIMemasukiWilayahPemain, jalurKeretaKolomPemainKosong, tempatIstirahatAIKosong, tempatIstirahatPemainKosong, bidakTelahDiperkirakanPangkatnya, bidakTelahDiperkirakanPangkatnyaDiIstirahat, benderaPemainDiketahui, 0);
+        Cases kasus = new Cases(pemainMemasukiWilayahAI, jalurKeretaKolomAIKosong, AIMemasukiWilayahPemain, jalurKeretaKolomPemainKosong, tempatIstirahatAIKosong, tempatIstirahatPemainKosong, bidakTelahDiperkirakanPangkatnya, bidakTelahDiperkirakanPangkatnyaDiIstirahat, benderaPemainDiketahui, benderaAIDiketahui, 0);
         similarity(kasus);
         
     }
@@ -1596,6 +1725,7 @@ public class AI : MonoBehaviour
         double f7=0;
         double f8=0;
         double f9=0;
+        double f10=0;
         double bobot1=2;
         double bobot2=4;
         double bobot3=2;
@@ -1605,7 +1735,8 @@ public class AI : MonoBehaviour
         double bobot7=5;
         double bobot8=4;
         double bobot9=5;
-        double totalBobot = bobot1 + bobot2 + bobot3 + bobot4 + bobot5 + bobot6 + bobot7 + bobot8 + bobot9;
+        double bobot10=5;
+        double totalBobot = bobot1 + bobot2 + bobot3 + bobot4 + bobot5 + bobot6 + bobot7 + bobot8 + bobot9 + bobot10;
         foreach(var kasus in listKasus){
             if(kasusBaru.pemainMemasukiWilayahAI == kasus.pemainMemasukiWilayahAI){
                 f1 = 1;
@@ -1652,6 +1783,11 @@ public class AI : MonoBehaviour
             }else if(kasusBaru.benderaPemainDiketahui != kasus.benderaPemainDiketahui){
                 f9 = 0;
             }
+            if(kasusBaru.benderaAIDiketahui == kasus.benderaAIDiketahui){
+                f10 = 1;
+            }else if(kasusBaru.benderaAIDiketahui != kasus.benderaAIDiketahui){
+                f10 = 0;
+            }
             double bobotxsim1 = f1*bobot1;
             double bobotxsim2 = f2*bobot2;
             double bobotxsim3 = f3*bobot3;
@@ -1661,7 +1797,8 @@ public class AI : MonoBehaviour
             double bobotxsim7 = f7*bobot7;
             double bobotxsim8 = f8*bobot8;
             double bobotxsim9 = f9*bobot9;
-            double total = bobotxsim1 + bobotxsim2 + bobotxsim3+ bobotxsim4 + bobotxsim5 + bobotxsim6 + bobotxsim7 + bobotxsim8 + bobotxsim9;
+            double bobotxsim10 = f10*bobot10;
+            double total = bobotxsim1 + bobotxsim2 + bobotxsim3+ bobotxsim4 + bobotxsim5 + bobotxsim6 + bobotxsim7 + bobotxsim8 + bobotxsim9 +bobotxsim10;
             double hasil = total/totalBobot;
             listSimilarity.Add(hasil);
         }

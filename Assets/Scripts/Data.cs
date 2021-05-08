@@ -189,6 +189,7 @@ public class Data : MonoBehaviour
                 print("AI mengetahui letak bendera Pemain");
                 Data.WriteResponseAI("AI knows Pemain's Bendera position");
             }else if((pangkatDitabrak == 10 && getKepemilikan(barisPosTujuan, kolomPosTujuan) == 'l') || (pangkatMenabrak == 10 && getKepemilikan(barisPosAwal, kolomPosAwal) == 'l')){
+                AI.benderaAIExposed = true;
                 GameObject[] bidakAI = GameObject.FindGameObjectsWithTag("Lawan");
                 foreach(var bidak in bidakAI){
                     if(bidak != null && bidak.GetComponentInChildren<Text>() && bidak.GetComponent<Bidak>().nama == "bendera"){
@@ -207,6 +208,7 @@ public class Data : MonoBehaviour
                 print("AI mengetahui letak bendera Pemain");
                 Data.WriteResponseAI("AI knows Pemain's Bendera position");
             }else if(pangkatMenabrak == 10 && getKepemilikan(barisPosAwal, kolomPosAwal) == 'l'){
+                AI.benderaAIExposed = true;
                 GameObject[] bidakAI = GameObject.FindGameObjectsWithTag("Lawan");
                 foreach(var bidak in bidakAI){
                     if(bidak != null && bidak.GetComponentInChildren<Text>() && bidak.GetComponent<Bidak>().nama == "bendera"){
@@ -224,6 +226,7 @@ public class Data : MonoBehaviour
             return "menang";
         }else if(pangkatMenabrak == pangkatDitabrak){
             if(pangkatDitabrak == 10 || pangkatMenabrak == 10){
+                AI.benderaAIExposed = true;
                 AI.benderaExposed = true;
                 print("AI mengetahui letak bendera Pemain");
                 Data.WriteResponseAI("AI knows Pemain's Bendera position");
@@ -309,7 +312,7 @@ public class Data : MonoBehaviour
     [MenuItem("Tools/Write file")]
     static void WriteString()
     {
-        string path = "Assets/Resources/dataPenguji2.txt";
+        string path = "Assets/Resources/dataTemp.txt";
 
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(path, true);
@@ -354,7 +357,7 @@ public class Data : MonoBehaviour
 
     [MenuItem("Tools/Write file")]
     static void WriteTxt(string response){
-        string path = "Assets/Resources/dataPenguji2.txt";
+        string path = "Assets/Resources/dataTemp.txt";
 
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(response);
@@ -364,7 +367,7 @@ public class Data : MonoBehaviour
 
     [MenuItem("Tools/Write file")]
     public static void WriteCase(string response){
-        string path = "Assets/Resources/casePenguji2.txt";
+        string path = "Assets/Resources/caseTemp.txt";
 
         StreamWriter writer = new StreamWriter(path, true);
         writer.WriteLine(response);
