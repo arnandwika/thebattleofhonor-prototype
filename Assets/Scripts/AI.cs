@@ -69,7 +69,7 @@ public class AI : MonoBehaviour
     private int min=0;
     private GameObject tempBidak;
     private List<Target> listTarget;
-    private List<GameObject> pathPosisi;
+    //private List<GameObject> pathPosisi;
     private Dictionary<int, GameObject> tempPathPosisi;
     private List<GameObject> listPathPosisi;
     private GameObject hasilPathPosisi;
@@ -90,44 +90,66 @@ public class AI : MonoBehaviour
     {
         listBidak = GameObject.FindGameObjectsWithTag("Lawan");
         giliranPemain = Giliran.getGiliran();
-        Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1);
-        Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1);
-        Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1);
-        Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2);
-        Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2);
-        Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 2);
-        Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 3);
-        Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 0, 3);
-        Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 3);
-        Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 0, 3);
-        Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 3);
-        Cases kasus6_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 3);
-        Cases kasus7_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 3);
-        Cases kasus8_strategy3 = new Cases(1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3);
-        Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 4);
-        Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 4);
-        Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 0, 4);
-        Cases kasus4_strategy4 = new Cases(0, 1, 1, 1, 1, 1, 2, 1, 0, 0, 4);
-        listKasus.Add(kasus1_strategy1);
-        listKasus.Add(kasus2_strategy1);
-        listKasus.Add(kasus3_strategy1);
-        listKasus.Add(kasus1_strategy2);
-        listKasus.Add(kasus2_strategy2);
-        listKasus.Add(kasus3_strategy2);
-        listKasus.Add(kasus1_strategy3);
-        listKasus.Add(kasus2_strategy3);
-        listKasus.Add(kasus3_strategy3);
-        listKasus.Add(kasus4_strategy3);
-        listKasus.Add(kasus5_strategy3);
-        listKasus.Add(kasus6_strategy3);
-        listKasus.Add(kasus7_strategy3);
-        listKasus.Add(kasus8_strategy3);
-        listKasus.Add(kasus1_strategy4);
-        listKasus.Add(kasus2_strategy4);
-        listKasus.Add(kasus3_strategy4);
-        listKasus.Add(kasus4_strategy4);
-        foreach(var kasus in listKasus){
-            Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+kasus.benderaPemainDiketahui+","+kasus.benderaAIDiketahui+","+kasus.solusiStrategi);
+        var scene_name = SceneManager.GetActiveScene().name;
+        if(scene_name == "Pengujian Dasar"){
+            Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1);
+            Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1);
+            Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1);
+            Cases kasus1_strategy2 = new Cases(0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 2);
+            Cases kasus2_strategy2 = new Cases(1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2);
+            Cases kasus3_strategy2 = new Cases(1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 2);
+            Cases kasus1_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 3);
+            Cases kasus2_strategy3 = new Cases(0, 0, 1, 0, 0, 1, 2, 1, 0, 0, 3);
+            Cases kasus3_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 3);
+            Cases kasus4_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 2, 1, 0, 0, 3);
+            Cases kasus5_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 3);
+            Cases kasus6_strategy3 = new Cases(1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 3);
+            Cases kasus7_strategy3 = new Cases(1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 3);
+            Cases kasus8_strategy3 = new Cases(1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3);
+            Cases kasus1_strategy4 = new Cases(0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 4);
+            Cases kasus2_strategy4 = new Cases(1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 4);
+            Cases kasus3_strategy4 = new Cases(1, 1, 1, 1, 1, 0, 2, 2, 1, 0, 4);
+            Cases kasus4_strategy4 = new Cases(0, 1, 1, 1, 1, 1, 2, 1, 0, 0, 4);
+            listKasus.Add(kasus1_strategy1);
+            listKasus.Add(kasus2_strategy1);
+            listKasus.Add(kasus3_strategy1);
+            listKasus.Add(kasus1_strategy2);
+            listKasus.Add(kasus2_strategy2);
+            listKasus.Add(kasus3_strategy2);
+            listKasus.Add(kasus1_strategy3);
+            listKasus.Add(kasus2_strategy3);
+            listKasus.Add(kasus3_strategy3);
+            listKasus.Add(kasus4_strategy3);
+            listKasus.Add(kasus5_strategy3);
+            listKasus.Add(kasus6_strategy3);
+            listKasus.Add(kasus7_strategy3);
+            listKasus.Add(kasus8_strategy3);
+            listKasus.Add(kasus1_strategy4);
+            listKasus.Add(kasus2_strategy4);
+            listKasus.Add(kasus3_strategy4);
+            listKasus.Add(kasus4_strategy4);
+            foreach(var kasus in listKasus){
+                Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+kasus.benderaPemainDiketahui+","+kasus.benderaAIDiketahui+","+kasus.solusiStrategi);
+            }
+        }else{
+            IEnumerable<string> lines = Data.ReadCase();
+            foreach (var line in lines){
+                string[] features = line.Split(',');
+                List<int> dataKasus = new List<int>();
+                if(features.Length == 11){
+                    foreach(var feature in features){
+                        int data = int.Parse(feature);
+                        dataKasus.Add(data);
+                    }
+                    Cases kasus = new Cases(dataKasus[0], dataKasus[1], dataKasus[2], dataKasus[3], dataKasus[4], dataKasus[5], dataKasus[6], dataKasus[7], dataKasus[8], dataKasus[9], dataKasus[10]);
+                    listKasus.Add(kasus);
+                }else{
+                    continue;
+                }
+            }
+            foreach(var kasus in listKasus){
+                Data.WriteCase(kasus.pemainMemasukiWilayahAI+","+kasus.jalurKeretaKolomAIKosong+","+kasus.AIMemasukiWilayahPemain+","+kasus.jalurKeretaKolomPemainKosong+","+kasus.tempatIstirahatAIKosong+","+kasus.tempatIstirahatPemainKosong+","+kasus.bidakTelahDiperkirakanPangkatnya+","+kasus.bidakTelahDiperkirakanPangkatnyaDiIstirahat+","+kasus.benderaPemainDiketahui+","+kasus.benderaAIDiketahui+","+kasus.solusiStrategi);
+            }
         }
     }
 

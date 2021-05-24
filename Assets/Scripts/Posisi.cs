@@ -10,22 +10,22 @@ public class Posisi : MonoBehaviour
     public GameObject[] ke;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    // void Start()
+    // {
 
-    }
+    // }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
         
-    }
+    // }
 
-    void OnTriggerEnter2D(Collider2D collision){
+    // void OnTriggerEnter2D(Collider2D collision){
         
-    }
+    // }
 
-    void OnTriggerExit2D(Collider2D collision){
+    // void OnTriggerExit2D(Collider2D collision){
         
-    }
+    // }
 }

@@ -75,10 +75,10 @@ public class Data : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
         
-    }
+    // }
 
     [ContextMenu("printAllPangkat")]
     public void printAllPangkat(){
@@ -376,13 +376,12 @@ public class Data : MonoBehaviour
     }
 
     [MenuItem("Tools/Read file")]
-    static void ReadString()
+    public static IEnumerable<string> ReadCase()
     {
-        string path = "Assets/Resources/data.txt";
+        string path = "Assets/Resources/casePenguji3.txt";
 
         //Read the text from directly from the test.txt file
-        StreamReader reader = new StreamReader(path); 
-        Debug.Log(reader.ReadToEnd());
-        reader.Close();
+        IEnumerable<string> lines = File.ReadLines(path);
+        return lines;
     }
 }
