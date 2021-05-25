@@ -1,0 +1,78 @@
+Player move from (6,4) to (1,4)
+ 
+Phase 1, Player turn
+| prajurit(l) | dinamit(l) | dinamit(l) | bendera(l) |   KOSONG   |  
+| kapten(l) |   KOSONG   |   KOSONG   | dinamit(l) | letjen(p) |  
+| brigjen(l) |   KOSONG   | letjen(l) | panglima(l) |   KOSONG   |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+|   KOSONG   | sersan(l) | sersan(l) | letnan(l) |   KOSONG   |  
+| kolonel(l) | letnan(l) | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   | letnan(p) | bom(p) | letnan(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | mayor(p) | letnan(p) | mayor(p) | sersan(p) |  
+| brigjen(p) |   KOSONG   | kolonel(p) |   KOSONG   | brigjen(p) |  
+|   KOSONG   | dinamit(p) | panglima(p) |   KOSONG   | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) | dinamit(p) | prajurit(p) |  
+ 
+CBR give solution strategy 1 from case index 18
+ 
+AI filling their Tempat Istirahat
+ 
+Phase 2, AI turn
+| prajurit(l) | dinamit(l) | dinamit(l) | bendera(l) |   KOSONG   |  
+| kapten(l) |   KOSONG   |   KOSONG   | dinamit(l) | letjen(p) |  
+|   KOSONG   | brigjen(l) | letjen(l) | panglima(l) |   KOSONG   |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+|   KOSONG   | sersan(l) | sersan(l) | letnan(l) |   KOSONG   |  
+| kolonel(l) | letnan(l) | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   | letnan(p) | bom(p) | letnan(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | mayor(p) | letnan(p) | mayor(p) | sersan(p) |  
+| brigjen(p) |   KOSONG   | kolonel(p) |   KOSONG   | brigjen(p) |  
+|   KOSONG   | dinamit(p) | panglima(p) |   KOSONG   | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) | dinamit(p) | prajurit(p) |  
+ 
+Player move from (1,4) to (0,4)
+ 
+Phase 3, Player turn
+| prajurit(l) | dinamit(l) | dinamit(l) | bendera(l) | letjen(p) |  
+| kapten(l) |   KOSONG   |   KOSONG   | dinamit(l) |   KOSONG   |  
+|   KOSONG   | brigjen(l) | letjen(l) | panglima(l) |   KOSONG   |  
+| sersan(l) | mayor(l) | letnan(l) | mayor(l) |   KOSONG   |  
+|   KOSONG   | sersan(l) | sersan(l) | letnan(l) |   KOSONG   |  
+| kolonel(l) | letnan(l) | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   | letnan(p) | bom(p) | letnan(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | mayor(p) | letnan(p) | mayor(p) | sersan(p) |  
+| brigjen(p) |   KOSONG   | kolonel(p) |   KOSONG   | brigjen(p) |  
+|   KOSONG   | dinamit(p) | panglima(p) |   KOSONG   | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) | dinamit(p) | prajurit(p) |  
+ 
+CBR give solution strategy 2 from case index 24
+ 
+AI mayor moving forward to (3,4)
+ 
+Phase 4, AI turn
+| prajurit(l) | dinamit(l) | dinamit(l) | bendera(l) | letjen(p) |  
+| kapten(l) |   KOSONG   |   KOSONG   | dinamit(l) |   KOSONG   |  
+|   KOSONG   | brigjen(l) | letjen(l) | panglima(l) |   KOSONG   |  
+| sersan(l) | mayor(l) | letnan(l) |   KOSONG   | mayor(l) |  
+|   KOSONG   | sersan(l) | sersan(l) | letnan(l) |   KOSONG   |  
+| kolonel(l) | letnan(l) | bom(l) |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   |  
+|   KOSONG   |   KOSONG   |   KOSONG   |   KOSONG   | sersan(p) |  
+|   KOSONG   | letnan(p) | bom(p) | letnan(p) |   KOSONG   |  
+|   KOSONG   |   KOSONG   | sersan(p) |   KOSONG   |   KOSONG   |  
+|   KOSONG   | mayor(p) | letnan(p) | mayor(p) | sersan(p) |  
+| brigjen(p) |   KOSONG   | kolonel(p) |   KOSONG   | brigjen(p) |  
+|   KOSONG   | dinamit(p) | panglima(p) |   KOSONG   | kapten(p) |  
+| bom(p) | bendera(p) | dinamit(p) | dinamit(p) | prajurit(p) |  
+ 
+GAME OVER
+ 
