@@ -103,7 +103,7 @@ public class GerakBidak : MonoBehaviour
                     Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, kepemilikanBidak);
                     barisPosAwal = barisPosTujuan;
                     kolomPosAwal = kolomPosTujuan;
-                    Data.updatePosisiBidak();
+                    //Data.updatePosisiBidak();
                     if(masukPapan == false){
                         AturanGerak.jumlahBidakDitempatkan+=1;
                         masukPapan = true;

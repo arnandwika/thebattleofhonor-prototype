@@ -83,6 +83,9 @@
      <None Include="Assets\Resources\casePenguji2_3.txt" />
      <None Include="Assets\Resources\casePenguji1_2.txt" />
      <None Include="Assets\Resources\casePenguji1.txt" />
+     <None Include="Assets\Resources\dataPengujiPB1_2.txt" />
+     <None Include="Assets\Resources\dataPengujiPB1.txt" />
+     <None Include="Assets\Resources\casePengujiPB1_2.txt" />
      <None Include="Assets\Resources\dataTemp.txt" />
      <None Include="Assets\Resources\casePenguji4.txt" />
      <None Include="Assets\Resources\dataSkenario2_3.txt" />
@@ -94,6 +97,7 @@
      <None Include="Assets\Resources\caseSkenario2_2.txt" />
      <None Include="Assets\Resources\dataSkenario2_1.txt" />
      <None Include="Assets\Resources\caseSkenario1_1.txt" />
+     <None Include="Assets\Resources\casePengujiPB1.txt" />
      <None Include="Assets\Resources\caseSkenario3_2.txt" />
      <None Include="Assets\Resources\dataSkenario3_1.txt" />
      <None Include="Assets\Resources\dataPenguji1.txt" />

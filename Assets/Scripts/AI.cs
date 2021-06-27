@@ -91,7 +91,7 @@ public class AI : MonoBehaviour
         listBidak = GameObject.FindGameObjectsWithTag("Lawan");
         giliranPemain = Giliran.getGiliran();
         var scene_name = SceneManager.GetActiveScene().name;
-        if(scene_name == "Pengujian Dasar"){
+        if(scene_name == "Pengujian Dasar" || scene_name == "PD_Penempatan_Bidak"){
             Cases kasus1_strategy1 = new Cases(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1);
             Cases kasus2_strategy1 = new Cases(1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1);
             Cases kasus3_strategy1 = new Cases(0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1);
@@ -552,7 +552,7 @@ public class AI : MonoBehaviour
                                                 posisiAwal.tag = "Untagged";
                                                 bidak.GetComponent<Bidak>().baris = barisPosTujuan;
                                                 bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                                 Giliran.setGiliranLawan();
                                                 Data.dataPangkatPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getPangkat(barisPosAwal, kolomPosAwal));
                                                 Data.dataKepemilikanPindah(barisPosAwal, kolomPosAwal, barisPosTujuan, kolomPosTujuan, Data.getKepemilikan(barisPosAwal, kolomPosAwal));
@@ -584,7 +584,7 @@ public class AI : MonoBehaviour
                                                 posisiAwal.tag = "Untagged";
                                                 bidak.GetComponent<Bidak>().baris = barisPosTujuan;
                                                 bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                                 Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                                                 Data.zeroPangkat(barisPosTujuan, kolomPosTujuan);
                                                 Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
@@ -625,7 +625,7 @@ public class AI : MonoBehaviour
                                                 posisiAwal.tag = "Untagged";
                                                 bidak.GetComponent<Bidak>().baris = barisPosTujuan;
                                                 bidak.GetComponent<Bidak>().kolom = kolomPosTujuan;
-                                                bidak.GetComponent<Bidak>().gerak = gerak;
+                                                bidak.GetComponent<Bidak>().gerak = posisi.GetComponent<Posisi>().gerak;
                                                 Data.zeroPangkat(barisPosAwal, kolomPosAwal);
                                                 Data.noneKepemilikan(barisPosAwal, kolomPosAwal);
                                                 Giliran.setGiliranPemain();
@@ -919,7 +919,7 @@ public class AI : MonoBehaviour
                                     posisiAwal.tag = "Untagged";
                                     target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                     target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                     Giliran.setGiliranLawan();
                                     Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
                                     Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
@@ -951,7 +951,7 @@ public class AI : MonoBehaviour
                                     posisiAwal.tag = "Untagged";
                                     target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                     target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                     Data.zeroPangkat(barisAwal, kolomAwal);
                                     Data.zeroPangkat(barisKe, kolomKe);
                                     Data.noneKepemilikan(barisAwal, kolomAwal);
@@ -995,7 +995,7 @@ public class AI : MonoBehaviour
                                     posisiAwal.tag = "Untagged";
                                     target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                     target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                    target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                    target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                     Data.zeroPangkat(barisAwal, kolomAwal);
                                     Data.noneKepemilikan(barisAwal, kolomAwal);
                                     Giliran.setGiliranPemain();
@@ -1223,7 +1223,7 @@ public class AI : MonoBehaviour
                                             posisiAwal.tag = "Untagged";
                                             target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                             target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                             Giliran.setGiliranLawan();
                                             Data.dataPangkatPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getPangkat(barisAwal, kolomAwal));
                                             Data.dataKepemilikanPindah(barisAwal, kolomAwal, barisKe, kolomKe, Data.getKepemilikan(barisAwal, kolomAwal));
@@ -1256,7 +1256,7 @@ public class AI : MonoBehaviour
                                             posisiAwal.tag = "Untagged";
                                             target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                             target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                             Data.zeroPangkat(barisAwal, kolomAwal);
                                             Data.zeroPangkat(barisKe, kolomKe);
                                             Data.noneKepemilikan(barisAwal, kolomAwal);
@@ -1301,7 +1301,7 @@ public class AI : MonoBehaviour
                                             posisiAwal.tag = "Untagged";
                                             target.bidakAI.GetComponent<Bidak>().baris = barisKe;
                                             target.bidakAI.GetComponent<Bidak>().kolom = kolomKe;
-                                            target.bidakAI.GetComponent<Bidak>().gerak = gerak;
+                                            target.bidakAI.GetComponent<Bidak>().gerak = target.hasilPathPosisi.GetComponent<Posisi>().gerak;
                                             Data.zeroPangkat(barisAwal, kolomAwal);
                                             Data.noneKepemilikan(barisAwal, kolomAwal);
                                             Giliran.setGiliranPemain();
