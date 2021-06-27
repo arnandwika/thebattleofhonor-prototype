@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
@@ -16,6 +17,12 @@ public class Scene : MonoBehaviour
     // {
         
     // }
+    public void PDPenempatanBidak(){
+        if(AturanGerak.jumlahBidakDitempatkan == 25){
+            AturanGerak.penempatanBidak = true;
+            gameObject.GetComponent<Image>().color = Color.black;
+        }
+    }
 
     public void PengujianDasar(){
         SceneManager.LoadScene("Pengujian Dasar");

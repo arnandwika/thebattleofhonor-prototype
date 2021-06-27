@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AturanGerak : MonoBehaviour
 {
     private static int loop;
+    public static bool penempatanBidak;
+    public static int jumlahBidakDitempatkan;
+    private string scene_name;
     // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    void Start()
+    {
+        scene_name = SceneManager.GetActiveScene().name;
+        if(scene_name == "PD_Penempatan_Bidak"){
+            penempatanBidak = false;
+            jumlahBidakDitempatkan = 0;
+        }
+    }
 
     // Update is called once per frame
     // void Update()
@@ -235,6 +243,33 @@ public class AturanGerak : MonoBehaviour
             return false;
         }else{
             return true;
+        }
+    }
+
+    public static bool opsiTaruhBidak(int pangkatBidak, int barisPosTujuan, int kolomPosTujuan){
+        if(barisPosTujuan >= 8){
+            if(!((barisPosTujuan == TempatIstirahat.barisIstirahat[0] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[0]) || 
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[1] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[1]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[2] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[2]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[3] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[3]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[4] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[4]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[5] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[5]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[6] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[6]) ||
+            (barisPosTujuan == TempatIstirahat.barisIstirahat[7] && kolomPosTujuan == TempatIstirahat.kolomIstirahat[7]))){
+                if(pangkatBidak == 1 && barisPosTujuan == 13 && (kolomPosTujuan == 1 || kolomPosTujuan == 3)){
+                    return true;
+                }else if(pangkatBidak == -1 && barisPosTujuan >= 11){
+                    return true;
+                }else if(pangkatBidak != 1 && pangkatBidak != -1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }else{
+            return false;
         }
     }
 }

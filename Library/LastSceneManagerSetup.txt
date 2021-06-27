@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Skenario 2.unity
+- path: Assets/Scenes/PD_Penempatan_Bidak.unity
   isLoaded: 1
   isActive: 1

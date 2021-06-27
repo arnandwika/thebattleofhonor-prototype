@@ -141,7 +141,18 @@ public class AI : MonoBehaviour
                         int data = int.Parse(feature);
                         dataKasus.Add(data);
                     }
-                    Cases kasus = new Cases(dataKasus[0], dataKasus[1], dataKasus[2], dataKasus[3], dataKasus[4], dataKasus[5], dataKasus[6], dataKasus[7], dataKasus[8], dataKasus[9], dataKasus[10]);
+                    Cases kasus = new Cases(
+                        dataKasus[0],
+                        dataKasus[1],
+                        dataKasus[2],
+                        dataKasus[3],
+                        dataKasus[4],
+                        dataKasus[5],
+                        dataKasus[6],
+                        dataKasus[7],
+                        dataKasus[8],
+                        dataKasus[9],
+                        dataKasus[10]);
                     listKasus.Add(kasus);
                 }else{
                     continue;
